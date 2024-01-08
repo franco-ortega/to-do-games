@@ -1,10 +1,5 @@
-import Image from 'next/image';
-import styles from './page.module.css';
+import Home from './components/home/Home';
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <p>Hello, Games!</p>
-    </main>
-  );
+export default function HomePage() {
+  return <Home />;
 }
