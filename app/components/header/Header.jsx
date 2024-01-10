@@ -3,7 +3,7 @@ import Nav from '../nav/Nav';
 export default function Header() {
   return (
     <header>
-      <h1>To Do Games</h1>
+      <h1>Games To Play...</h1>
       <Nav />
     </header>
   );
