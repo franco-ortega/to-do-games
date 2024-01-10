@@ -1,12 +1,21 @@
+import Link from 'next/link';
+
 export default function Nav() {
   return (
     <nav>
       <ul>
-        <li>Link #1</li>
-        <li>Link #2</li>
-        <li>Link #3</li>
-        <li>Link #4</li>
-        <li>Link #5</li>
+        <li>
+          <Link href={'/'}>Home Page</Link>
+        </li>
+        <li>
+          <Link href={'/week'}>This Week</Link>
+        </li>
+        <li>
+          <Link href={'/month'}>This Month</Link>
+        </li>
+        <li>
+          <Link href={'/year'}>This Year</Link>
+        </li>
       </ul>
     </nav>
   );
