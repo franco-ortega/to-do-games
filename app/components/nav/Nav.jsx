@@ -5,9 +5,6 @@ export default function Nav() {
     <nav>
       <ul>
         <li>
-          <Link href={'/'}>Home Page</Link>
-        </li>
-        <li>
           <Link href={'/week'}>This Week</Link>
         </li>
         <li>
@@ -15,6 +12,9 @@ export default function Nav() {
         </li>
         <li>
           <Link href={'/year'}>This Year</Link>
+        </li>
+        <li>
+          <Link href={'/'}>Home Page</Link>
         </li>
       </ul>
     </nav>
