@@ -5,13 +5,13 @@ export default function Home() {
     <main className={styles.Home}>
       <h2>Home Page</h2>
       <section>
-        <h2>Section #1</h2>
+        <h3>Section #1</h3>
       </section>
       <section>
-        <h2>Section #2</h2>
+        <h3>Section #2</h3>
       </section>
       <section>
-        <h2>Section #3</h2>
+        <h3>Section #3</h3>
       </section>
     </main>
   );
