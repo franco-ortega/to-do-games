@@ -20,6 +20,7 @@ body {
 
 body {
   background-color: hsl(0, 0%, 10%);
+  color: hsl(0, 0%, 90%);
 }
 
 a {
