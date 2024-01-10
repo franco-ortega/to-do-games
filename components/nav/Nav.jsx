@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import styles from './Nav.module.scss';
 
 export default function Nav() {
   return (
-    <nav>
+    <nav className={styles.Nav}>
       <ul>
         <li>
           <Link href={'/week'}>This Week</Link>
