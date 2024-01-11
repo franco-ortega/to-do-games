@@ -8,13 +8,7 @@ type Props = {
 };
 
 export default function GamesToPlay({ gameData, time }: Props): JSX.Element {
-  const [games, setGames] = useState([] as Game[]);
-
-  useEffect(() => {
-    if (!games.length) setGames(gameData);
-  }, [gameData, games]);
-
-  const gamesList: JSX.Element[] = games.map((game: Game) => (
+  const gamesList: JSX.Element[] = gameData.map((game: Game) => (
     <div key={game[0]}>
       {game[0]} (played:{' '}
       {game[1]['played'] ? <span>yes</span> : <span>no</span>})
