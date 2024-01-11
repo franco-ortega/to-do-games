@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-type Game = [string, { played: boolean }];
+import { Game } from '../../utils/types';
 
 type Props = {
   gameData: Game[];
