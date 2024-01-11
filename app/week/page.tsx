@@ -17,24 +17,5 @@ export default function WeekPage() {
     if (!data.length) setData(weekData);
   }, [data, weekData]);
 
-  // const gamesList: JSX.Element[] = weekData.map((game: Game) => (
-  //   <div key={game[0]}>
-  //     {game[0]} (played:{' '}
-  //     {game[1]['played'] ? <span>yes</span> : <span>no</span>})
-  //   </div>
-  // ));
-
-  console.log('WEEK', weekData);
-
-  return (
-    <main>
-      <section>
-        <h2>Games to Play This Week</h2>
-        {/* {gamesList} */}
-      </section>
-      <section>
-        <GamesToPlay gameData={weekData} title={'Week'} />
-      </section>
-    </main>
-  );
+  return <GamesToPlay gameData={weekData} title={'Week'} />;
 }
