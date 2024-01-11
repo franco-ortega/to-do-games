@@ -17,7 +17,7 @@ export default function WeekPage() {
   const gamesList: JSX.Element[] = weekData.map((game: Game) => (
     <div key={game[0]}>
       {game[0]} (played:{' '}
-      {game[0]['played'] ? <span>yes</span> : <span>no</span>})
+      {game[1]['played'] ? <span>yes</span> : <span>no</span>})
     </div>
   ));
 
