@@ -33,7 +33,7 @@ export default function WeekPage() {
         {/* {gamesList} */}
       </section>
       <section>
-        <GamesToPlay gameData={weekData} />
+        <GamesToPlay gameData={weekData} title={'Week'} />
       </section>
     </main>
   );
