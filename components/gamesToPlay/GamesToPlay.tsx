@@ -7,10 +7,7 @@ type Props = {
   time: string;
 };
 
-const GamesToPlay: React.FunctionComponent<Props> = ({
-  gameData,
-  time,
-}): JSX.Element => {
+export default function GamesToPlay({ gameData, time }: Props): JSX.Element {
   const [games, setGames] = useState([] as Game[]);
 
   useEffect(() => {
@@ -30,6 +27,4 @@ const GamesToPlay: React.FunctionComponent<Props> = ({
       {gamesList}
     </main>
   );
-};
-
-export default GamesToPlay;
+}
