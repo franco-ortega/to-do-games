@@ -1,0 +1,22 @@
+{
+  "week": [
+    ["Apiary", {"played": false}], 
+    ["Bear Raid", {"played": false}], 
+    ["Castles of Burgandy", {"played": false}]
+  ],
+  "month": [
+    ["Dune Imperium", {"played": false}], 
+    ["Expeditions", {"played": false}], 
+    ["Farshore", {"played": false}], 
+    ["Galaxy Trucker", {"played": false}]
+  ],
+  "year": [
+    ["Hanabi", {"played": false}], 
+    ["ISS Vanguard", {"played": false}], 
+    ["Jekyll vs Hyde", {"played": false}], 
+    ["King Domino", {"played": false}], 
+    ["Libertalia", {"played": false}], 
+    ["Monster Island", {"played": false}], 
+    ["Nom Nom Nom", {"played": false}], 
+    ["Oath", {"played": false}]]
+}
