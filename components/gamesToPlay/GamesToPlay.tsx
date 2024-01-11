@@ -5,8 +5,8 @@ import { ReactNode, useEffect, useState } from 'react';
 type Game = [string, { played: boolean }];
 
 type Props = {
-  gameData: [string, { played: boolean }][];
-  title: string;
+  gameData: Game[];
+  time: string;
 };
 
 const GamesToPlay = (gameData: Props): JSX.Element => {
@@ -25,7 +25,7 @@ const GamesToPlay = (gameData: Props): JSX.Element => {
 
   return (
     <main>
-      <h2>Games To Play This {gameData.title}</h2>
+      <h2>Games To Play This {gameData.time}</h2>
       {gamesList}
     </main>
   );

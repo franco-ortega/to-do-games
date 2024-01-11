@@ -17,5 +17,5 @@ export default function WeekPage() {
     if (!data.length) setData(weekData);
   }, [data, weekData]);
 
-  return <GamesToPlay gameData={weekData} title={'Week'} />;
+  return <GamesToPlay gameData={weekData} time={'Week'} />;
 }
