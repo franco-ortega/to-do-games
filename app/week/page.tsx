@@ -3,12 +3,9 @@
 import sampleData from '../../data/sample.json';
 
 type Game = [string, { played: boolean }];
-type Games = Game[];
 
 export default function WeekPage() {
   const weekData = sampleData.week as Game[];
-
-  console.log('Week DATA', weekData);
 
   const gamesList: JSX.Element[] = weekData.map((game: Game) => (
     <div key={game[0]}>
