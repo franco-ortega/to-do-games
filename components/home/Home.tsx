@@ -5,13 +5,8 @@ export default function Home() {
     <main className={styles.Home}>
       <h2>Home Page</h2>
       <section>
-        <h3>Section #1</h3>
-      </section>
-      <section>
-        <h3>Section #2</h3>
-      </section>
-      <section>
-        <h3>Section #3</h3>
+        The links for This Week, This Month, and This Year now dynamically
+        display sample data.
       </section>
     </main>
   );
