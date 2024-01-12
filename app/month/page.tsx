@@ -5,5 +5,5 @@ import { Game } from '@/utils/types';
 export default function MonthPage() {
   const data = sampleData.month as Game[];
 
-  return <GamesToPlay gameData={data} time={'Week'} />;
+  return <GamesToPlay gameData={data} time={'Month'} />;
 }
