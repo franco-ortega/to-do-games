@@ -6,6 +6,9 @@ export default function Nav() {
     <nav className={styles.Nav}>
       <ul>
         <li>
+          <Link href={'/'}>Home Page</Link>
+        </li>
+        <li>
           <Link href={'/week'}>This Week</Link>
         </li>
         <li>
@@ -15,7 +18,7 @@ export default function Nav() {
           <Link href={'/year'}>This Year</Link>
         </li>
         <li>
-          <Link href={'/'}>Home Page</Link>
+          <Link href={'/all'}>All Games</Link>
         </li>
       </ul>
     </nav>
