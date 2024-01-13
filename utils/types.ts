@@ -1,1 +1,1 @@
-export type Game = [string, { played: boolean }];
+export type Game = [string, { isPlayed: boolean }];

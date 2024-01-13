@@ -1,22 +1,22 @@
 {
   "week": [
-    ["Apiary", {"played": false}], 
-    ["Bear Raid", {"played": true}], 
-    ["Castles of Burgandy", {"played": false}]
+    ["Apiary", {"isPlayed": false}], 
+    ["Bear Raid", {"isPlayed": true}], 
+    ["Castles of Burgandy", {"isPlayed": false}]
   ],
   "month": [
-    ["Dune Imperium", {"played": false}], 
-    ["Expeditions", {"played": true}], 
-    ["Farshore", {"played": false}], 
-    ["Galaxy Trucker", {"played": false}]
+    ["Dune Imperium", {"isPlayed": false}], 
+    ["Expeditions", {"isPlayed": true}], 
+    ["Farshore", {"isPlayed": false}], 
+    ["Galaxy Trucker", {"isPlayed": false}]
   ],
   "year": [
-    ["Hanabi", {"played": false}], 
-    ["ISS Vanguard", {"played": true}], 
-    ["Jekyll vs Hyde", {"played": false}], 
-    ["King Domino", {"played": false}], 
-    ["Libertalia", {"played": true}], 
-    ["Monster Island", {"played": false}], 
-    ["Nom Nom Nom", {"played": false}], 
-    ["Oath", {"played": false}]]
+    ["Hanabi", {"isPlayed": false}], 
+    ["ISS Vanguard", {"isPlayed": true}], 
+    ["Jekyll vs Hyde", {"isPlayed": false}], 
+    ["King Domino", {"isPlayed": false}], 
+    ["Libertalia", {"isPlayed": true}], 
+    ["Monster Island", {"isPlayed": false}], 
+    ["Nom Nom Nom", {"isPlayed": false}], 
+    ["Oath", {"isPlayed": false}]]
 }
