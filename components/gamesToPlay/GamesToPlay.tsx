@@ -1,24 +1,21 @@
 import { useEffect, useState } from 'react';
 
 import { Game } from '../../utils/types';
+import GamesList from '../gamesList/GamesList';
 
 type Props = {
   gameData: Game[];
-  time: string;
+  timeSpan: string;
 };
 
-export default function GamesToPlay({ gameData, time }: Props): JSX.Element {
-  const gamesList: JSX.Element[] = gameData.map((game: Game) => (
-    <div key={game[0]}>
-      {game[0]} (played:{' '}
-      {game[1]['played'] ? <span>yes</span> : <span>no</span>})
-    </div>
-  ));
-
+export default function GamesToPlay({
+  gameData,
+  timeSpan,
+}: Props): JSX.Element {
   return (
     <main>
-      <h2>Games To Play This {time}</h2>
-      {gamesList}
+      <h2>Games To Play This {timeSpan}</h2>
+      <GamesList gamesList={gameData} />
     </main>
   );
 }
