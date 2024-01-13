@@ -5,13 +5,16 @@ import GamesList from '../gamesList/GamesList';
 
 type Props = {
   gameData: Game[];
-  time: string;
+  timeSpan: string;
 };
 
-export default function GamesToPlay({ gameData, time }: Props): JSX.Element {
+export default function GamesToPlay({
+  gameData,
+  timeSpan,
+}: Props): JSX.Element {
   return (
     <main>
-      <h2>Games To Play This {time}</h2>
+      <h2>Games To Play This {timeSpan}</h2>
       <GamesList gamesList={gameData} />
     </main>
   );
