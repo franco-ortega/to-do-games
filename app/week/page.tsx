@@ -8,5 +8,5 @@ import { timeSpan } from '@/utils/enums';
 export default function WeekPage() {
   const weekData = sampleData.week as Game[];
 
-  return <GamesToPlay gameData={weekData} time={timeSpan.week} />;
+  return <GamesToPlay gameData={weekData} timeSpan={timeSpan.week} />;
 }
