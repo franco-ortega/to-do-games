@@ -16,8 +16,9 @@ export default function Home() {
   ) => {
     e.preventDefault();
     setGames((prevState) => [...prevState, [game, { isPlayed: false }]]);
-    console.log(e.target);
   };
+
+  console.log(timeSpanOption);
 
   return (
     <main className={styles.Home}>
@@ -37,6 +38,23 @@ export default function Home() {
                 id='add-game'
                 onChange={(e) => setGame(e.target.value)}
               />
+            </label>
+          </p>
+          <p>
+            <label htmlFor='time-span-options'>
+              <select
+                id='time-span-options'
+                onChange={(e) =>
+                  setTimeSpanOption(
+                    e.target.value.toLowerCase() as TimeSpanOptions
+                  )
+                }
+              >
+                <option value={''}>When Will You Play?</option>
+                <option value={timeSpan.week}>This Week</option>
+                <option value={timeSpan.month}>This Month</option>
+                <option value={timeSpan.year}>This Year</option>
+              </select>
             </label>
           </p>
           <button>Add Game</button>
