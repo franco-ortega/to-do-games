@@ -7,7 +7,6 @@ import { timeSpan } from '@/utils/enums';
 
 export default function Home() {
   const [game, setGame] = useState('');
-  // const [games, setGames] = useState([] as Game[]);
   const [gamesToPlay, setGamesToPlay] = useState({
     week: [] as Game[],
     month: [] as Game[],
@@ -30,8 +29,6 @@ export default function Home() {
 
     setGame('');
   };
-
-  console.log({ gamesToPlay });
 
   return (
     <main className={styles.Home}>
