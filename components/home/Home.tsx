@@ -7,18 +7,24 @@ import { timeSpan } from '@/utils/enums';
 
 export default function Home() {
   const [game, setGame] = useState('');
-  const [games, setGames] = useState([] as Game[]);
-  const [gamesToPlay, setGamesToPlay] = useState({} as GamesToPlay);
+  // const [games, setGames] = useState([] as Game[]);
+  const [gamesToPlay, setGamesToPlay] = useState({
+    week: [['test week', { isPlayed: false }]] as Game[],
+    month: [] as Game[],
+    year: [] as Game[],
+  } as GamesToPlay);
   const [timeSpanOption, setTimeSpanOption] = useState('' as TimeSpanOptions);
 
   const addGame: React.FormEventHandler = (
     e: React.FormEvent<HTMLInputElement>
   ) => {
     e.preventDefault();
-    setGames((prevState) => [...prevState, [game, { isPlayed: false }]]);
+    // setGames((prevState) => [...prevState, [game, { isPlayed: false }]]);
+
+    setGame('');
   };
 
-  console.log(timeSpanOption);
+  console.log({ gamesToPlay });
 
   return (
     <main className={styles.Home}>
@@ -36,6 +42,7 @@ export default function Home() {
               <input
                 type='text'
                 id='add-game'
+                value={game}
                 onChange={(e) => setGame(e.target.value)}
               />
             </label>
@@ -62,10 +69,10 @@ export default function Home() {
       </section>
       <section>
         <h3>New Games</h3>
-        <ul>
+        {/* <ul>
           {games.length > 0 &&
             games.map((game) => <li key={game[0]}>{game[0]}</li>)}
-        </ul>
+        </ul> */}
       </section>
     </main>
   );
