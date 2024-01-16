@@ -9,7 +9,7 @@ export default function Home() {
   const [game, setGame] = useState('');
   // const [games, setGames] = useState([] as Game[]);
   const [gamesToPlay, setGamesToPlay] = useState({
-    week: [['test week', { isPlayed: false }]] as Game[],
+    week: [] as Game[],
     month: [] as Game[],
     year: [] as Game[],
   } as GamesToPlay);
@@ -82,6 +82,31 @@ export default function Home() {
           {games.length > 0 &&
             games.map((game) => <li key={game[0]}>{game[0]}</li>)}
         </ul> */}
+
+        <section>
+          <h4>Play This Week</h4>
+          <ul>
+            {gamesToPlay.week.map((game) => (
+              <li key={game[0]}>{game[0]}</li>
+            ))}
+          </ul>
+        </section>
+        <section>
+          <h4>Play This Month</h4>
+          <ul>
+            {gamesToPlay.month.map((game) => (
+              <li key={game[0]}>{game[0]}</li>
+            ))}
+          </ul>
+        </section>
+        <section>
+          <h4>Play This Year</h4>
+          <ul>
+            {gamesToPlay.year.map((game) => (
+              <li key={game[0]}>{game[0]}</li>
+            ))}
+          </ul>
+        </section>
       </section>
     </main>
   );
