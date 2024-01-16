@@ -1,19 +1,22 @@
 'use client';
 
 import { useState } from 'react';
-import { Game, GamesToPlay } from '../../utils/types';
+import { Game, GamesToPlay, TimeSpanOptions } from '../../utils/types';
 import styles from './Home.module.scss';
+import { timeSpan } from '@/utils/enums';
 
 export default function Home() {
   const [game, setGame] = useState('');
   const [games, setGames] = useState([] as Game[]);
   const [gamesToPlay, setGamesToPlay] = useState({} as GamesToPlay);
+  const [timeSpanOption, setTimeSpanOption] = useState('' as TimeSpanOptions);
 
   const addGame: React.FormEventHandler = (
     e: React.FormEvent<HTMLInputElement>
   ) => {
     e.preventDefault();
     setGames((prevState) => [...prevState, [game, { isPlayed: false }]]);
+    console.log(e.target);
   };
 
   return (

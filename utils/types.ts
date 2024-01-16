@@ -5,3 +5,5 @@ export type GamesToPlay = {
   month: Game[],
   year: Game[]
 };
+
+export type TimeSpanOptions = 'week' | 'month' | 'year';
