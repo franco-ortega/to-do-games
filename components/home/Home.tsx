@@ -80,7 +80,9 @@ export default function Home() {
           <h4>...This Week</h4>
           <ul>
             {gamesToPlay.week.map(([game, { isPlayed }]) => (
-              <li key={game}>{game}</li>
+              <li key={game}>
+                {game} ({isPlayed ? 'Played!' : 'not played yet'})
+              </li>
             ))}
           </ul>
         </section>
@@ -88,7 +90,9 @@ export default function Home() {
           <h4>...This Month</h4>
           <ul>
             {gamesToPlay.month.map(([game, { isPlayed }]) => (
-              <li key={game}>{game}</li>
+              <li key={game}>
+                {game} ({isPlayed ? 'Played!' : 'not played yet'})
+              </li>
             ))}
           </ul>
         </section>
@@ -96,7 +100,9 @@ export default function Home() {
           <h4>...This Year</h4>
           <ul>
             {gamesToPlay.year.map(([game, { isPlayed }]) => (
-              <li key={game}>{game}</li>
+              <li key={game}>
+                {game} ({isPlayed ? 'Played!' : 'not played yet'})
+              </li>
             ))}
           </ul>
         </section>
