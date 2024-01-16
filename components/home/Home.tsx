@@ -75,28 +75,28 @@ export default function Home() {
         </form>
       </section>
       <section>
-        <h3>New Games</h3>
+        <h3>Games To Play...</h3>
         <section>
-          <h4>Play This Week</h4>
+          <h4>...This Week</h4>
           <ul>
-            {gamesToPlay.week.map((game) => (
-              <li key={game[0]}>{game[0]}</li>
+            {gamesToPlay.week.map(([game, { isPlayed }]) => (
+              <li key={game}>{game}</li>
             ))}
           </ul>
         </section>
         <section>
-          <h4>Play This Month</h4>
+          <h4>...This Month</h4>
           <ul>
-            {gamesToPlay.month.map((game) => (
-              <li key={game[0]}>{game[0]}</li>
+            {gamesToPlay.month.map(([game, { isPlayed }]) => (
+              <li key={game}>{game}</li>
             ))}
           </ul>
         </section>
         <section>
-          <h4>Play This Year</h4>
+          <h4>...This Year</h4>
           <ul>
-            {gamesToPlay.year.map((game) => (
-              <li key={game[0]}>{game[0]}</li>
+            {gamesToPlay.year.map(([game, { isPlayed }]) => (
+              <li key={game}>{game}</li>
             ))}
           </ul>
         </section>
