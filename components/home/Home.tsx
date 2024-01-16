@@ -21,6 +21,15 @@ export default function Home() {
     e.preventDefault();
     // setGames((prevState) => [...prevState, [game, { isPlayed: false }]]);
 
+    setGamesToPlay((prevState) => {
+      prevState[timeSpanOption] = [
+        ...prevState[timeSpanOption],
+        [game, { isPlayed: false }],
+      ];
+      console.log({ prevState });
+      return prevState;
+    });
+
     setGame('');
   };
 
