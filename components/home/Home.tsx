@@ -19,14 +19,12 @@ export default function Home() {
     e: React.FormEvent<HTMLInputElement>
   ) => {
     e.preventDefault();
-    // setGames((prevState) => [...prevState, [game, { isPlayed: false }]]);
 
     setGamesToPlay((prevState) => {
       prevState[timeSpanOption] = [
         ...prevState[timeSpanOption],
         [game, { isPlayed: false }],
       ];
-      console.log({ prevState });
       return prevState;
     });
 
@@ -78,11 +76,6 @@ export default function Home() {
       </section>
       <section>
         <h3>New Games</h3>
-        {/* <ul>
-          {games.length > 0 &&
-            games.map((game) => <li key={game[0]}>{game[0]}</li>)}
-        </ul> */}
-
         <section>
           <h4>Play This Week</h4>
           <ul>
