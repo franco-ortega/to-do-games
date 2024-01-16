@@ -1,18 +1,33 @@
 'use client';
 
 import { useState } from 'react';
-import { Game } from '../../utils/types';
+import { Game, GamesToPlay, TimeSpanOptions } from '../../utils/types';
 import styles from './Home.module.scss';
+import { timeSpan } from '@/utils/enums';
 
 export default function Home() {
   const [game, setGame] = useState('');
-  const [games, setGames] = useState([] as Game[]);
+  const [gamesToPlay, setGamesToPlay] = useState({
+    week: [] as Game[],
+    month: [] as Game[],
+    year: [] as Game[],
+  } as GamesToPlay);
+  const [timeSpanOption, setTimeSpanOption] = useState('' as TimeSpanOptions);
 
   const addGame: React.FormEventHandler = (
     e: React.FormEvent<HTMLInputElement>
   ) => {
     e.preventDefault();
-    setGames((prevState) => [...prevState, [game, { isPlayed: false }]]);
+
+    setGamesToPlay((prevState) => {
+      prevState[timeSpanOption] = [
+        ...prevState[timeSpanOption],
+        [game, { isPlayed: false }],
+      ];
+      return prevState;
+    });
+
+    setGame('');
   };
 
   return (
@@ -31,19 +46,63 @@ export default function Home() {
               <input
                 type='text'
                 id='add-game'
+                value={game}
                 onChange={(e) => setGame(e.target.value)}
               />
+            </label>
+          </p>
+          <p>
+            <label htmlFor='time-span-options'>
+              <select
+                id='time-span-options'
+                onChange={(e) =>
+                  setTimeSpanOption(
+                    e.target.value.toLowerCase() as TimeSpanOptions
+                  )
+                }
+              >
+                <option value={''}>When Will You Play?</option>
+                <option value={timeSpan.week}>This Week</option>
+                <option value={timeSpan.month}>This Month</option>
+                <option value={timeSpan.year}>This Year</option>
+              </select>
             </label>
           </p>
           <button>Add Game</button>
         </form>
       </section>
       <section>
-        <h3>New Games</h3>
-        <ul>
-          {games.length > 0 &&
-            games.map((game) => <li key={game[0]}>{game[0]}</li>)}
-        </ul>
+        <h3>Games To Play...</h3>
+        <section>
+          <h4>...This Week</h4>
+          <ul>
+            {gamesToPlay.week.map(([game, { isPlayed }]) => (
+              <li key={game}>
+                {game} ({isPlayed ? 'Played!' : 'not played yet'})
+              </li>
+            ))}
+          </ul>
+        </section>
+        <section>
+          <h4>...This Month</h4>
+          <ul>
+            {gamesToPlay.month.map(([game, { isPlayed }]) => (
+              <li key={game}>
+                {game} ({isPlayed ? 'Played!' : 'not played yet'})
+              </li>
+            ))}
+          </ul>
+        </section>
+        <section>
+          <h4>...This Year</h4>
+          <ul>
+            {gamesToPlay.year.map(([game, { isPlayed }]) => (
+              <li key={game}>
+                {game} ({isPlayed ? 'Played!' : 'not played yet'})
+              </li>
+            ))}
+          </ul>
+        </section>
       </section>
     </main>
   );
