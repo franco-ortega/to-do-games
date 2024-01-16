@@ -40,8 +40,10 @@ export default function Home() {
       </section>
       <section>
         <h3>New Games</h3>
-        {games.length > 0 &&
-          games.map((game) => <li key={game[0]}>{game[0]}</li>)}
+        <ul>
+          {games.length > 0 &&
+            games.map((game) => <li key={game[0]}>{game[0]}</li>)}
+        </ul>
       </section>
     </main>
   );
