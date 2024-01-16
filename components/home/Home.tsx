@@ -1,12 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { Game } from '../../utils/types';
+import { Game, GamesToPlay } from '../../utils/types';
 import styles from './Home.module.scss';
 
 export default function Home() {
   const [game, setGame] = useState('');
   const [games, setGames] = useState([] as Game[]);
+  const [gamesToPlay, setGamesToPlay] = useState({} as GamesToPlay);
 
   const addGame: React.FormEventHandler = (
     e: React.FormEvent<HTMLInputElement>
