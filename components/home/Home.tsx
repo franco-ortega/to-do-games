@@ -23,11 +23,16 @@ export default function Home() {
         display sample data.
       </section>
       <section>
+        <h3>Add a Game</h3>
         <form onSubmit={addGame}>
           <p>
-            <label>
+            <label htmlFor='add-game'>
               Game:{' '}
-              <input type='text' onChange={(e) => setGame(e.target.value)} />
+              <input
+                type='text'
+                id='add-game'
+                onChange={(e) => setGame(e.target.value)}
+              />
             </label>
           </p>
           <button>Add Game</button>
