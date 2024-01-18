@@ -76,31 +76,37 @@ export default function Home() {
         <section>
           <h4>...This Week</h4>
           <ul>
-            {gamesToPlay.week.map(([game, { isPlayed }]) => (
-              <li key={game}>
-                {game} ({isPlayed ? 'Played!' : 'not played yet'})
-              </li>
-            ))}
+            {gamesToPlay.week.length
+              ? gamesToPlay.week.map(([game, { isPlayed }]) => (
+                  <li key={game}>
+                    {game} ({isPlayed ? 'Played!' : 'not played yet'})
+                  </li>
+                ))
+              : 'No games to play yet.'}
           </ul>
         </section>
         <section>
           <h4>...This Month</h4>
           <ul>
-            {gamesToPlay.month.map(([game, { isPlayed }]) => (
-              <li key={game}>
-                {game} ({isPlayed ? 'Played!' : 'not played yet'})
-              </li>
-            ))}
+            {gamesToPlay.month.length
+              ? gamesToPlay.month.map(([game, { isPlayed }]) => (
+                  <li key={game}>
+                    {game} ({isPlayed ? 'Played!' : 'not played yet'})
+                  </li>
+                ))
+              : 'No games to play yet.'}
           </ul>
         </section>
         <section>
           <h4>...This Year</h4>
           <ul>
-            {gamesToPlay.year.map(([game, { isPlayed }]) => (
-              <li key={game}>
-                {game} ({isPlayed ? 'Played!' : 'not played yet'})
-              </li>
-            ))}
+            {gamesToPlay.year.length
+              ? gamesToPlay.year.map(([game, { isPlayed }]) => (
+                  <li key={game}>
+                    {game} ({isPlayed ? 'Played!' : 'not played yet'})
+                  </li>
+                ))
+              : 'No games to play yet.'}
           </ul>
         </section>
       </section>
