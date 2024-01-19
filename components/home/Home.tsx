@@ -5,19 +5,27 @@ import { Game, GamesToPlay, TimeSpanOptions } from '../../utils/types';
 import styles from './Home.module.scss';
 import { timeSpan } from '@/utils/enums';
 
-function GameListByTimeSpan(data: GamesToPlay, time: string) {
-  <section>
-    <h4>...This Month</h4>
-    <ul>
-      {data.month.length
-        ? data.month.map(([game, { isPlayed }]) => (
-            <li key={game}>
-              {game} ({isPlayed ? 'Played!' : 'not played yet'})
-            </li>
-          ))
-        : 'No games to play yet.'}
-    </ul>
-  </section>;
+type Props = {
+  data: GamesToPlay;
+  time: string;
+};
+
+function GameListByTimeSpan({ data, time }: Props) {
+  console.log(data);
+  return (
+    <section>
+      <h4>...This Month</h4>
+      <ul>
+        {data.week?.length
+          ? data.week.map(([game, { isPlayed }]) => (
+              <li key={game}>
+                {game} ({isPlayed ? 'Played!' : 'not played yet'})
+              </li>
+            ))
+          : `No games to play yet this ${time}.`}
+      </ul>
+    </section>
+  );
 }
 
 export default function Home() {
@@ -124,6 +132,7 @@ export default function Home() {
               : 'No games to play yet.'}
           </ul>
         </section>
+        <GameListByTimeSpan data={gamesToPlay} time='week' />
       </section>
     </main>
   );
