@@ -5,6 +5,28 @@ import { Game, GamesToPlay, TimeSpanOptions } from '../../utils/types';
 import styles from './Home.module.scss';
 import { timeSpan } from '@/utils/enums';
 
+type Props = {
+  data: GamesToPlay;
+  time: TimeSpanOptions;
+};
+
+function GameListByTimeSpan({ data, time }: Props) {
+  return (
+    <section>
+      <h4>...This Month</h4>
+      <ul>
+        {data[time].length
+          ? data[time].map(([game, { isPlayed }]) => (
+              <li key={game}>
+                {game} ({isPlayed ? 'Played!' : 'not played yet'})
+              </li>
+            ))
+          : `No games to play yet this ${time}.`}
+      </ul>
+    </section>
+  );
+}
+
 export default function Home() {
   const [game, setGame] = useState('');
   const [gamesToPlay, setGamesToPlay] = useState({
@@ -71,45 +93,9 @@ export default function Home() {
           <button>Add Game</button>
         </form>
       </section>
-      <section>
-        <h3>Games To Play...</h3>
-        <section>
-          <h4>...This Week</h4>
-          <ul>
-            {gamesToPlay.week.length
-              ? gamesToPlay.week.map(([game, { isPlayed }]) => (
-                  <li key={game}>
-                    {game} ({isPlayed ? 'Played!' : 'not played yet'})
-                  </li>
-                ))
-              : 'No games to play yet.'}
-          </ul>
-        </section>
-        <section>
-          <h4>...This Month</h4>
-          <ul>
-            {gamesToPlay.month.length
-              ? gamesToPlay.month.map(([game, { isPlayed }]) => (
-                  <li key={game}>
-                    {game} ({isPlayed ? 'Played!' : 'not played yet'})
-                  </li>
-                ))
-              : 'No games to play yet.'}
-          </ul>
-        </section>
-        <section>
-          <h4>...This Year</h4>
-          <ul>
-            {gamesToPlay.year.length
-              ? gamesToPlay.year.map(([game, { isPlayed }]) => (
-                  <li key={game}>
-                    {game} ({isPlayed ? 'Played!' : 'not played yet'})
-                  </li>
-                ))
-              : 'No games to play yet.'}
-          </ul>
-        </section>
-      </section>
+      <GameListByTimeSpan data={gamesToPlay} time='week' />
+      <GameListByTimeSpan data={gamesToPlay} time='month' />
+      <GameListByTimeSpan data={gamesToPlay} time='year' />
     </main>
   );
 }
