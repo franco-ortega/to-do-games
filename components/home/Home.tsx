@@ -5,6 +5,21 @@ import { Game, GamesToPlay, TimeSpanOptions } from '../../utils/types';
 import styles from './Home.module.scss';
 import { timeSpan } from '@/utils/enums';
 
+function GameListByTimeSpan(data: GamesToPlay, time: string) {
+  <section>
+    <h4>...This Month</h4>
+    <ul>
+      {data.month.length
+        ? data.month.map(([game, { isPlayed }]) => (
+            <li key={game}>
+              {game} ({isPlayed ? 'Played!' : 'not played yet'})
+            </li>
+          ))
+        : 'No games to play yet.'}
+    </ul>
+  </section>;
+}
+
 export default function Home() {
   const [game, setGame] = useState('');
   const [gamesToPlay, setGamesToPlay] = useState({
