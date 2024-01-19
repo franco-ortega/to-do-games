@@ -7,17 +7,16 @@ import { timeSpan } from '@/utils/enums';
 
 type Props = {
   data: GamesToPlay;
-  time: string;
+  time: TimeSpanOptions;
 };
 
 function GameListByTimeSpan({ data, time }: Props) {
-  console.log(data);
   return (
     <section>
       <h4>...This Month</h4>
       <ul>
-        {data.week?.length
-          ? data.week.map(([game, { isPlayed }]) => (
+        {data[time].length
+          ? data[time].map(([game, { isPlayed }]) => (
               <li key={game}>
                 {game} ({isPlayed ? 'Played!' : 'not played yet'})
               </li>
@@ -94,46 +93,9 @@ export default function Home() {
           <button>Add Game</button>
         </form>
       </section>
-      <section>
-        <h3>Games To Play...</h3>
-        <section>
-          <h4>...This Week</h4>
-          <ul>
-            {gamesToPlay.week.length
-              ? gamesToPlay.week.map(([game, { isPlayed }]) => (
-                  <li key={game}>
-                    {game} ({isPlayed ? 'Played!' : 'not played yet'})
-                  </li>
-                ))
-              : 'No games to play yet.'}
-          </ul>
-        </section>
-        <section>
-          <h4>...This Month</h4>
-          <ul>
-            {gamesToPlay.month.length
-              ? gamesToPlay.month.map(([game, { isPlayed }]) => (
-                  <li key={game}>
-                    {game} ({isPlayed ? 'Played!' : 'not played yet'})
-                  </li>
-                ))
-              : 'No games to play yet.'}
-          </ul>
-        </section>
-        <section>
-          <h4>...This Year</h4>
-          <ul>
-            {gamesToPlay.year.length
-              ? gamesToPlay.year.map(([game, { isPlayed }]) => (
-                  <li key={game}>
-                    {game} ({isPlayed ? 'Played!' : 'not played yet'})
-                  </li>
-                ))
-              : 'No games to play yet.'}
-          </ul>
-        </section>
-        <GameListByTimeSpan data={gamesToPlay} time='week' />
-      </section>
+      <GameListByTimeSpan data={gamesToPlay} time='week' />
+      <GameListByTimeSpan data={gamesToPlay} time='month' />
+      <GameListByTimeSpan data={gamesToPlay} time='year' />
     </main>
   );
 }
