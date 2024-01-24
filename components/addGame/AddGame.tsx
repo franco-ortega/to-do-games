@@ -27,6 +27,9 @@ export default function AddGame({ setGamesToPlay }: Props) {
 
     setGame('');
   };
+
+  console.log({ timeSpanOption });
+
   return (
     <section>
       <h3>Add a Game</h3>
@@ -46,6 +49,7 @@ export default function AddGame({ setGamesToPlay }: Props) {
           <label htmlFor='time-span-options'>
             <select
               id='time-span-options'
+              name='time-span-options'
               onChange={(e) =>
                 setTimeSpanOption(
                   e.target.value.toLowerCase() as TimeSpanOptions
