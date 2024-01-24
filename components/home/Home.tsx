@@ -13,8 +13,6 @@ export default function Home() {
     year: [] as Game[],
   } as GamesToPlay);
 
-  console.log(gamesToPlay);
-
   return (
     <main className={styles.Home}>
       <section>
