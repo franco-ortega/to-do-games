@@ -1,31 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import GamesListByTimeSpan from '../gamesListByTimeSpan/GamesListByTimeSpan';
 import { Game, GamesToPlay, TimeSpanOptions } from '../../utils/types';
-import styles from './Home.module.scss';
 import { timeSpan } from '@/utils/enums';
-
-type Props = {
-  data: GamesToPlay;
-  time: TimeSpanOptions;
-};
-
-function GameListByTimeSpan({ data, time }: Props) {
-  return (
-    <section>
-      <h4>...This Month</h4>
-      <ul>
-        {data[time].length
-          ? data[time].map(([game, { isPlayed }]) => (
-              <li key={game}>
-                {game} ({isPlayed ? 'Played!' : 'not played yet'})
-              </li>
-            ))
-          : `No games to play yet this ${time}.`}
-      </ul>
-    </section>
-  );
-}
+import styles from './Home.module.scss';
 
 export default function Home() {
   const [game, setGame] = useState('');
@@ -93,9 +72,9 @@ export default function Home() {
           <button>Add Game</button>
         </form>
       </section>
-      <GameListByTimeSpan data={gamesToPlay} time='week' />
-      <GameListByTimeSpan data={gamesToPlay} time='month' />
-      <GameListByTimeSpan data={gamesToPlay} time='year' />
+      <GamesListByTimeSpan data={gamesToPlay} time='week' />
+      <GamesListByTimeSpan data={gamesToPlay} time='month' />
+      <GamesListByTimeSpan data={gamesToPlay} time='year' />
     </main>
   );
 }
