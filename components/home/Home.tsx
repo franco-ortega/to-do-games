@@ -69,7 +69,7 @@ export default function Home() {
               </select>
             </label>
           </p>
-          <button>Add Game</button>
+          <button disabled={!game || !timeSpanOption}>Add Game</button>
         </form>
       </section>
       <GamesListByTimeSpan data={gamesToPlay} time='week' />
