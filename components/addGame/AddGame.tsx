@@ -28,8 +28,6 @@ export default function AddGame({ setGamesToPlay }: Props) {
     setGame('');
   };
 
-  console.log({ timeSpanOption });
-
   return (
     <section>
       <h3>Add a Game</h3>
