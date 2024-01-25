@@ -12,4 +12,6 @@ export function getGames(key: string) {
     const parsedGames: GamesToPlay = JSON.parse(stringyGames);
     return parsedGames
   }
+
+  return {} as GamesToPlay;
 };
