@@ -1,10 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import GamesListByTimeSpan from '../gamesListByTimeSpan/GamesListByTimeSpan';
 import { Game, GamesToPlay } from '../../utils/types';
 import styles from './Home.module.scss';
 import AddGame from '../addGame/AddGame';
+import { getGames } from '@/utils/localStorage';
 
 export default function Home() {
   const [gamesToPlay, setGamesToPlay] = useState({
@@ -12,6 +13,11 @@ export default function Home() {
     month: [] as Game[],
     year: [] as Game[],
   } as GamesToPlay);
+
+  useEffect(() => {
+    const currentGames = getGames('GAMES_TO_PLAY');
+    setGamesToPlay(currentGames);
+  }, []);
 
   return (
     <main className={styles.Home}>
