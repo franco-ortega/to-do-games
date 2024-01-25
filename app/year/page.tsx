@@ -8,7 +8,5 @@ import { timeSpan } from '@/utils/enums';
 export default function YearPage() {
   const data = sampleData.year as Game[];
 
-  return (
-    <GamesToPlay gameData={data} timeSpan={timeSpan.year as TimeSpanOptions} />
-  );
+  return <GamesToPlay timeSpan={timeSpan.year as TimeSpanOptions} />;
 }

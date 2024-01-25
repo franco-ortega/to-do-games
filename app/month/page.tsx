@@ -8,7 +8,5 @@ import { timeSpan } from '@/utils/enums';
 export default function MonthPage() {
   const data = sampleData.month as Game[];
 
-  return (
-    <GamesToPlay gameData={data} timeSpan={timeSpan.month as TimeSpanOptions} />
-  );
+  return <GamesToPlay timeSpan={timeSpan.month as TimeSpanOptions} />;
 }
