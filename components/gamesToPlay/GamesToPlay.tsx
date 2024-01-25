@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-
 import { Game, GamesToPlay, TimeSpanOptions } from '../../utils/types';
 import GamesList from '../gamesList/GamesList';
 import { getGames } from '@/utils/localStorage';
