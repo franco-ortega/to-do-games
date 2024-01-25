@@ -13,11 +13,12 @@ export default function GamesToPlay({
 }: Props): JSX.Element {
   const currentGames = getGames('GAMES_TO_PLAY');
   const time = timeSpan.toLowerCase() as TimeSpanOptions;
+  const gameInfo = currentGames[time] ? currentGames[time] : [];
 
   return (
     <main>
       <h2>Games To Play This {timeSpan}</h2>
-      <GamesList gamesList={currentGames[time]} />
+      <GamesList gamesList={gameInfo} />
     </main>
   );
 }

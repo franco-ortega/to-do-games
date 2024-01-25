@@ -5,6 +5,8 @@ type Props = {
 };
 
 export default function GamesList({ gamesList }: Props) {
+  if (!gamesList.length) return 'No games yet.';
+
   return (
     <ul>
       {gamesList.map(([game, { isPlayed }]) => (
