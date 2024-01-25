@@ -2,11 +2,11 @@ import { GamesToPlay } from "./types";
 
 export function setGames(key: string, value: GamesToPlay) {
   const stringyGames = JSON.stringify(value);
-    localStorage.setItem(key, stringyGames);
+    window.localStorage.setItem(key, stringyGames);
 };
 
 export function getGames(key: string) {
-  const stringyGames = localStorage.getItem(key);
+  const stringyGames = window.localStorage.getItem(key);
 
   if(stringyGames) {
     const parsedGames: GamesToPlay = JSON.parse(stringyGames);
