@@ -1,14 +1,9 @@
 import { timeSpan } from '@/utils/enums';
 import { getGames, setGames } from '@/utils/localStorage';
-import { GamesToPlay, TimeSpanOptions } from '@/utils/types';
+import { TimeSpanOptions } from '@/utils/types';
 import React, { useState } from 'react';
 
-// type Props = {
-//   setGamesToPlay: React.Dispatch<React.SetStateAction<GamesToPlay>>;
-// };
-
 export default function AddGame() {
-// { setGamesToPlay }: Props
   const [game, setGame] = useState('');
   const [timeSpanOption, setTimeSpanOption] = useState('' as TimeSpanOptions);
 
@@ -16,18 +11,6 @@ export default function AddGame() {
     e: React.FormEvent<HTMLInputElement>
   ) => {
     e.preventDefault();
-
-    // setGamesToPlay((prevState) => {
-    //   const updatedGamesList = {
-    //     ...prevState,
-    //     [timeSpanOption]: [
-    //       ...prevState[timeSpanOption],
-    //       [game, { isPlayed: false }],
-    //     ],
-    //   };
-
-    //   return updatedGamesList;
-    // });
 
     const savedGames = getGames('GAMES_TO_PLAY');
     const updatedGamesList = {
