@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import GamesListByTimeSpan from '../gamesListByTimeSpan/GamesListByTimeSpan';
 import { Game, GamesToPlay } from '../../utils/types';
 import styles from './Home.module.scss';
 import AddGame from '../addGame/AddGame';
@@ -23,9 +22,6 @@ export default function Home() {
         </p>
       </section>
       <AddGame setGamesToPlay={setGamesToPlay} />
-      <GamesListByTimeSpan data={gamesToPlay} time='week' />
-      <GamesListByTimeSpan data={gamesToPlay} time='month' />
-      <GamesListByTimeSpan data={gamesToPlay} time='year' />
     </main>
   );
 }
