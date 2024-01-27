@@ -21,7 +21,9 @@ export default function Home() {
           and this year.
         </p>
       </section>
-      <AddGame setGamesToPlay={setGamesToPlay} />
+      <AddGame
+      //  setGamesToPlay={setGamesToPlay}
+      />
     </main>
   );
 }
