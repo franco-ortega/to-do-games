@@ -13,7 +13,7 @@ export default function AddGame() {
     e.preventDefault();
 
     const savedGames = getGames('GAMES_TO_PLAY');
-    const updatedGamesList = {
+    const updatedGames = {
       ...savedGames,
       [timeSpanOption]: [
         ...savedGames[timeSpanOption],
@@ -21,7 +21,7 @@ export default function AddGame() {
       ],
     };
 
-    setGames('GAMES_TO_PLAY', updatedGamesList);
+    setGames('GAMES_TO_PLAY', updatedGames);
     setGame('');
   };
 
