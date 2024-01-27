@@ -17,8 +17,8 @@ export default function Home() {
       <section>
         <h2>Home Page</h2>
         <p>
-          The links for This Week, This Month, and This Year now dynamically
-          display sample data.
+          Make lists of the games that you want to play this week, this month,
+          and this year.
         </p>
       </section>
       <AddGame setGamesToPlay={setGamesToPlay} />
