@@ -1,22 +1,22 @@
 import { GamesToPlay } from "./types";
 
 export function setGames(key: string, value: GamesToPlay) {
-
-  // if(typeof window !== 'undefined') {
-    const stringyGames = JSON.stringify(value);
-      window.localStorage.setItem(key, stringyGames);
-  // }
+  const stringyGames = JSON.stringify(value);
+  window.localStorage.setItem(key, stringyGames);  
 };
 
 export function getGames(key: string) {
-  // if(typeof window !== 'undefined') {
-    const stringyGames = window.localStorage.getItem(key);
+  const stringyGames = window.localStorage.getItem(key);
 
-    if(stringyGames) {
-      const parsedGames: GamesToPlay = JSON.parse(stringyGames);
-      return parsedGames
-    }
-  // }
+  if(stringyGames) {
+    const parsedGames: GamesToPlay = JSON.parse(stringyGames);
+    return parsedGames
+  }
 
-  return {} as GamesToPlay;
+  return {
+    week: [],
+    month: [],
+    year: []
+    
+  } as GamesToPlay;
 };

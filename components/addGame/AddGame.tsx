@@ -13,6 +13,7 @@ export default function AddGame() {
     e.preventDefault();
 
     const savedGames = getGames('GAMES_TO_PLAY');
+
     const updatedGames = {
       ...savedGames,
       [timeSpanOption]: [
