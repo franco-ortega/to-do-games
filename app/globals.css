@@ -1,6 +1,12 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
+
+  --bkgd-clr-main: hsl(223, 54%, 27%);
+  --bkgd-clr-accent: hsl(0, 50%, 27%);
+
+  --text-clr-main: hsl(229, 73%, 94%);
+  --text-clr-accent: hsl(0, 63%, 97%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,9 +25,8 @@ body {
 }
 
 body {
-  /* background-color: hsl(0, 0%, 10%); */
-  background-color: hsl(223, 54%, 27%);
-  color: hsl(0, 0%, 90%);
+  background-color: var(--bkgd-clr-main);
+  color: var(--text-clr-main);
 }
 
 a {
