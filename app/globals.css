@@ -5,8 +5,8 @@
   --bkgd-clr-main: hsl(223, 54%, 27%);
   --bkgd-clr-accent: hsl(0, 50%, 27%);
 
-  --text-clr-main: hsl(229, 73%, 94%);
-  --text-clr-accent: hsl(0, 63%, 97%);
+  --text-clr-main: hsl(227, 68%, 86%);
+  --text-clr-accent: hsl(0, 81%, 88%);
 }
 
 @media (prefers-color-scheme: dark) {
