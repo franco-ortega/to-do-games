@@ -2,6 +2,7 @@ import { timeSpan } from '@/utils/enums';
 import { getGames, setGames } from '@/utils/localStorage';
 import { TimeSpanOptions } from '@/utils/types';
 import React, { useState } from 'react';
+import styles from './AddGame.module.scss';
 
 export default function AddGame() {
   const [game, setGame] = useState('');
@@ -27,7 +28,7 @@ export default function AddGame() {
   };
 
   return (
-    <section>
+    <section className={styles.AddGame}>
       <h3>Add a Game</h3>
       <form onSubmit={addGame}>
         <p>
