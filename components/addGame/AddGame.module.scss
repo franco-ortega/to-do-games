@@ -16,6 +16,16 @@
   }
 
   select {
+    border-radius: .25rem;
+    padding-block: .1rem;
+    padding-inline: .25rem;
+
     color: var(--text-clr-main);
+    font-size: .9rem;
+  }
+
+  button:disabled {
+    background-color: hsl(0, 0%, 80%);
+    color: hsl(0, 0%, 50%);
   }
 }
