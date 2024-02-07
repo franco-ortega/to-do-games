@@ -9,12 +9,14 @@ An app for listing the games you want to play this week / month / year.
       1. Create separate component for the LIST- DONE
       1. Fine tune types as needed
       1. Create enum for time span string values
+1. Add LOADING component
 
 PROTOTYPE
 
 function GamesToPlayList(data: GamesToPlay, time: TimeSpanOptions) {
 console.log(data);
 return (
+
 <section>
 <h4>...This Year</h4>
 <ul>
