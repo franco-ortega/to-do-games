@@ -30,33 +30,29 @@ export default function AddGame() {
   return (
     <form className={styles.AddGame} onSubmit={addGame}>
       <h3>Add a Game</h3>
-      <p>
-        <label htmlFor='add-game'>
-          Game:{' '}
-          <input
-            type='text'
-            id='add-game'
-            value={game}
-            onChange={(e) => setGame(e.target.value)}
-          />
-        </label>
-      </p>
-      <p>
-        <label htmlFor='time-span-options'>
-          <select
-            id='time-span-options'
-            name='time-span-options'
-            onChange={(e) =>
-              setTimeSpanOption(e.target.value.toLowerCase() as TimeSpanOptions)
-            }
-          >
-            <option value={''}>When Will You Play?</option>
-            <option value={timeSpan.week}>This Week</option>
-            <option value={timeSpan.month}>This Month</option>
-            <option value={timeSpan.year}>This Year</option>
-          </select>
-        </label>
-      </p>
+      <label htmlFor='add-game'>
+        Game:{' '}
+        <input
+          type='text'
+          id='add-game'
+          value={game}
+          onChange={(e) => setGame(e.target.value)}
+        />
+      </label>
+      <label htmlFor='time-span-options'>
+        <select
+          id='time-span-options'
+          name='time-span-options'
+          onChange={(e) =>
+            setTimeSpanOption(e.target.value.toLowerCase() as TimeSpanOptions)
+          }
+        >
+          <option value={''}>When Will You Play?</option>
+          <option value={timeSpan.week}>This Week</option>
+          <option value={timeSpan.month}>This Month</option>
+          <option value={timeSpan.year}>This Year</option>
+        </select>
+      </label>
       <button disabled={!game || !timeSpanOption}>Add Game</button>
     </form>
   );
