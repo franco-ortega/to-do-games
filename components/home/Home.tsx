@@ -8,8 +8,8 @@ export default function Home() {
     <main className={styles.Home}>
       <section>
         <p>
-          Make lists of the games that you want to play this week, this month,
-          and this year.
+          Make lists of the games you want to play this week, this month, and
+          this year.
         </p>
       </section>
       <AddGame />
