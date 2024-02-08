@@ -1,8 +1,9 @@
 .Home {
   padding: 1rem;
 
-  h2 {
-    font-weight: 400;
-    margin-top: 1rem;
+  p {
+    max-width: 40rem;
+    margin-bottom: 1rem;
+    margin-inline: auto;
   }
 }
