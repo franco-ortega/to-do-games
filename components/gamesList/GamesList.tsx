@@ -17,15 +17,15 @@ export default function GamesList({ gamesList }: Props) {
 
   if (loading) return <Loading />;
 
-  if (!gamesList.length) return 'No games yet.';
-
   return (
     <ul>
-      {gamesList.map(([game, { isPlayed }]) => (
-        <li key={game}>
-          {game} (played: {isPlayed ? <span>yes</span> : <span>no</span>})
-        </li>
-      ))}
+      {gamesList.length
+        ? gamesList.map(([game, { isPlayed }]) => (
+            <li key={game}>
+              {game} (played: {isPlayed ? <span>yes</span> : <span>no</span>})
+            </li>
+          ))
+        : 'No games yet.'}
     </ul>
   );
 }
