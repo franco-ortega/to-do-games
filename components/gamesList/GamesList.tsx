@@ -1,7 +1,8 @@
-import { Game } from '@/utils/types';
 import { useEffect, useState } from 'react';
+import { Game } from '@/utils/types';
 import Loading from '../loading/Loading';
 import GameEntry from '../gameEntry/GameEntry';
+import styles from './GamesList.module.scss';
 
 type Props = {
   gamesList: Game[];
@@ -19,7 +20,7 @@ export default function GamesList({ gamesList }: Props) {
   if (loading) return <Loading />;
 
   return (
-    <ul>
+    <ul className={styles.GamesList}>
       {gamesList.length
         ? gamesList.map(([game, { isPlayed }]) => (
             <GameEntry key={game} game={game} isPlayed={isPlayed} />
