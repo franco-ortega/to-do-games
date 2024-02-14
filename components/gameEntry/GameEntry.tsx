@@ -17,10 +17,10 @@ export default function GameEntry({ game, isPlayed }: Props) {
     <li className={styles.GameEntry}>
       <label>
         <input type='checkbox' onChange={isCheckedChange} />
-        <p>
+        <span>
           {game} (status:{' '}
           {isPlayed ? <span>🎉</span> : <span>not played yet</span>})
-        </p>
+        </span>
       </label>
     </li>
   );

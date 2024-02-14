@@ -11,7 +11,7 @@
     margin-right: .25rem;
   }
 
-  input:checked ~ p {
+  input:checked ~ span {
     color: grey;
     text-decoration: line-through;
   }
