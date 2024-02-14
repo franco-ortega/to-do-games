@@ -1,8 +1,17 @@
 .Nav {
-  margin-left: 1rem;
+
+  ul {
+    margin-top: .5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
 
   ul li {
+    background-color: rgb(92, 11, 27);
+    border-radius: .5rem;
     list-style-type: none;
+    padding: .25rem .5rem;
   }
 
   a {
