@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import { Game, GamesToPlay, TimeSpanOptions } from '../../utils/types';
-import GamesList from '../gamesList/GamesList';
 import { getGames } from '@/utils/localStorage';
+import GamesList from '../gamesList/GamesList';
+import styles from './GamesToPlay.module.scss';
 
 type Props = {
   timeSpan: TimeSpanOptions;
@@ -20,7 +21,7 @@ export default function GamesToPlay({ timeSpan }: Props): JSX.Element {
   }, [timeSpan]);
 
   return (
-    <main>
+    <main className={styles.GamesToPlay}>
       <h2>Games To Play This {timeSpan}</h2>
       <GamesList gamesList={gameStuff} />
     </main>
