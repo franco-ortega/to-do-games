@@ -1,6 +1,7 @@
 import { Game } from '@/utils/types';
 import { useEffect, useState } from 'react';
 import Loading from '../loading/Loading';
+import GameEntry from '../gameEntry/GameEntry';
 
 type Props = {
   gamesList: Game[];
@@ -21,9 +22,7 @@ export default function GamesList({ gamesList }: Props) {
     <ul>
       {gamesList.length
         ? gamesList.map(([game, { isPlayed }]) => (
-            <li key={game}>
-              {game} (played: {isPlayed ? <span>yes</span> : <span>no</span>})
-            </li>
+            <GameEntry key={game} game={game} isPlayed={isPlayed} />
           ))
         : 'No games yet.'}
     </ul>
