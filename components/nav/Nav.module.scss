@@ -1,8 +1,12 @@
 .Nav {
-  margin-left: 2rem;
+  margin-left: 1rem;
+
+  ul li {
+    list-style-type: none;
+  }
 
   a {
-    color: rgb(15, 219, 151);
+    color: hsl(160, 87%, 46%);
     font-weight: 500;
   }
 }
