@@ -20,8 +20,6 @@ export default function GameEntry({ game, isPlayed }: Props) {
 
     const savedGames = getGames('GAMES_TO_PLAY') as GamesToPlay;
     const timeSpan = pathname.slice(1) as TimeSpanOptions;
-    console.log(pathname);
-    console.log(savedGames);
 
     const updatedGames = {
       ...savedGames,
@@ -38,8 +36,6 @@ export default function GameEntry({ game, isPlayed }: Props) {
         } else return gameItem;
       }),
     };
-
-    console.log(updatedGames);
 
     setGames('GAMES_TO_PLAY', updatedGames);
   };
