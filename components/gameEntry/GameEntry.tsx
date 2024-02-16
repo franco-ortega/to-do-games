@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { getGames, setGames } from '@/utils/localStorage';
 import styles from './GameEntry.module.scss';
 import { Game, GamesToPlay, TimeSpanOptions } from '@/utils/types';
+import updateGameEntry from '@/utils/updateGameEntry';
 
 type Props = {
   game: string;
@@ -17,27 +18,7 @@ export default function GameEntry({ game, isPlayed }: Props) {
 
   const isCheckedChange = () => {
     setIsChecked((prevState) => !prevState);
-
-    const savedGames = getGames('GAMES_TO_PLAY') as GamesToPlay;
-    const timeSpan = pathname.slice(1) as TimeSpanOptions;
-
-    const updatedGames = {
-      ...savedGames,
-      [timeSpan]: savedGames[timeSpan].map((gameItem) => {
-        console.log({ gameItem });
-        console.log(gameItem[1]);
-        if (gameItem[0] === (game as unknown as string)) {
-          return [
-            game,
-            {
-              isPlayed: !isPlayed,
-            },
-          ];
-        } else return gameItem;
-      }),
-    };
-
-    setGames('GAMES_TO_PLAY', updatedGames);
+    updateGameEntry(pathname, game, isPlayed);
   };
 
   return (
