@@ -10,11 +10,9 @@ type Props = {
 
 export default function GamesList({ gamesList }: Props) {
   const [loading, setLoading] = useState(true);
-  const [games, setGames] = useState([] as Game[]);
 
   useEffect(() => {
-    setGames(gamesList);
-    setLoading(false);
+    if (gamesList) setLoading(false);
   }, [gamesList]);
 
   if (loading) return <Loading />;
