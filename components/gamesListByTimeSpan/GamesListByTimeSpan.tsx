@@ -1,8 +1,8 @@
-import { GamesToPlay, TimeSpanOptions } from '@/utils/types';
+import { GamesToPlay, TimeSpanPathOptions } from '@/utils/types';
 
 type Props = {
   data: GamesToPlay;
-  time: TimeSpanOptions;
+  time: TimeSpanPathOptions;
 };
 
 export default function GameListsByTimeSpan({ data, time }: Props) {
