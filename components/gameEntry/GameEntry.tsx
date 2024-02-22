@@ -1,21 +1,18 @@
 'use client';
 
 import { useState } from 'react';
-// import { usePathname } from 'next/navigation';
 import styles from './GameEntry.module.scss';
 import updateGameEntry from '@/utils/updateGameEntry';
-import { TimeSpanOptions } from '@/utils/types';
+import { TimeSpanPathOptions } from '@/utils/types';
 
 type Props = {
   game: string;
   isPlayed: boolean;
-  timeSpan: TimeSpanOptions;
+  timeSpan: TimeSpanPathOptions;
 };
 
 export default function GameEntry({ game, isPlayed, timeSpan }: Props) {
   const [isChecked, setIsChecked] = useState(isPlayed);
-  // const pathname = usePathname();
-  console.log(timeSpan);
 
   const isCheckedChange = () => {
     setIsChecked((prevState) => !prevState);
