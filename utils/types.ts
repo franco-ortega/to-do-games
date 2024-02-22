@@ -7,3 +7,10 @@ export type GamesToPlay = {
 };
 
 export type TimeSpanOptions = 'week' | 'month' | 'year';
+
+export type TimeSpan = {
+  path: string;
+  title: string;
+}
+export type TimeSpanPathOptions = 'week' | 'month' | 'year';
+export type TimeSpanTitleOptions = 'Week' | 'Month' | 'Year';

@@ -1,7 +1,7 @@
 import GamesToPlay from '@/components/gamesToPlay/GamesToPlay';
-import { TimeSpanOptions } from '../../utils/types';
-import { timeSpan } from '@/utils/enums';
+import { TimeSpan } from '../../utils/types';
+import { timeSpanOptions } from '@/utils/enums';
 
 export default function WeekPage() {
-  return <GamesToPlay timeSpan={timeSpan.week.title as TimeSpanOptions} />;
+  return <GamesToPlay timeSpan={timeSpanOptions.week} />;
 }

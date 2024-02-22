@@ -6,3 +6,9 @@ export const timeSpan = {
   // year: "Year"
   year: { path: "year", title: "Year"}
 }
+
+export const timeSpanOptions = {
+  week: { path: "week", title: "Week"},
+  month: { path: "month", title: "Month"},
+  year: { path: "year", title: "Year"}
+}

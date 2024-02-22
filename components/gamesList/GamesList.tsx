@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import { Game, TimeSpanOptions } from '@/utils/types';
+import { Game, TimeSpanOptions, TimeSpanTitleOptions } from '@/utils/types';
 import Loading from '../loading/Loading';
 import GameEntry from '../gameEntry/GameEntry';
 import styles from './GamesList.module.scss';
 
 type Props = {
   gamesList: Game[];
-  timeSpan: TimeSpanOptions;
+  timeSpan: TimeSpanTitleOptions;
 };
 
 export default function GamesList({ gamesList, timeSpan }: Props) {
