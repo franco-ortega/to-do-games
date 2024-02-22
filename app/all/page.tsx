@@ -1,5 +1,3 @@
-'use client';
-
 import GamesToPlay from '@/components/gamesToPlay/GamesToPlay';
 import { timeSpanOptions } from '@/utils/enums';
 
