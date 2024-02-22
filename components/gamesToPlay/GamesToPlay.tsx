@@ -23,7 +23,7 @@ export default function GamesToPlay({ timeSpan }: Props): JSX.Element {
   return (
     <main className={styles.GamesToPlay}>
       <h2>Games To Play This {timeSpan}</h2>
-      <GamesList gamesList={gameStuff} />
+      <GamesList gamesList={gameStuff} timeSpan={timeSpan} />
     </main>
   );
 }

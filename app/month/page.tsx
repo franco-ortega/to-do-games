@@ -3,5 +3,5 @@ import { TimeSpanOptions } from '@/utils/types';
 import { timeSpan } from '@/utils/enums';
 
 export default function MonthPage() {
-  return <GamesToPlay timeSpan={timeSpan.month as TimeSpanOptions} />;
+  return <GamesToPlay timeSpan={timeSpan.month.title as TimeSpanOptions} />;
 }
