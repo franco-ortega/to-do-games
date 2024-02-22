@@ -8,7 +8,7 @@ export default function updateGameEntry(pathname: TimeSpanPathOptions, game: str
   const updatedGames = {
     ...savedGames,
     [pathname]: savedGames[pathname].map((gameItem) => {
-      if (gameItem[0] === (game as unknown as string)) {
+      if (gameItem[0] === (game)) {
         return [
           game,
           {
