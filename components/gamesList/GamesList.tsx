@@ -1,20 +1,19 @@
 import { useEffect, useState } from 'react';
-import { Game } from '@/utils/types';
+import { Game, TimeSpanPathOptions } from '@/utils/types';
 import Loading from '../loading/Loading';
 import GameEntry from '../gameEntry/GameEntry';
 import styles from './GamesList.module.scss';
 
 type Props = {
   gamesList: Game[];
+  timeSpan: TimeSpanPathOptions;
 };
 
-export default function GamesList({ gamesList }: Props) {
+export default function GamesList({ gamesList, timeSpan }: Props) {
   const [loading, setLoading] = useState(true);
-  const [games, setGames] = useState([] as Game[]);
 
   useEffect(() => {
-    setGames(gamesList);
-    setLoading(false);
+    if (gamesList) setLoading(false);
   }, [gamesList]);
 
   if (loading) return <Loading />;
@@ -23,7 +22,12 @@ export default function GamesList({ gamesList }: Props) {
     <ul className={styles.GamesList}>
       {gamesList.length
         ? gamesList.map(([game, { isPlayed }]) => (
-            <GameEntry key={game} game={game} isPlayed={isPlayed} />
+            <GameEntry
+              key={game}
+              game={game}
+              isPlayed={isPlayed}
+              timeSpan={timeSpan}
+            />
           ))
         : 'No games yet.'}
     </ul>

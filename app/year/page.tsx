@@ -1,9 +1,6 @@
-'use client';
-
 import GamesToPlay from '@/components/gamesToPlay/GamesToPlay';
-import { Game, TimeSpanOptions } from '@/utils/types';
-import { timeSpan } from '@/utils/enums';
+import { timeSpanOptions } from '@/utils/enums';
 
 export default function YearPage() {
-  return <GamesToPlay timeSpan={timeSpan.year as TimeSpanOptions} />;
+  return <GamesToPlay timeSpan={timeSpanOptions.year} />;
 }

@@ -1,16 +1,13 @@
-'use client';
-
 import GamesToPlay from '@/components/gamesToPlay/GamesToPlay';
-import { TimeSpanOptions } from '@/utils/types';
-import { timeSpan } from '@/utils/enums';
+import { timeSpanOptions } from '@/utils/enums';
 
 export default function AllPage() {
   return (
     <main>
       <h2>All Games to Play</h2>
-      <GamesToPlay timeSpan={timeSpan.week as TimeSpanOptions} />
-      <GamesToPlay timeSpan={timeSpan.month as TimeSpanOptions} />
-      <GamesToPlay timeSpan={timeSpan.year as TimeSpanOptions} />
+      <GamesToPlay timeSpan={timeSpanOptions.week} />
+      <GamesToPlay timeSpan={timeSpanOptions.month} />
+      <GamesToPlay timeSpan={timeSpanOptions.year} />
     </main>
   );
 }

@@ -1,24 +1,22 @@
 'use client';
 
 import { useState } from 'react';
-import { usePathname } from 'next/navigation';
-import { getGames, setGames } from '@/utils/localStorage';
 import styles from './GameEntry.module.scss';
-import { Game, GamesToPlay, TimeSpanOptions } from '@/utils/types';
 import updateGameEntry from '@/utils/updateGameEntry';
+import { TimeSpanPathOptions } from '@/utils/types';
 
 type Props = {
   game: string;
   isPlayed: boolean;
+  timeSpan: TimeSpanPathOptions;
 };
 
-export default function GameEntry({ game, isPlayed }: Props) {
+export default function GameEntry({ game, isPlayed, timeSpan }: Props) {
   const [isChecked, setIsChecked] = useState(isPlayed);
-  const pathname = usePathname();
 
   const isCheckedChange = () => {
     setIsChecked((prevState) => !prevState);
-    updateGameEntry(pathname, game, isPlayed);
+    updateGameEntry(timeSpan, game, isPlayed);
   };
 
   return (
