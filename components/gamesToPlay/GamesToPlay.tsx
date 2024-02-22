@@ -6,7 +6,6 @@ import {
   GamesToPlay,
   TimeSpan,
   TimeSpanPathOptions,
-  TimeSpanTitleOptions,
 } from '../../utils/types';
 import { getGames } from '@/utils/localStorage';
 import GamesList from '../gamesList/GamesList';
@@ -31,7 +30,7 @@ export default function GamesToPlay({ timeSpan }: Props): JSX.Element {
       <h2>Games To Play This {timeSpan.title}</h2>
       <GamesList
         gamesList={gameStuff}
-        timeSpan={timeSpan.title as TimeSpanTitleOptions}
+        timeSpan={timeSpan.path as TimeSpanPathOptions}
       />
     </main>
   );
