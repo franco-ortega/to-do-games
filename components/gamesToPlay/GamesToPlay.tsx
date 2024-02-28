@@ -17,9 +17,9 @@ export default function GamesToPlay({
   console.log(path);
 
   useEffect(() => {
-    const currentGames = getGames('GAMES_TO_PLAY');
-    const gameInfo = currentGames[path] ? currentGames[path] : [];
-    setGameStuff(gameInfo);
+    const games = getGames('GAMES_TO_PLAY');
+    const gamesByTimeSpan = games[path] ? games[path] : [];
+    setGameStuff(gamesByTimeSpan);
   }, [path]);
 
   return (
