@@ -25,7 +25,7 @@ export default function GamesToPlay({
   return (
     <main className={styles.GamesToPlay}>
       <h2>Games To Play This {title}</h2>
-      <GamesList gamesList={gameStuff} timeSpan={path as TimeSpanPathOptions} />
+      <GamesList gamesList={gameStuff} timeSpan={path} />
     </main>
   );
 }
