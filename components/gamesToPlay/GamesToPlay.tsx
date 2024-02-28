@@ -12,10 +12,7 @@ import GamesList from '../gamesList/GamesList';
 import styles from './GamesToPlay.module.scss';
 
 type Props = {
-  timeSpan: {
-    path: string;
-    title: string;
-  };
+  timeSpan: TimeSpan;
 };
 
 export default function GamesToPlay({
