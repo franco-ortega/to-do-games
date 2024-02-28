@@ -14,7 +14,6 @@ export default function GamesToPlay({
   timeSpan: { path, title },
 }: Props): JSX.Element {
   const [games, setGames] = useState([] as Game[]);
-  console.log(path);
 
   useEffect(() => {
     const gamesFromLocalStorage = getGames('GAMES_TO_PLAY');
