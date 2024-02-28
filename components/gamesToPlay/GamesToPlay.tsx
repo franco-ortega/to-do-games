@@ -12,26 +12,29 @@ import GamesList from '../gamesList/GamesList';
 import styles from './GamesToPlay.module.scss';
 
 type Props = {
-  timeSpan: TimeSpan;
+  timeSpan: {
+    path: string;
+    title: string;
+  };
 };
 
-export default function GamesToPlay({ timeSpan }: Props): JSX.Element {
+export default function GamesToPlay({
+  timeSpan: { path, title },
+}: Props): JSX.Element {
   const [gameStuff, setGameStuff] = useState([] as Game[]);
+  console.log(path);
 
   useEffect(() => {
     const currentGames = getGames('GAMES_TO_PLAY');
-    const currentTime = timeSpan.path as TimeSpanPathOptions;
+    const currentTime = path as TimeSpanPathOptions;
     const gameInfo = currentGames[currentTime] ? currentGames[currentTime] : [];
     setGameStuff(gameInfo);
-  }, [timeSpan]);
+  }, [path]);
 
   return (
     <main className={styles.GamesToPlay}>
-      <h2>Games To Play This {timeSpan.title}</h2>
-      <GamesList
-        gamesList={gameStuff}
-        timeSpan={timeSpan.path as TimeSpanPathOptions}
-      />
+      <h2>Games To Play This {title}</h2>
+      <GamesList gamesList={gameStuff} timeSpan={path as TimeSpanPathOptions} />
     </main>
   );
 }
