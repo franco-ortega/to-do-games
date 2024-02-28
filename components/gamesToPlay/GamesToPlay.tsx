@@ -13,19 +13,21 @@ type Props = {
 export default function GamesToPlay({
   timeSpan: { path, title },
 }: Props): JSX.Element {
-  const [gameStuff, setGameStuff] = useState([] as Game[]);
+  const [games, setGames] = useState([] as Game[]);
   console.log(path);
 
   useEffect(() => {
-    const games = getGames('GAMES_TO_PLAY');
-    const gamesByTimeSpan = games[path] ? games[path] : [];
-    setGameStuff(gamesByTimeSpan);
+    const gamesFromLocalStorage = getGames('GAMES_TO_PLAY');
+    const gamesByTimeSpan = gamesFromLocalStorage[path]
+      ? gamesFromLocalStorage[path]
+      : [];
+    setGames(gamesByTimeSpan);
   }, [path]);
 
   return (
     <main className={styles.GamesToPlay}>
       <h2>Games To Play This {title}</h2>
-      <GamesList gamesList={gameStuff} timeSpan={path} />
+      <GamesList gamesList={games} timeSpan={path} />
     </main>
   );
 }
