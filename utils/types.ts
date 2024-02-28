@@ -6,9 +6,10 @@ export type GamesToPlay = {
   year: Game[]
 };
 
-export type TimeSpan = {
-  path: string;
-  title: string;
-}
 export type TimeSpanPathOptions = 'week' | 'month' | 'year';
 export type TimeSpanTitleOptions = 'Week' | 'Month' | 'Year';
+
+export type TimeSpan = {
+  path: TimeSpanPathOptions;
+  title: TimeSpanTitleOptions;
+}
