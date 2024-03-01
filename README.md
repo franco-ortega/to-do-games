@@ -12,24 +12,3 @@ An app for listing the games you want to play this week / month / year.
 1. Add LOADING component - DONE
 1. Add "notes" section to Add Game and data structure.
 1. Add database
-
-PROTOTYPE
-
-function GamesToPlayList(data: GamesToPlay, time: TimeSpanOptions) {
-console.log(data);
-return (
-
-<section>
-<h4>...This Year</h4>
-<ul>
-{data[time]?.length
-? data[time].map(([game, { isPlayed }]) => (
-<li key={game}>
-{game} ({isPlayed ? 'Played!' : 'not played yet'})
-</li>
-))
-: `No games to play yet this ${time}.`}
-</ul>
-</section>
-);
-}
