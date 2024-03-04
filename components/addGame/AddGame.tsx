@@ -22,7 +22,7 @@ export default function AddGame() {
       ...savedGames,
       [timeSpanOption]: [
         ...savedGames[timeSpanOption],
-        [game, { isPlayed: false }],
+        [game, { isPlayed: false, notes: '' }],
       ],
     };
 
