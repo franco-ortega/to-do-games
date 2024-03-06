@@ -22,9 +22,10 @@ export default function GameEntry({ game, isPlayed, notes, timeSpan }: Props) {
 
   return (
     <li className={styles.GameEntry}>
-      <label>
+      <label htmlFor='game'>
         <div>
           <input
+            id='game'
             type='checkbox'
             onChange={isCheckedChange}
             checked={isChecked}
