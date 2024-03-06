@@ -46,8 +46,9 @@ export default function AddGame() {
       </label>
       <label htmlFor='add-note'>
         Notes:{' '}
-        <input
-          type='text'
+        <textarea
+          cols={20}
+          rows={3}
           id='add-note'
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
