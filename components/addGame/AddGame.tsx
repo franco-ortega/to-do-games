@@ -47,7 +47,6 @@ export default function AddGame() {
       <label htmlFor='add-note'>
         <p>Notes</p>
         <textarea
-          cols={20}
           rows={4}
           id='add-note'
           value={notes}
