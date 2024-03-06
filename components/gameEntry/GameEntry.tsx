@@ -30,14 +30,11 @@ export default function GameEntry({ game, isPlayed, notes, timeSpan }: Props) {
             checked={isChecked}
           />
           <h3>{game} </h3>
-          <span>
-            (status:{' '}
-            {isChecked ? <span>played 🎉</span> : <span>not played yet</span>})
-          </span>
         </div>
-        <p>
-          <span>Notes</span>: {notes}
-        </p>
+        <div>
+          <span>(status: {isChecked ? 'played 🎉' : 'not played yet'})</span>
+        </div>
+        <div>Notes: {notes}</div>
       </label>
     </li>
   );
