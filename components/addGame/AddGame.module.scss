@@ -1,7 +1,11 @@
 .AddGame {
   background-color: var(--bkgd-clr-accent);
   border-radius: 1rem;
-  width: fit-content;
+  // width: fit-content;
+  min-width: 20rem;
+  max-width: 30rem;
+
+  margin-top: 1rem;
 
   margin-inline: auto;
   padding: .5rem;
@@ -15,14 +19,29 @@
     font-weight: 400;
   }
 
-  select {
-    border-radius: .25rem;
-    padding-block: .1rem;
-    padding-inline: .25rem;
+  label {
+    // outline: 1px solid yellow;
+    width: 100%;
 
-    color: var(--text-clr-main);
-    font-size: .9rem;
+    input {
+      width: 100%;
+    }
+
+    textarea {
+      width: 100%;
+    }
+  
+  
+    select {
+      border-radius: .25rem;
+      padding-block: .1rem;
+      padding-inline: .25rem;
+  
+      color: var(--text-clr-main);
+      font-size: .9rem;
+    }
   }
+
 
   button {
     border-radius: .25rem;

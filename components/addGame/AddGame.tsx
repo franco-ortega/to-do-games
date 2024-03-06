@@ -36,7 +36,7 @@ export default function AddGame() {
     <form className={styles.AddGame} onSubmit={addGame}>
       <h3>Add a Game</h3>
       <label htmlFor='add-game'>
-        Game:{' '}
+        <p>Title</p>
         <input
           type='text'
           id='add-game'
@@ -45,10 +45,10 @@ export default function AddGame() {
         />
       </label>
       <label htmlFor='add-note'>
-        Notes:{' '}
+        <p>Notes</p>
         <textarea
           cols={20}
-          rows={3}
+          rows={4}
           id='add-note'
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
