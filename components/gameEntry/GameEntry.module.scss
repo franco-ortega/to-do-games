@@ -5,12 +5,25 @@
 
   padding: .25rem .5rem;
   min-width: 10rem;
-  max-width: 20rem;
+  width: 100%;
 
   label {
     div:first-child {
       display: flex;
       flex-direction: row;
+
+      input {
+        margin-right: .25rem;
+      }
+    
+      input:checked + span {
+        color: grey;
+        text-decoration: line-through;
+      }
+
+      h3 {
+        font-weight: 500;
+      }
     }
 
     div:not(:first-child) {
@@ -19,23 +32,7 @@
     }
   }
 
-  div {
-
-    input {
-      margin-right: .25rem;
-    }
-  
-    input:checked + span {
-      color: grey;
-      text-decoration: line-through;
-    }  
-
-    h3 {
-      font-weight: 500;
-    }
-  }
-
-  p {
+  div:last-child {
     span {
       text-decoration: underline;
     }
