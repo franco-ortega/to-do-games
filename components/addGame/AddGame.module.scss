@@ -1,7 +1,10 @@
 .AddGame {
   background-color: var(--bkgd-clr-accent);
   border-radius: 1rem;
-  width: fit-content;
+  min-width: 20rem;
+  max-width: 30rem;
+
+  margin-top: 1rem;
 
   margin-inline: auto;
   padding: .5rem;
@@ -15,14 +18,25 @@
     font-weight: 400;
   }
 
-  select {
-    border-radius: .25rem;
-    padding-block: .1rem;
-    padding-inline: .25rem;
+  label:not(:has(select)) {
+    width: 100%;
 
-    color: var(--text-clr-main);
-    font-size: .9rem;
+    input, textarea {
+      width: 100%;
+      padding: .25rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: .9rem;
+    }
   }
+  
+    select {
+      border-radius: .25rem;
+      padding: .25rem;
+  
+      color: var(--text-clr-main);
+      font-size: .95rem;
+    }
+
 
   button {
     border-radius: .25rem;

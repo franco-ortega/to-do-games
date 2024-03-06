@@ -8,10 +8,11 @@ import { TimeSpanPathOptions } from '@/utils/types';
 type Props = {
   game: string;
   isPlayed: boolean;
+  notes: string;
   timeSpan: TimeSpanPathOptions;
 };
 
-export default function GameEntry({ game, isPlayed, timeSpan }: Props) {
+export default function GameEntry({ game, isPlayed, notes, timeSpan }: Props) {
   const [isChecked, setIsChecked] = useState(isPlayed);
 
   const isCheckedChange = () => {
@@ -21,13 +22,22 @@ export default function GameEntry({ game, isPlayed, timeSpan }: Props) {
 
   return (
     <li className={styles.GameEntry}>
-      <label>
-        <input type='checkbox' onChange={isCheckedChange} checked={isChecked} />
-        <span>{game} </span>
-        <span>
-          (status:{' '}
-          {isChecked ? <span>played 🎉</span> : <span>not played yet</span>})
-        </span>
+      <label htmlFor='game'>
+        <div>
+          <input
+            id='game'
+            type='checkbox'
+            onChange={isCheckedChange}
+            checked={isChecked}
+          />
+          <h3>{game}</h3>
+        </div>
+        <div>
+          <span>(status: {isChecked ? 'played 🎉' : 'not played yet'})</span>
+        </div>
+        <div>
+          <span>Notes</span>: {notes}
+        </div>
       </label>
     </li>
   );

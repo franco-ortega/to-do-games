@@ -7,6 +7,7 @@ import { timeSpanOptions } from '@/utils/enums';
 
 export default function AddGame() {
   const [game, setGame] = useState('');
+  const [notes, setNotes] = useState('');
   const [timeSpanOption, setTimeSpanOption] = useState(
     '' as TimeSpanPathOptions
   );
@@ -22,24 +23,34 @@ export default function AddGame() {
       ...savedGames,
       [timeSpanOption]: [
         ...savedGames[timeSpanOption],
-        [game, { isPlayed: false }],
+        [game, { isPlayed: false, notes }],
       ],
     };
 
     setGames('GAMES_TO_PLAY', updatedGames);
     setGame('');
+    setNotes('');
   };
 
   return (
     <form className={styles.AddGame} onSubmit={addGame}>
       <h3>Add a Game</h3>
       <label htmlFor='add-game'>
-        Game:{' '}
+        <p>Title</p>
         <input
           type='text'
           id='add-game'
           value={game}
           onChange={(e) => setGame(e.target.value)}
+        />
+      </label>
+      <label htmlFor='add-note'>
+        <p>Notes</p>
+        <textarea
+          rows={4}
+          id='add-note'
+          value={notes}
+          onChange={(e) => setNotes(e.target.value)}
         />
       </label>
       <label htmlFor='time-span-options'>
