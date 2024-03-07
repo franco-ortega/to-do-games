@@ -26,9 +26,9 @@
   --bkgd-clr-accent: var(--red-dark);
   --bkgd-game-entry: var(--blue-darkest);
   --bkgd-game-list: var(--green-dark);
-  --btn-bkgd-enabled: var(--bkgd-clr-main);
-  --btn-bkgd-disabled: var(--bkgd-clr-main-faded);
-  --nav-link-bkgd: var(--red-darkest);
+  --bkgd-btn-enabled: var(--bkgd-clr-main);
+  --bkgd-btn-disabled: var(--bkgd-clr-main-faded);
+  --bkgd-nav-link: var(--red-darkest);
 
   /* borders */
   --bdr-game-entry: var(--white);
@@ -38,8 +38,8 @@
   --text-clr-main-faded: var(--blue-light-faded);
   --text-clr-accent: var(--pink);
   --text-clr-nav: var(--pink-dark);
-  --btn-text-enabled: var(--text-clr-main);
-  --btn-text-disabled: var(--text-clr-main-faded);
+  --text-btn-enabled: var(--text-clr-main);
+  --text-btn-disabled: var(--text-clr-main-faded);
 }
 
 @media (prefers-color-scheme: dark) {
