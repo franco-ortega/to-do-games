@@ -19,6 +19,7 @@
   --red-dark: hsl(0, 50%, 27%);
   --red-darkest: hsl(348, 79%, 18%);
   --white: hsl(0, 0%, 100%);
+  --white-dark: hsl(0, 0%, 90%);
 
   /* backgrounds */
   --bkgd-clr-main: var(--blue-dark);
@@ -31,6 +32,7 @@
   --bkgd-game-entry: var(--blue-darkest);
   --bkgd-game-list: var(--green-dark);
   --bkgd-nav-link: var(--red-darkest);
+  --bkgd-input: var(--white-dark);
 
   /* borders */
   --bdr-game-entry: var(--white);
