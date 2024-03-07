@@ -14,6 +14,7 @@
   --blue-light-faded: hsl(227, 68%, 86%, var(--fade-mild));
   --pink: hsl(0, 81%, 88%);
   --red-dark: hsl(0, 50%, 27%);
+  --red-darkest: hsl(348, 79%, 18%);
 
   /* backgrounds */
   --bkgd-clr-main: var(--blue-dark);
@@ -21,6 +22,7 @@
   --bkgd-clr-accent: var(--red-dark);
   --btn-bkgd-enabled: var(--bkgd-clr-main);
   --btn-bkgd-disabled: var(--bkgd-clr-main-faded);
+  --nav-link-bkgd: var(--red-darkest);
 
   /* text */
   --text-clr-main: var(--blue-light);
