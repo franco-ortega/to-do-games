@@ -16,7 +16,7 @@
   }
 
   a {
-    color: hsl(160, 87%, 46%);
+    color: var(--text-clr-nav);
     font-weight: 500;
   }
 }
