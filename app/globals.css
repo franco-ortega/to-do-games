@@ -24,10 +24,12 @@
   --bkgd-clr-main: var(--blue-dark);
   --bkgd-clr-main-faded: var(--blue-dark-faded);
   --bkgd-clr-accent: var(--red-dark);
-  --bkgd-game-entry: var(--blue-darkest);
-  --bkgd-game-list: var(--green-dark);
+
   --bkgd-btn-enabled: var(--bkgd-clr-main);
   --bkgd-btn-disabled: var(--bkgd-clr-main-faded);
+
+  --bkgd-game-entry: var(--blue-darkest);
+  --bkgd-game-list: var(--green-dark);
   --bkgd-nav-link: var(--red-darkest);
 
   /* borders */
@@ -37,9 +39,11 @@
   --text-clr-main: var(--blue-light);
   --text-clr-main-faded: var(--blue-light-faded);
   --text-clr-accent: var(--pink);
-  --text-clr-nav: var(--pink-dark);
+
   --text-btn-enabled: var(--text-clr-main);
   --text-btn-disabled: var(--text-clr-main-faded);
+
+  --text-nav: var(--pink-dark);
 }
 
 @media (prefers-color-scheme: dark) {
