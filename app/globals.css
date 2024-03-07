@@ -5,13 +5,13 @@
   /* fades */
   --fade-heavy: 0.25;
   --fade-half: 0.5;
-  --fade-light: 0.75;
+  --fade-mild: 0.75;
 
   /* colors */
   --blue-dark: hsl(223, 54%, 27%);
-  --blue-dark-faded: hsl(223, 54%, 27%, var(--fade-light));
+  --blue-dark-faded: hsl(223, 54%, 27%, var(--fade-mild));
   --blue-light: hsl(227, 68%, 86%);
-  --blue-light-faded: hsl(227, 68%, 86%, var(--fade-light));
+  --blue-light-faded: hsl(227, 68%, 86%, var(--fade-mild));
   --pink: hsl(0, 81%, 88%);
   --red-dark: hsl(0, 50%, 27%);
 
