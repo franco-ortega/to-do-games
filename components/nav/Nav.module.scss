@@ -9,14 +9,14 @@
   }
 
   ul li {
-    background-color: rgb(92, 11, 27);
+    background-color: var(--bkgd-nav-link);
     border-radius: .5rem;
     list-style-type: none;
     padding: .25rem .5rem;
   }
 
   a {
-    color: hsl(160, 87%, 46%);
+    color: var(--text-nav);
     font-weight: 500;
   }
 }

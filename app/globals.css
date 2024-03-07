@@ -2,22 +2,50 @@
   --max-width: 1100px;
   --border-radius: 12px;
 
-  --disabled: 0.5;
+  /* fades */
+  --fade-heavy: 0.25;
+  --fade-half: 0.5;
+  --fade-mild: 0.75;
 
-  --h: 227;
-  --s: 68%;
-  --l: 86%;
+  /* colors */
+  --blue-dark: hsl(223, 54%, 27%);
+  --blue-dark-faded: hsl(223, 54%, 27%, var(--fade-mild));
+  --blue-darkest: hsl(223, 54%, 20%);
+  --blue-light: hsl(227, 68%, 86%);
+  --blue-light-faded: hsl(227, 68%, 86%, var(--fade-mild));
+  --green-dark: hsl(120, 8%, 25%);
+  --pink: hsl(0, 81%, 88%);
+  --pink-dark: hsl(160, 87%, 46%);
+  --red-dark: hsl(0, 50%, 27%);
+  --red-darkest: hsl(348, 79%, 18%);
+  --white: hsl(0, 0%, 100%);
+  --white-dark: hsl(0, 0%, 90%);
 
-  --bkgd-clr-main: hsl(223, 54%, 27%);
-  --bkgd-clr-accent: hsl(0, 50%, 27%);
+  /* backgrounds */
+  --bkgd-clr-main: var(--blue-dark);
+  --bkgd-clr-main-faded: var(--blue-dark-faded);
+  --bkgd-clr-accent: var(--red-dark);
 
-  --text-clr-main: hsl(227, 68%, 86%);
-  --text-clr-accent: hsl(0, 81%, 88%);
+  --bkgd-btn-enabled: var(--bkgd-clr-main);
+  --bkgd-btn-disabled: var(--bkgd-clr-main-faded);
 
-  --btn-bkgd-enabled: var(--bkgd-clr-main);
-  --btn-bkgd-disabled: var(--bkgd-clr-main, --disabled);
-  --btn-text-enabled: hsl(var(--h), var(--s), var(--l));
-  --btn-text-disabled: hsl(var(--h), var(--s), var(--l), var(--disabled));
+  --bkgd-game-entry: var(--blue-darkest);
+  --bkgd-game-list: var(--green-dark);
+  --bkgd-nav-link: var(--red-darkest);
+  --bkgd-input: var(--white-dark);
+
+  /* borders */
+  --bdr-game-entry: var(--white);
+
+  /* text */
+  --text-clr-main: var(--blue-light);
+  --text-clr-main-faded: var(--blue-light-faded);
+  --text-clr-accent: var(--pink);
+
+  --text-btn-enabled: var(--text-clr-main);
+  --text-btn-disabled: var(--text-clr-main-faded);
+
+  --text-nav: var(--pink-dark);
 }
 
 @media (prefers-color-scheme: dark) {
