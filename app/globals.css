@@ -9,15 +9,17 @@
   --l: 86%;
 
   --bkgd-clr-main: hsl(223, 54%, 27%);
+  --bkgd-clr-main-faded: hsl(223, 54%, 27%, 0.75);
   --bkgd-clr-accent: hsl(0, 50%, 27%);
 
-  --text-clr-main: hsl(227, 68%, 86%);
+  --text-clr-main: hsl(var(--h), var(--s), var(--l));
+  --text-clr-main-faded: hsl(var(--h), var(--s), var(--l), var(--disabled));
   --text-clr-accent: hsl(0, 81%, 88%);
 
   --btn-bkgd-enabled: var(--bkgd-clr-main);
-  --btn-bkgd-disabled: var(--bkgd-clr-main, --disabled);
-  --btn-text-enabled: hsl(var(--h), var(--s), var(--l));
-  --btn-text-disabled: hsl(var(--h), var(--s), var(--l), var(--disabled));
+  --btn-bkgd-disabled: var(--bkgd-clr-main-faded);
+  --btn-text-enabled: var(--text-clr-main);
+  --btn-text-disabled: var(--text-clr-main-faded);
 }
 
 @media (prefers-color-scheme: dark) {
