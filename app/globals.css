@@ -46,6 +46,9 @@
   --text-btn-disabled: var(--text-clr-main-faded);
 
   --text-nav: var(--pink-dark);
+
+  /* test */
+  --outline-test: 1px solid yellow;
 }
 
 @media (prefers-color-scheme: dark) {
