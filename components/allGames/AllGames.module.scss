@@ -19,7 +19,11 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 5rem;
+      gap: 3rem;
+
+      main {
+        margin-inline: 0;
+      }
     }
     
   }
