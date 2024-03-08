@@ -5,12 +5,9 @@ import styles from './AllGames.module.scss';
 export default function AllGames() {
   return (
     <main className={styles.AllGames}>
-      <h2>All Games to Play</h2>
-      <section>
-        <GamesToPlay timeSpan={timeSpanOptions.week} />
-        <GamesToPlay timeSpan={timeSpanOptions.month} />
-        <GamesToPlay timeSpan={timeSpanOptions.year} />
-      </section>
+      <GamesToPlay timeSpan={timeSpanOptions.week} />
+      <GamesToPlay timeSpan={timeSpanOptions.month} />
+      <GamesToPlay timeSpan={timeSpanOptions.year} />
     </main>
   );
 }
