@@ -24,9 +24,9 @@ export default function GamesToPlay({
   }, [path]);
 
   return (
-    <main className={styles.GamesToPlay}>
+    <section className={styles.GamesToPlay}>
       <h2>Games To Play This {title}</h2>
       <GamesList gamesList={games} timeSpan={path} />
-    </main>
+    </section>
   );
 }
