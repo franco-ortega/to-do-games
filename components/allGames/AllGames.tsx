@@ -2,9 +2,7 @@ import GamesToPlay from '../gamesToPlay/GamesToPlay';
 import { timeSpanOptions } from '@/utils/enums';
 import styles from './AllGames.module.scss';
 
-type Props = {};
-
-export default function AllGames({}: Props) {
+export default function AllGames() {
   return (
     <main className={styles.AllGames}>
       <h2>All Games to Play</h2>
