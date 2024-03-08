@@ -1,7 +1,5 @@
 .AllGames {
-  * {
-    // outline: var(--outline-test);
-  }
+  padding: 1rem;
 
   h2 {
     font-size: 2rem;
@@ -12,7 +10,6 @@
   @media (min-width: 40rem) {
 
     section {
-      // background-color: pink;
       max-width: fit-content;
       margin-inline: auto;
       display: flex;
