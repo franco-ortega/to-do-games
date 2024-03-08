@@ -33,7 +33,7 @@ export default function GameEntry({ game, isPlayed, notes, timeSpan }: Props) {
           <h3>{game}</h3>
         </div>
         <div>
-          <span>(status: {isChecked ? 'played 🎉' : 'not played yet'})</span>
+          <span>(status: {isChecked ? 'played 🎉' : 'unplayed'})</span>
         </div>
         <div>
           <span>Notes</span>: {notes}
