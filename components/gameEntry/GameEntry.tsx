@@ -48,8 +48,10 @@ export default function GameEntry({ game, isPlayed, notes, timeSpan }: Props) {
             <button onClick={handleEditNote}>Edit Note</button>
           </div>
         </div>
-        {isOpen && <EditNote isOpen={isOpen} notes={notes} />}
       </label>
+      {isOpen && (
+        <EditNote isOpen={isOpen} setIsOpen={setIsOpen} notes={notes} />
+      )}
     </li>
   );
 }
