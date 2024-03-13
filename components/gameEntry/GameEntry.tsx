@@ -24,14 +24,8 @@ export default function GameEntry({ game, isPlayed, notes, timeSpan }: Props) {
   };
 
   const handleEditNote = () => {
-    console.log('edit note');
     setIsOpen(true);
   };
-
-  useEffect(() => {
-    console.log('USE');
-  }, [notes, isOpen]);
-
   return (
     <li className={styles.GameEntry}>
       <label htmlFor='game'>

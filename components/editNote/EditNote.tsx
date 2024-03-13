@@ -27,9 +27,7 @@ export default function EditNote({
   };
 
   const onHandleSave = () => {
-    console.log('save note');
     const savedGames = getGames('GAMES_TO_PLAY');
-    console.log(savedGames, timeSpanOption);
 
     // need to update the specific game
     // find time span
