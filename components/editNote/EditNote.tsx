@@ -47,7 +47,7 @@ export default function EditNote({
   };
 
   return (
-    <div className={styles.EditNote}>
+    <dialog className={styles.EditNote} open={isOpen}>
       <label htmlFor='edit-note'>
         <p>Note:</p>
         <textarea
@@ -59,6 +59,6 @@ export default function EditNote({
         <button onClick={onHandleSave}>Save</button>
         <button onClick={onHandleCancel}>Cancel</button>
       </label>
-    </div>
+    </dialog>
   );
 }
