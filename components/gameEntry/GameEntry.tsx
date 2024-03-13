@@ -50,7 +50,13 @@ export default function GameEntry({ game, isPlayed, notes, timeSpan }: Props) {
         </div>
       </label>
       {isOpen && (
-        <EditNote isOpen={isOpen} setIsOpen={setIsOpen} notes={notes} />
+        <EditNote
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          game={game}
+          notes={notes}
+          timeSpanOption={timeSpan}
+        />
       )}
     </li>
   );

@@ -1,14 +1,48 @@
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import styles from './EditNote.module.scss';
+import { getGames, setGames } from '@/utils/localStorage';
+import { TimeSpanPathOptions } from '@/utils/types';
 
 type Props = {
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
+  game: string;
   notes: string;
+  timeSpanOption: TimeSpanPathOptions;
 };
 
-export default function EditNote({ isOpen, notes, setIsOpen }: Props) {
+export default function EditNote({
+  isOpen,
+  setIsOpen,
+  game,
+  notes,
+  timeSpanOption,
+}: Props) {
+  const [newNote, setNewNote] = useState(notes);
   const handleCancel = () => {
+    setIsOpen(false);
+  };
+
+  const onHandleSave = () => {
+    console.log('save note');
+    const savedGames = getGames('GAMES_TO_PLAY');
+    console.log(savedGames, timeSpanOption);
+
+    // need to update the specific game
+    // find time span
+    // find game by title - needs id soon
+    const updatedGames = {
+      ...savedGames,
+      [timeSpanOption]: savedGames[timeSpanOption].map((currentGame) => {
+        if (game === currentGame[0]) {
+          console.log(currentGame[0]);
+          return [game, { isPlayed: currentGame[1].isPlayed, notes: newNote }];
+        }
+        return currentGame;
+      }),
+    };
+
+    setGames('GAMES_TO_PLAY', updatedGames);
     setIsOpen(false);
   };
 
@@ -19,9 +53,10 @@ export default function EditNote({ isOpen, notes, setIsOpen }: Props) {
         <textarea
           rows={4}
           id='edit-note'
-          value={notes}
-          onChange={(e) => e.target.value}
+          value={newNote}
+          onChange={(e) => setNewNote(e.target.value)}
         />
+        <button onClick={onHandleSave}>Save</button>
         <button onClick={handleCancel}>Cancel</button>
       </label>
     </dialog>
