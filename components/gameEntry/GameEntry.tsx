@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './GameEntry.module.scss';
 import updateGameEntry from '@/utils/updateGameEntry';
 import { TimeSpanPathOptions } from '@/utils/types';
@@ -16,6 +16,7 @@ type Props = {
 export default function GameEntry({ game, isPlayed, notes, timeSpan }: Props) {
   const [isChecked, setIsChecked] = useState(isPlayed);
   const [isOpen, setIsOpen] = useState(false);
+  const [currentNote, setCurrentNote] = useState(notes);
 
   const isCheckedChange = () => {
     setIsChecked((prevState) => !prevState);
@@ -26,6 +27,10 @@ export default function GameEntry({ game, isPlayed, notes, timeSpan }: Props) {
     console.log('edit note');
     setIsOpen(true);
   };
+
+  useEffect(() => {
+    console.log('USE');
+  }, [notes, isOpen]);
 
   return (
     <li className={styles.GameEntry}>
@@ -43,7 +48,7 @@ export default function GameEntry({ game, isPlayed, notes, timeSpan }: Props) {
           <span>(status: {isChecked ? 'played 🎉' : 'unplayed'})</span>
         </div>
         <div>
-          <span>Notes</span>: {notes}
+          <span>Notes</span>: {currentNote}
           <div>
             <button onClick={handleEditNote}>Edit Note</button>
           </div>
@@ -56,6 +61,7 @@ export default function GameEntry({ game, isPlayed, notes, timeSpan }: Props) {
           game={game}
           notes={notes}
           timeSpanOption={timeSpan}
+          setCurrentNote={setCurrentNote}
         />
       )}
     </li>

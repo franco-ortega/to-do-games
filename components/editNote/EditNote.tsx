@@ -9,6 +9,7 @@ type Props = {
   game: string;
   notes: string;
   timeSpanOption: TimeSpanPathOptions;
+  setCurrentNote: Dispatch<SetStateAction<string>>;
 };
 
 export default function EditNote({
@@ -17,8 +18,10 @@ export default function EditNote({
   game,
   notes,
   timeSpanOption,
+  setCurrentNote,
 }: Props) {
   const [newNote, setNewNote] = useState(notes);
+
   const handleCancel = () => {
     setIsOpen(false);
   };
@@ -43,12 +46,13 @@ export default function EditNote({
       ),
     };
 
+    setCurrentNote(newNote);
     setGames('GAMES_TO_PLAY', updatedGames);
     setIsOpen(false);
   };
 
   return (
-    <dialog className={styles.EditNote} open={isOpen}>
+    <div className={styles.EditNote}>
       <label htmlFor='edit-note'>
         <p>Note:</p>
         <textarea
@@ -60,6 +64,6 @@ export default function EditNote({
         <button onClick={onHandleSave}>Save</button>
         <button onClick={handleCancel}>Cancel</button>
       </label>
-    </dialog>
+    </div>
   );
 }
