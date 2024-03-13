@@ -22,7 +22,7 @@ export default function EditNote({
 }: Props) {
   const [newNote, setNewNote] = useState(notes);
 
-  const handleCancel = () => {
+  const onHandleCancel = () => {
     setIsOpen(false);
   };
 
@@ -57,7 +57,7 @@ export default function EditNote({
           onChange={(e) => setNewNote(e.target.value)}
         />
         <button onClick={onHandleSave}>Save</button>
-        <button onClick={handleCancel}>Cancel</button>
+        <button onClick={onHandleCancel}>Cancel</button>
       </label>
     </div>
   );
