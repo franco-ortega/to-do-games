@@ -4,6 +4,7 @@ import { useState } from 'react';
 import styles from './GameEntry.module.scss';
 import updateGameEntry from '@/utils/updateGameEntry';
 import { TimeSpanPathOptions } from '@/utils/types';
+import EditNote from '../editNote/EditNote';
 
 type Props = {
   game: string;
@@ -14,10 +15,16 @@ type Props = {
 
 export default function GameEntry({ game, isPlayed, notes, timeSpan }: Props) {
   const [isChecked, setIsChecked] = useState(isPlayed);
+  const [isOpen, setIsOpen] = useState(false);
 
   const isCheckedChange = () => {
     setIsChecked((prevState) => !prevState);
     updateGameEntry(timeSpan, game, isPlayed);
+  };
+
+  const handleEditNote = () => {
+    console.log('edit note');
+    setIsOpen(true);
   };
 
   return (
@@ -38,9 +45,10 @@ export default function GameEntry({ game, isPlayed, notes, timeSpan }: Props) {
         <div>
           <span>Notes</span>: {notes}
           <div>
-            <button>Edit Note</button>
+            <button onClick={handleEditNote}>Edit Note</button>
           </div>
         </div>
+        {isOpen && <EditNote isOpen={isOpen} />}
       </label>
     </li>
   );

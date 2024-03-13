@@ -1,0 +1,10 @@
+.EditNote {
+  background-color: red;
+  margin: auto;
+  // position: absolute;
+
+  &::backdrop {
+    color: yellow;
+    opacity: 50%;
+  }
+}
