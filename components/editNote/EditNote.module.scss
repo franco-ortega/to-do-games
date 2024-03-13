@@ -1,9 +1,13 @@
 .EditNote {
-  background-color: red;
+  background-color: var(--bkgd-clr-accent);
   margin: auto;
   padding: .5rem;
   width: 20rem;
   position: absolute;
+  top: 25%;
+  z-index: 1;
+
+  color: var(--text-clr-main);
 
   textarea {
     background-color: var(--bkgd-input);

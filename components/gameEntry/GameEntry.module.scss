@@ -5,7 +5,10 @@
 
   padding: .25rem .5rem;
 
+  position: relative;
+  
   label {
+
     div:first-child {
       display: flex;
       flex-direction: row;
