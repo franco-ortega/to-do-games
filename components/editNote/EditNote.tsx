@@ -29,9 +29,6 @@ export default function EditNote({
   const onHandleSave = () => {
     const savedGames = getGames('GAMES_TO_PLAY');
 
-    // need to update the specific game
-    // find time span
-    // find game by title - needs id soon
     const updatedGames = {
       ...savedGames,
       [timeSpanOption]: savedGames[timeSpanOption].map(
