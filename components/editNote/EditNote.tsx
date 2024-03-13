@@ -33,13 +33,14 @@ export default function EditNote({
     // find game by title - needs id soon
     const updatedGames = {
       ...savedGames,
-      [timeSpanOption]: savedGames[timeSpanOption].map((currentGame) => {
-        if (game === currentGame[0]) {
-          console.log(currentGame[0]);
-          return [game, { isPlayed: currentGame[1].isPlayed, notes: newNote }];
+      [timeSpanOption]: savedGames[timeSpanOption].map(
+        ([currentGame, { isPlayed, notes }]) => {
+          if (game === currentGame) {
+            return [game, { isPlayed, notes: newNote }];
+          }
+          return [currentGame, { isPlayed, notes }];
         }
-        return currentGame;
-      }),
+      ),
     };
 
     setGames('GAMES_TO_PLAY', updatedGames);
