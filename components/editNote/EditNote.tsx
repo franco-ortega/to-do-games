@@ -34,11 +34,11 @@ export default function EditNote({
     const updatedGames = {
       ...savedGames,
       [timeSpanOption]: savedGames[timeSpanOption].map(
-        ([currentGame, { isPlayed, notes }]) => {
-          if (game === currentGame) {
+        ([selectedGame, { isPlayed, notes }]) => {
+          if (game === selectedGame) {
             return [game, { isPlayed, notes: newNote }];
           }
-          return [currentGame, { isPlayed, notes }];
+          return [selectedGame, { isPlayed, notes }];
         }
       ),
     };
