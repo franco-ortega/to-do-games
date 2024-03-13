@@ -2,12 +2,13 @@ import styles from './EditNote.module.scss';
 
 type Props = {
   isOpen: boolean;
+  notes: string;
 };
 
-export default function EditNote({ isOpen }: Props) {
+export default function EditNote({ isOpen, notes }: Props) {
   return (
     <dialog className={styles.EditNote} open={isOpen}>
-      Edit your note
+      <textarea>{notes}</textarea>
     </dialog>
   );
 }
