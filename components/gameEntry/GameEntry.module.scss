@@ -23,7 +23,7 @@
       }
     }
 
-    div:not(:first-child) {
+    & > div:not(:first-child) {
       margin-left: 1rem;
       line-height: 1.5rem;
     }
@@ -32,6 +32,14 @@
   div:last-child {
     span {
       text-decoration: underline;
+    }
+
+    button {
+      background-color: var(--bkgd-btn-edit);
+      color: var(--text-btn-edit);
+
+      border-radius: var(--bdr-rad-btn);
+      padding: var(--pad-btn);
     }
   }
 }

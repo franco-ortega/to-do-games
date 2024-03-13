@@ -37,6 +37,9 @@ export default function GameEntry({ game, isPlayed, notes, timeSpan }: Props) {
         </div>
         <div>
           <span>Notes</span>: {notes}
+          <div>
+            <button>Edit Note</button>
+          </div>
         </div>
       </label>
     </li>

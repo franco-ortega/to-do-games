@@ -28,6 +28,7 @@
 
   --bkgd-btn-enabled: var(--bkgd-clr-main);
   --bkgd-btn-disabled: var(--bkgd-clr-main-faded);
+  --bkgd-btn-edit: var(--blue-light);
 
   --bkgd-game-entry: var(--blue-darkest);
   --bkgd-game-list: var(--green-dark);
@@ -36,6 +37,10 @@
 
   /* borders */
   --bdr-game-entry: var(--white);
+  --bdr-rad-btn: 0.25rem;
+
+  /* padding */
+  --pad-btn: 0.1rem 0.3rem;
 
   /* text */
   --text-clr-main: var(--blue-light);
@@ -44,6 +49,7 @@
 
   --text-btn-enabled: var(--text-clr-main);
   --text-btn-disabled: var(--text-clr-main-faded);
+  --text-btn-edit: var(--blue-dark);
 
   --text-nav: var(--pink-dark);
 
