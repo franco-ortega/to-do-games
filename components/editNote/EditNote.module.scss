@@ -12,9 +12,23 @@
   textarea {
     background-color: var(--bkgd-input);
     width: 100%;
+    
     padding: .25rem;
+    margin-bottom: .25rem;
+
+    color: var(--red-darkest);
     font-family: Arial, Helvetica, sans-serif;
     font-size: .9rem;
-    color: var(--red-darkest);
+  }
+
+  button {
+    background-color: var(--bkgd-clr-main);
+    border-radius: var(--bdr-rad-btn);
+    padding: var(--pad-btn);
+    color: var(--text-clr-accent);
+  }
+
+  button + button {
+    margin-left: .5rem;
   }
 }
