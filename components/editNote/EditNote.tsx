@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useState } from 'react';
-import styles from './EditNote.module.scss';
 import { getGames, setGames } from '@/utils/localStorage';
 import { TimeSpanPathOptions } from '@/utils/types';
+import styles from './EditNote.module.scss';
 
 type Props = {
   isOpen: boolean;

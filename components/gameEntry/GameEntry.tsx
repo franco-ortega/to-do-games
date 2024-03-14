@@ -1,10 +1,10 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import styles from './GameEntry.module.scss';
-import updateGameEntry from '@/utils/updateGameEntry';
+import { useState } from 'react';
 import { TimeSpanPathOptions } from '@/utils/types';
+import updateGameEntry from '@/utils/updateGameEntry';
 import EditNote from '../editNote/EditNote';
+import styles from './GameEntry.module.scss';
 
 type Props = {
   game: string;
