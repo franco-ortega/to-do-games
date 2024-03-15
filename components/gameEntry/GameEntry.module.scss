@@ -26,13 +26,15 @@
       }
     }
 
-    & > div:not(:first-child) {
+    span {
       margin-left: 1rem;
       line-height: 1.5rem;
     }
   }
 
-  div:last-child {
+  & > div {
+    margin-left: 1rem;
+
     span {
       text-decoration: underline;
     }
@@ -42,6 +44,7 @@
       color: var(--text-btn-edit);
 
       border-radius: var(--bdr-rad-btn);
+      margin-top: .25rem;
       padding: var(--pad-btn);
     }
   }

@@ -1,13 +1,10 @@
 .EditNote {
   background-color: var(--bkgd-clr-accent);
-  margin-block: 1rem;
-  margin-inline: auto;
-  padding: .5rem;
+  margin-block: .25rem;
+  padding: .25rem .5rem;
   width: 20rem;
   position: relative;
-  top: 25%;
-  z-index: 1;
-
+  
   color: var(--text-clr-main);
 
   textarea {
@@ -17,7 +14,7 @@
     padding: .25rem;
     margin-bottom: .25rem;
 
-    color: var(--red-darkest);
+    color: var(--text-textarea);
     font-family: Arial, Helvetica, sans-serif;
     font-size: .9rem;
   }
