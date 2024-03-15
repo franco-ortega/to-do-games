@@ -53,6 +53,8 @@
 
   --text-nav: var(--pink-dark);
 
+  --text-textbox: var(--red-darkest);
+
   /* test */
   --outline-test: 1px solid yellow;
 }
