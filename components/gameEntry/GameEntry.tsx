@@ -53,7 +53,7 @@ export default function GameEntry({ game, isPlayed, notes, timeSpan }: Props) {
             isOpen={isOpen}
             setIsOpen={setIsOpen}
             game={game}
-            notes={notes}
+            notes={currentNote}
             timeSpanOption={timeSpan}
             setCurrentNote={setCurrentNote}
           />
