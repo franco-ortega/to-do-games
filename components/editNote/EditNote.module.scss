@@ -1,0 +1,32 @@
+.EditNote {
+  background-color: var(--bkgd-clr-accent);
+  margin-block: .25rem;
+  padding: .25rem .5rem;
+  width: 20rem;
+  position: relative;
+  
+  color: var(--text-clr-main);
+
+  textarea {
+    background-color: var(--bkgd-input);
+    width: 100%;
+    
+    padding: .25rem;
+    margin-bottom: .25rem;
+
+    color: var(--text-textarea);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .9rem;
+  }
+
+  button {
+    background-color: var(--bkgd-clr-main);
+    border-radius: var(--bdr-rad-btn);
+    padding: var(--pad-btn);
+    color: var(--text-clr-accent);
+  }
+
+  button + button {
+    margin-left: .5rem;
+  }
+}
