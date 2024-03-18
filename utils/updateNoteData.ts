@@ -12,5 +12,28 @@ export default function updateNoteData() {
     year: OldGame[]
   };
 
-  
+  for (const timeSpan in savedGames) {
+    
+    const games = savedGames[timeSpan as TimeSpanPathOptions]
+
+    const updatedNote = games.map(game => {
+
+      if (game[1].notes) {
+        return [
+          game[0],
+          {
+            isPlayed: game[1].isPlayed,
+            note: game[1].notes
+          }
+        ]
+      }
+
+      return game;
+
+
+    }) as unknown as GamesToPlay;
+
+    console.log(updatedNote)
+    
+  }
 }
