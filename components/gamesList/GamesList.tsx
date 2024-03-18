@@ -21,12 +21,12 @@ export default function GamesList({ gamesList, timeSpan }: Props) {
   return (
     <ul className={styles.GamesList}>
       {gamesList.length
-        ? gamesList.map(([game, { isPlayed, notes }]) => (
+        ? gamesList.map(([game, { isPlayed, note }]) => (
             <GameEntry
               key={game}
               game={game}
               isPlayed={isPlayed}
-              notes={notes}
+              note={note}
               timeSpan={timeSpan}
             />
           ))
