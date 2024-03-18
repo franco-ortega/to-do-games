@@ -2,8 +2,11 @@
 
 import styles from './Home.module.scss';
 import AddGame from '../addGame/AddGame';
+import updateNoteData from '@/utils/updateNoteData';
 
 export default function Home() {
+  updateNoteData();
+
   return (
     <main className={styles.Home}>
       <section>
