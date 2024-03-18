@@ -20,7 +20,7 @@ export default function GameEntry({ game, isPlayed, notes, timeSpan }: Props) {
 
   const isCheckedChange = () => {
     setIsChecked((prevState) => !prevState);
-    updateGameEntry(timeSpan, game, isPlayed, notes);
+    updateGameEntry(timeSpan, game, isPlayed, currentNote);
   };
 
   const handleEditNote = () => {
