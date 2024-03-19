@@ -1,9 +1,8 @@
-// import { timeSpan } from '@/utils/enums';
-import { getGames, setGames } from '@/utils/localStorage';
-import { TimeSpanPathOptions } from '@/utils/types';
 import React, { useState } from 'react';
-import styles from './AddGame.module.scss';
 import { timeSpanOptions } from '@/utils/enums';
+import { TimeSpanPathOptions } from '@/utils/types';
+import { getGames, setGames } from '@/utils/localStorage';
+import styles from './AddGame.module.scss';
 
 export default function AddGame() {
   const [game, setGame] = useState('');
@@ -18,7 +17,6 @@ export default function AddGame() {
     e.preventDefault();
 
     const savedGames = getGames('GAMES_TO_PLAY');
-    console.log(savedGames);
 
     const updatedGames = {
       ...savedGames,
