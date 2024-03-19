@@ -4,7 +4,6 @@ import { TimeSpanPathOptions } from "./types";
 export default function updateNoteData() {
 
   const savedGames = getGames('GAMES_TO_PLAY');
-  console.log(savedGames)
   
   for (const timeSpan in savedGames) {
     const gamesPerTimeSpan = savedGames[timeSpan as TimeSpanPathOptions]
@@ -21,8 +20,6 @@ export default function updateNoteData() {
           
           // second - remove the "notes" variable
           delete gameData.notes
-
-          // console.log(gameData);
         }
       })
     }
