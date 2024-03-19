@@ -14,9 +14,9 @@ export type GamesToPlay = {
 };
 
 export type TimeSpanPathOptions = 'week' | 'month' | 'year';
-export type TimeSpanTitleOptions = 'Week' | 'Month' | 'Year';
+export type TimeSpanHeaderOptions = 'Week' | 'Month' | 'Year';
 
 export type TimeSpan = {
   path: TimeSpanPathOptions;
-  title: TimeSpanTitleOptions;
+  header: TimeSpanHeaderOptions;
 }

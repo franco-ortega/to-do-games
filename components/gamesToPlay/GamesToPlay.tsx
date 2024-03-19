@@ -12,7 +12,7 @@ type Props = {
 };
 
 export default function GamesToPlay({
-  timeSpan: { path, title },
+  timeSpan: { path, header },
 }: Props): JSX.Element {
   const [games, setGames] = useState([] as Game[]);
 
@@ -29,7 +29,7 @@ export default function GamesToPlay({
 
   return (
     <section className={styles.GamesToPlay}>
-      <h2>Games To Play This {title}</h2>
+      <h2>Games To Play This {header}</h2>
       <GamesList gamesList={games} timeSpan={path} />
     </section>
   );
