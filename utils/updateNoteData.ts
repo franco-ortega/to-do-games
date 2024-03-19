@@ -1,12 +1,12 @@
 import { getGames, setGames } from "./localStorage";
-import { TimeSpanPathOptions } from "./types";
+import { TimeSpanPaths } from "./types";
 
 export default function updateNoteData() {
 
   const savedGames = getGames('GAMES_TO_PLAY');
   
   for (const timeSpan in savedGames) {
-    const gamesPerTimeSpan = savedGames[timeSpan as TimeSpanPathOptions]
+    const gamesPerTimeSpan = savedGames[timeSpan as TimeSpanPaths]
 
     if(gamesPerTimeSpan.length) {
       gamesPerTimeSpan.forEach(game => {

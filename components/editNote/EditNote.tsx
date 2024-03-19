@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useState } from 'react';
 import { getGames, setGames } from '@/utils/localStorage';
-import { TimeSpanPathOptions } from '@/utils/types';
+import { TimeSpanPaths } from '@/utils/types';
 import styles from './EditNote.module.scss';
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
   game: string;
   note: string;
-  timeSpanOption: TimeSpanPathOptions;
+  timeSpanOption: TimeSpanPaths;
   setCurrentNote: Dispatch<SetStateAction<string>>;
 };
 
