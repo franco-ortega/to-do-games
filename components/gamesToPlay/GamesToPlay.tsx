@@ -3,10 +3,10 @@
 import { useEffect, useState } from 'react';
 import { Game, TimeSpanPaths } from '../../utils/types';
 import { getGames } from '@/utils/localStorage';
+import createHeaderFromPath from '@/utils/createHeaderFromPath';
+import updateNoteData from '@/utils/updateNoteData';
 import GamesList from '../gamesList/GamesList';
 import styles from './GamesToPlay.module.scss';
-import updateNoteData from '@/utils/updateNoteData';
-import createHeaderFromPath from '@/utils/createHeaderFromPath';
 
 type Props = {
   timeSpan: TimeSpanPaths;
