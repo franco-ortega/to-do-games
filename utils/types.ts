@@ -18,3 +18,9 @@ export type TimeSpanPaths = keyof GamesToPlay;
 export type TimeSpan = {
   path: TimeSpanPaths;
 }
+
+export enum TimeSpanOptions {
+  week,
+  month,
+  year
+}

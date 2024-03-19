@@ -1,7 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Game, TimeSpan, TimeSpanPaths } from '../../utils/types';
+import {
+  Game,
+  TimeSpan,
+  TimeSpanOptions,
+  TimeSpanPaths,
+} from '../../utils/types';
 import { getGames } from '@/utils/localStorage';
 import GamesList from '../gamesList/GamesList';
 import styles from './GamesToPlay.module.scss';
@@ -9,30 +14,30 @@ import updateNoteData from '@/utils/updateNoteData';
 import createHeaderFromPath from '@/utils/createHeaderFromPath';
 
 type Props = {
-  timeSpan: TimeSpan;
+  timeSpan: TimeSpanPaths;
 };
 
-export default function GamesToPlay({
-  timeSpan: { path },
-}: Props): JSX.Element {
+export default function GamesToPlay({ timeSpan }: Props): JSX.Element {
   const [games, setGames] = useState([] as Game[]);
-  const header = createHeaderFromPath(path);
+  const header = createHeaderFromPath(timeSpan);
+
+  console.log(timeSpan);
 
   useEffect(() => {
     // update note data
     updateNoteData();
 
     const gamesFromLocalStorage = getGames('GAMES_TO_PLAY');
-    const gamesByTimeSpan = gamesFromLocalStorage[path]
-      ? gamesFromLocalStorage[path]
+    const gamesByTimeSpan = gamesFromLocalStorage[timeSpan]
+      ? gamesFromLocalStorage[timeSpan]
       : [];
     setGames(gamesByTimeSpan);
-  }, [path]);
+  }, [timeSpan]);
 
   return (
     <section className={styles.GamesToPlay}>
       <h2>Games To Play This {header}</h2>
-      <GamesList gamesList={games} timeSpan={path} />
+      <GamesList gamesList={games} timeSpan={timeSpan} />
     </section>
   );
 }
