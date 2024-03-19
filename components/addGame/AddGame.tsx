@@ -59,9 +59,9 @@ export default function AddGame() {
           }
         >
           <option value={''}>When Will You Play?</option>
-          <option value={timeSpanOptions.week.header}>This Week</option>
-          <option value={timeSpanOptions.month.header}>This Month</option>
-          <option value={timeSpanOptions.year.header}>This Year</option>
+          <option value={timeSpanOptions.week.path}>This Week</option>
+          <option value={timeSpanOptions.month.path}>This Month</option>
+          <option value={timeSpanOptions.year.path}>This Year</option>
         </select>
       </label>
       <button disabled={!game || !timeSpanOption}>Add Game</button>
