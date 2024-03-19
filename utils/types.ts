@@ -14,7 +14,3 @@ export type GamesToPlay = {
 };
 
 export type TimeSpanPaths = keyof GamesToPlay;
-
-// export type TimeSpan = {
-//   path: TimeSpanPaths;
-// }
