@@ -6,6 +6,7 @@ import { getGames } from '@/utils/localStorage';
 import GamesList from '../gamesList/GamesList';
 import styles from './GamesToPlay.module.scss';
 import updateNoteData from '@/utils/updateNoteData';
+import createHeaderFromPath from '@/utils/createHeaderFromPath';
 
 type Props = {
   timeSpan: TimeSpan;
@@ -15,6 +16,9 @@ export default function GamesToPlay({
   timeSpan: { path, header },
 }: Props): JSX.Element {
   const [games, setGames] = useState([] as Game[]);
+
+  const realHeader = createHeaderFromPath(path);
+  console.log(realHeader);
 
   useEffect(() => {
     // update note data
@@ -29,7 +33,7 @@ export default function GamesToPlay({
 
   return (
     <section className={styles.GamesToPlay}>
-      <h2>Games To Play This {header}</h2>
+      <h2>Games To Play This {realHeader}</h2>
       <GamesList gamesList={games} timeSpan={path} />
     </section>
   );
