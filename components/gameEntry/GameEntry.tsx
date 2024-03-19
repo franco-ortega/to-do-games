@@ -9,18 +9,18 @@ import styles from './GameEntry.module.scss';
 type Props = {
   game: string;
   isPlayed: boolean;
-  notes: string;
+  note: string;
   timeSpan: TimeSpanPathOptions;
 };
 
-export default function GameEntry({ game, isPlayed, notes, timeSpan }: Props) {
+export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
   const [isChecked, setIsChecked] = useState(isPlayed);
   const [isOpen, setIsOpen] = useState(false);
-  const [currentNote, setCurrentNote] = useState(notes);
+  const [currentNote, setCurrentNote] = useState(note);
 
   const isCheckedChange = () => {
     setIsChecked((prevState) => !prevState);
-    updateGameEntry(timeSpan, game, isPlayed);
+    updateGameEntry(timeSpan, game, isPlayed, currentNote);
   };
 
   const handleEditNote = () => {
@@ -43,7 +43,7 @@ export default function GameEntry({ game, isPlayed, notes, timeSpan }: Props) {
       <div>
         {!isOpen ? (
           <>
-            <span>Notes</span>: {currentNote}
+            <span>Note</span>: {currentNote}
             <div>
               <button onClick={handleEditNote}>Edit Note</button>
             </div>
@@ -53,7 +53,7 @@ export default function GameEntry({ game, isPlayed, notes, timeSpan }: Props) {
             isOpen={isOpen}
             setIsOpen={setIsOpen}
             game={game}
-            notes={currentNote}
+            note={currentNote}
             timeSpanOption={timeSpan}
             setCurrentNote={setCurrentNote}
           />

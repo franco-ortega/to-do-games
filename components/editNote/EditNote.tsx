@@ -7,7 +7,7 @@ type Props = {
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
   game: string;
-  notes: string;
+  note: string;
   timeSpanOption: TimeSpanPathOptions;
   setCurrentNote: Dispatch<SetStateAction<string>>;
 };
@@ -16,11 +16,11 @@ export default function EditNote({
   isOpen,
   setIsOpen,
   game,
-  notes,
+  note,
   timeSpanOption,
   setCurrentNote,
 }: Props) {
-  const [newNote, setNewNote] = useState(notes);
+  const [newNote, setNewNote] = useState(note);
 
   const onHandleCancel = () => {
     setIsOpen(false);
@@ -32,11 +32,11 @@ export default function EditNote({
     const updatedGames = {
       ...savedGames,
       [timeSpanOption]: savedGames[timeSpanOption].map(
-        ([selectedGame, { isPlayed, notes }]) => {
+        ([selectedGame, { isPlayed, note }]) => {
           if (game === selectedGame) {
-            return [game, { isPlayed, notes: newNote }];
+            return [game, { isPlayed, note: newNote }];
           }
-          return [selectedGame, { isPlayed, notes }];
+          return [selectedGame, { isPlayed, note }];
         }
       ),
     };
