@@ -13,3 +13,11 @@ export type TimeSpan = {
   path: TimeSpanPathOptions;
   title: TimeSpanTitleOptions;
 }
+
+export type OldGame = [string, { isPlayed: boolean, notes: string }];
+
+export type OldGamesToPlay = {
+  week: OldGame[],
+  month: OldGame[],
+  year: OldGame[]
+};
