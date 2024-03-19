@@ -16,9 +16,10 @@ export default function GamesToPlay({
 }: Props): JSX.Element {
   const [games, setGames] = useState([] as Game[]);
 
-  updateNoteData();
-
   useEffect(() => {
+    // update note data
+    updateNoteData();
+
     const gamesFromLocalStorage = getGames('GAMES_TO_PLAY');
     const gamesByTimeSpan = gamesFromLocalStorage[path]
       ? gamesFromLocalStorage[path]
