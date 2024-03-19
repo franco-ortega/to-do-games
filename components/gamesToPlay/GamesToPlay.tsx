@@ -1,8 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Game, TimeSpanPaths } from '../../utils/types';
+import { TimeSpanOptions } from '@/utils/enums';
 import { getGames } from '@/utils/localStorage';
+import { Game, TimeSpanPaths } from '../../utils/types';
 import createHeaderFromPath from '@/utils/createHeaderFromPath';
 import updateNoteData from '@/utils/updateNoteData';
 import GamesList from '../gamesList/GamesList';
@@ -15,8 +16,7 @@ type Props = {
 export default function GamesToPlay({ timeSpan }: Props): JSX.Element {
   const [games, setGames] = useState([] as Game[]);
   const header = createHeaderFromPath(timeSpan);
-
-  console.log(timeSpan);
+  console.log(TimeSpanOptions.week);
 
   useEffect(() => {
     // update note data

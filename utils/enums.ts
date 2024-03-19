@@ -5,3 +5,9 @@ export const timeSpanOptions = {
   month: "month" as TimeSpanPaths,
   year: "year" as TimeSpanPaths
 }
+
+export enum TimeSpanOptions {
+  week = 'week',
+  month = 'month',
+  year = 'year'
+}
