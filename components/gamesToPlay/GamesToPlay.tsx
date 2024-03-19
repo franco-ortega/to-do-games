@@ -5,6 +5,7 @@ import { Game, TimeSpan, TimeSpanPathOptions } from '../../utils/types';
 import { getGames } from '@/utils/localStorage';
 import GamesList from '../gamesList/GamesList';
 import styles from './GamesToPlay.module.scss';
+import updateNoteData from '@/utils/updateNoteData';
 
 type Props = {
   timeSpan: TimeSpan;
@@ -16,6 +17,9 @@ export default function GamesToPlay({
   const [games, setGames] = useState([] as Game[]);
 
   useEffect(() => {
+    // update note data
+    updateNoteData();
+
     const gamesFromLocalStorage = getGames('GAMES_TO_PLAY');
     const gamesByTimeSpan = gamesFromLocalStorage[path]
       ? gamesFromLocalStorage[path]
