@@ -1,5 +1,5 @@
 import { getGames } from "./localStorage";
-import { TimeSpanPathOptions } from "./types";
+import { GameData, OldGameData, TimeSpanPathOptions } from "./types";
 
 export default function updateNoteData() {
 
@@ -15,6 +15,7 @@ export default function updateNoteData() {
 
         // this checks to see if "notes" exists
         if (Object.keys(gameData).includes('notes')) {
+          console.log(gameData.notes)
 
           // first - add the "note" variable
           gameData.note = gameData.notes
