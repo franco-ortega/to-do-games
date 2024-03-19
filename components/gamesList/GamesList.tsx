@@ -26,7 +26,7 @@ export default function GamesList({ gamesList, timeSpan }: Props) {
               key={game}
               game={game}
               isPlayed={isPlayed}
-              note={note}
+              note={note || ''}
               timeSpan={timeSpan}
             />
           ))
