@@ -1,9 +1,10 @@
-import { getGames } from "./localStorage";
+import { getGames, setGames } from "./localStorage";
 import { TimeSpanPathOptions } from "./types";
 
 export default function updateNoteData() {
 
   const savedGames = getGames('GAMES_TO_PLAY');
+  console.log(savedGames)
   
   for (const timeSpan in savedGames) {
     const gamesPerTimeSpan = savedGames[timeSpan as TimeSpanPathOptions]
@@ -14,7 +15,6 @@ export default function updateNoteData() {
 
         // this checks to see if "notes" exists
         if (Object.keys(gameData).includes('notes')) {
-          console.log(gameData.notes)
 
           // first - add the "note" variable
           gameData.note = gameData.notes
@@ -22,9 +22,11 @@ export default function updateNoteData() {
           // second - remove the "notes" variable
           delete gameData.notes
 
-          console.log(gameData);
+          // console.log(gameData);
         }
       })
     }
   }
+
+  setGames('GAMES_TO_PLAY', savedGames)
 }
