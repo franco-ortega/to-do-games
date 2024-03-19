@@ -1,5 +1,5 @@
-import GamesToPlay from '../gamesToPlay/GamesToPlay';
 import { TimeSpanOptions } from '@/utils/enums';
+import GamesToPlay from '../gamesToPlay/GamesToPlay';
 import styles from './AllGames.module.scss';
 
 export default function AllGames() {

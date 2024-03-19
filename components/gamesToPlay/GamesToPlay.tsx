@@ -19,7 +19,6 @@ export default function GamesToPlay({ timeSpan }: Props): JSX.Element {
   console.log(TimeSpanOptions.week);
 
   useEffect(() => {
-    // update note data
     updateNoteData();
 
     const gamesFromLocalStorage = getGames('GAMES_TO_PLAY');
