@@ -1,12 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import {
-  Game,
-  TimeSpan,
-  TimeSpanOptions,
-  TimeSpanPaths,
-} from '../../utils/types';
+import { Game, TimeSpanPaths } from '../../utils/types';
 import { getGames } from '@/utils/localStorage';
 import GamesList from '../gamesList/GamesList';
 import styles from './GamesToPlay.module.scss';
