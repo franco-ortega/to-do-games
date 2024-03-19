@@ -1,4 +1,4 @@
-export type Game = [string, { isPlayed: boolean, note: string }];
+export type Game = [string, { isPlayed: boolean, note: string, notes?: string }];
 
 export type GamesToPlay = {
   week: Game[],
@@ -14,7 +14,7 @@ export type TimeSpan = {
   title: TimeSpanTitleOptions;
 }
 
-export type OldGame = [string, { isPlayed: boolean, notes: string }];
+export type OldGame = [string, { isPlayed: boolean, note?: string, notes?: string }];
 
 export type OldGamesToPlay = {
   week: OldGame[],

@@ -1,4 +1,4 @@
-import { GamesToPlay } from "./types";
+import { GamesToPlay, OldGamesToPlay } from "./types";
 
 export function setGames(key: string, value: GamesToPlay) {
   const stringyGames = JSON.stringify(value);
@@ -18,5 +18,5 @@ export function getGames(key: string) {
     month: [],
     year: []
     
-  } as GamesToPlay;
+  } as GamesToPlay | OldGamesToPlay;
 };

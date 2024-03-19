@@ -1,17 +1,33 @@
 import { getGames } from "./localStorage";
-import { Game, GamesToPlay, TimeSpanPathOptions } from "./types";
-
-type OldGame = [string, { isPlayed: boolean, notes: string }];
+import { TimeSpanPathOptions } from "./types";
 
 export default function updateNoteData() {
-  // change "notes" variable into "note" variable
 
   const savedGames = getGames('GAMES_TO_PLAY');
-
-  // console.log(savedGames)
-
+  
   for (const timeSpan in savedGames) {
-    console.log(timeSpan)
+    const gamesPerTimeSpan = savedGames[timeSpan as TimeSpanPathOptions]
+    console.log(gamesPerTimeSpan)
+
+    if(gamesPerTimeSpan.length) {
+      gamesPerTimeSpan.forEach(game => {
+        const gameData = game[1];
+
+        // this checks to see if "notes" exists
+        if (Object.keys(gameData).includes('notes')) {
+
+          // first - add the "note" variable
+          gameData.note = gameData.notes
+          
+          // second - remove the "notes" variable
+          delete gameData.notes
+
+          console.log(gameData);
+        }
+
+      })
+
+    }
 
   }
 
