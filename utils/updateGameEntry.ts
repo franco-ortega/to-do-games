@@ -1,7 +1,7 @@
 import { getGames, setGames } from "./localStorage";
-import { GamesToPlay, TimeSpanPathOptions } from "./types";
+import { GamesToPlay, TimeSpanPaths } from "./types";
 
-export default function updateGameEntry(pathname: TimeSpanPathOptions, game: string, isPlayed: boolean, note: string) {
+export default function updateGameEntry(pathname: TimeSpanPaths, game: string, isPlayed: boolean, note: string) {
 
   const savedGames = getGames('GAMES_TO_PLAY') as GamesToPlay;
 

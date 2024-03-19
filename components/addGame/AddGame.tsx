@@ -1,16 +1,13 @@
-// import { timeSpan } from '@/utils/enums';
-import { getGames, setGames } from '@/utils/localStorage';
-import { TimeSpanPathOptions } from '@/utils/types';
 import React, { useState } from 'react';
-import styles from './AddGame.module.scss';
 import { timeSpanOptions } from '@/utils/enums';
+import { TimeSpanPaths } from '@/utils/types';
+import { getGames, setGames } from '@/utils/localStorage';
+import styles from './AddGame.module.scss';
 
 export default function AddGame() {
   const [game, setGame] = useState('');
   const [note, setNote] = useState('');
-  const [timeSpanOption, setTimeSpanOption] = useState(
-    '' as TimeSpanPathOptions
-  );
+  const [timeSpanOption, setTimeSpanOption] = useState('' as TimeSpanPaths);
 
   const addGame: React.FormEventHandler = (
     e: React.FormEvent<HTMLInputElement>
@@ -58,15 +55,13 @@ export default function AddGame() {
           id='time-span-options'
           name='time-span-options'
           onChange={(e) =>
-            setTimeSpanOption(
-              e.target.value.toLowerCase() as TimeSpanPathOptions
-            )
+            setTimeSpanOption(e.target.value.toLowerCase() as TimeSpanPaths)
           }
         >
           <option value={''}>When Will You Play?</option>
-          <option value={timeSpanOptions.week.title}>This Week</option>
-          <option value={timeSpanOptions.month.title}>This Month</option>
-          <option value={timeSpanOptions.year.title}>This Year</option>
+          <option value={timeSpanOptions.week.header}>This Week</option>
+          <option value={timeSpanOptions.month.header}>This Month</option>
+          <option value={timeSpanOptions.year.header}>This Year</option>
         </select>
       </label>
       <button disabled={!game || !timeSpanOption}>Add Game</button>

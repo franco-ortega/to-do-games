@@ -1,16 +1,16 @@
-import { TimeSpanPathOptions, TimeSpanTitleOptions } from "./types"
+import { TimeSpan } from "./types"
 
 export const timeSpanOptions = {
   week: {
-    path: "week" as TimeSpanPathOptions,
-    title: "Week" as TimeSpanTitleOptions
-  },
+    path: "week",
+    header: "Week"
+  } as TimeSpan,
   month: {
-    path: "month" as TimeSpanPathOptions,
-    title: "Month" as TimeSpanTitleOptions
-  },
+    path: "month",
+    header: "Month"
+  } as TimeSpan,
   year: {
-    path: "year" as TimeSpanPathOptions,
-    title: "Year" as TimeSpanTitleOptions
-  }
+    path: "year",
+    header: "Year"
+  } as TimeSpan
 }
