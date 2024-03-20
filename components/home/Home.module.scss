@@ -8,7 +8,12 @@
   align-items: center;
   gap: 1rem;
 
-  & section {
+  & > section:first-child {
+    width: fit-content;
+    max-width: 40rem;
+  }
+
+  & > section {
     width: 100%;
     min-width: 20rem;
     max-width: 30rem;

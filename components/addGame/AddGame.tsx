@@ -46,7 +46,6 @@ export default function AddGame() {
         <p>Note</p>
 
         <input
-          // rows={1}
           id='add-note'
           value={note}
           onChange={(e) => setNote(e.target.value)}
