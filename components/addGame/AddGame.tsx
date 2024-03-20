@@ -31,9 +31,11 @@ export default function AddGame() {
 
   return (
     <form className={styles.AddGame} onSubmit={addGame}>
-      <h3>Add a Game</h3>
+      <h2>Add a Game</h2>
+
       <label htmlFor='add-game'>
         <p>Title</p>
+
         <input
           type='text'
           id='add-game'
@@ -41,15 +43,17 @@ export default function AddGame() {
           onChange={(e) => setGame(e.target.value)}
         />
       </label>
+
       <label htmlFor='add-note'>
         <p>Note</p>
-        <textarea
-          rows={4}
+
+        <input
           id='add-note'
           value={note}
           onChange={(e) => setNote(e.target.value)}
         />
       </label>
+
       <label htmlFor='time-span-options'>
         <select
           id='time-span-options'
@@ -64,7 +68,12 @@ export default function AddGame() {
           <option value={TimeSpanOptions.year}>This Year</option>
         </select>
       </label>
-      <button disabled={!game || !timeSpanOption}>Add Game</button>
+
+      <label htmlFor='add-game-submit-button'>
+        <button id='add-game-submit-button' disabled={!game || !timeSpanOption}>
+          Add Game
+        </button>
+      </label>
     </form>
   );
 }

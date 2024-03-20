@@ -1,7 +1,7 @@
 'use client';
 
-import styles from './Home.module.scss';
 import AddGame from '../addGame/AddGame';
+import styles from './Home.module.scss';
 
 export default function Home() {
   return (
@@ -12,7 +12,9 @@ export default function Home() {
           this year.
         </p>
       </section>
-      <AddGame />
+      <section>
+        <AddGame />
+      </section>
     </main>
   );
 }
