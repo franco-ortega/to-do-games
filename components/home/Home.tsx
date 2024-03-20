@@ -13,9 +13,6 @@ export default function Home() {
         </p>
       </section>
       <section>
-        <h2>Add a Game</h2>
-      </section>
-      <section>
         <AddGame />
       </section>
     </main>

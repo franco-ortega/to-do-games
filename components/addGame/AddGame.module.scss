@@ -1,3 +1,5 @@
+@use '../../styles/scss/' as *;
+
 .AddGame {
   background-color: var(--bkgd-clr-accent);
   border-radius: .5rem;
@@ -5,7 +7,11 @@
   padding: 1rem;
 
   display: grid;
-  grid-template-rows: 2fr 2fr 1.75fr 1fr;
+  grid-template-rows: auto 2fr 2fr 1.75fr 1fr;
+
+  h2 {
+    @extend %h2-text-styles;
+  }
 
   label {
     width: 100%;
