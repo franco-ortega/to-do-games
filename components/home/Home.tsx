@@ -12,7 +12,9 @@ export default function Home() {
           this year.
         </p>
       </section>
-      <AddGame />
+      <section>
+        <AddGame />
+      </section>
     </main>
   );
 }
