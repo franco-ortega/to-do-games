@@ -31,8 +31,6 @@ export default function AddGame() {
 
   return (
     <form className={styles.AddGame} onSubmit={addGame}>
-      <h3>Add a Game</h3>
-
       <label htmlFor='add-game'>
         <p>Title</p>
 

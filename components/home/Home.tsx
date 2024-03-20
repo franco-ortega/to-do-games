@@ -7,6 +7,9 @@ export default function Home() {
   return (
     <main className={styles.Home}>
       <section>
+        <h2>Add a Game</h2>
+      </section>
+      <section>
         <p>
           Make lists of the games you want to play this week, this month, and
           this year.

@@ -1,3 +1,5 @@
+@use '../../styles/scss/' as *;
+
 .Home {
   padding: 1rem;
 
@@ -10,5 +12,9 @@
     width: 100%;
     min-width: 20rem;
     max-width: 30rem;
+
+    h2 {
+      @extend %h2-text-styles;
+    }
   }
 }
