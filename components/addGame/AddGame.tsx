@@ -3,26 +3,19 @@ import { TimeSpanOptions } from '@/utils/enums';
 import { TimeSpanPaths } from '@/utils/types';
 import { getGames, setGames } from '@/utils/localStorage';
 import styles from './AddGame.module.scss';
+import addGame from '@/utils/addGame';
 
 export default function AddGame() {
   const [game, setGame] = useState('');
   const [note, setNote] = useState('');
   const [timeSpanOption, setTimeSpanOption] = useState('' as TimeSpanPaths);
 
-  const addGame: React.FormEventHandler = (
+  const onAddGameSubmit: React.FormEventHandler = (
     e: React.FormEvent<HTMLInputElement>
   ) => {
     e.preventDefault();
 
-    const savedGames = getGames('GAMES_TO_PLAY');
-
-    const updatedGames = {
-      ...savedGames,
-      [timeSpanOption]: [
-        ...savedGames[timeSpanOption],
-        [game, { isPlayed: false, note }],
-      ],
-    };
+    const updatedGames = addGame(timeSpanOption, game, note);
 
     setGames('GAMES_TO_PLAY', updatedGames);
     setGame('');
@@ -30,7 +23,7 @@ export default function AddGame() {
   };
 
   return (
-    <form className={styles.AddGame} onSubmit={addGame}>
+    <form className={styles.AddGame} onSubmit={onAddGameSubmit}>
       <h2>Add a Game</h2>
 
       <label htmlFor='add-game'>
