@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { TimeSpanOptions } from '@/utils/enums';
 import { TimeSpanPaths } from '@/utils/types';
-import { getGames, setGames } from '@/utils/localStorage';
-import styles from './AddGame.module.scss';
+import { setGames } from '@/utils/localStorage';
 import addGame from '@/utils/addGame';
+import styles from './AddGame.module.scss';
 
 export default function AddGame() {
   const [game, setGame] = useState('');
