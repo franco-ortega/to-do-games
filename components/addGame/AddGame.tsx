@@ -22,6 +22,10 @@ export default function AddGame() {
     setNote('');
   };
 
+  const onTimeSpanSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setTimeSpanOption(e.target.value as TimeSpanPaths);
+  };
+
   return (
     <form className={styles.AddGame} onSubmit={onAddGameSubmit}>
       <h2>Add a Game</h2>
@@ -51,9 +55,7 @@ export default function AddGame() {
         <select
           id='time-span-options'
           name='time-span-options'
-          onChange={(e) =>
-            setTimeSpanOption(e.target.value.toLowerCase() as TimeSpanPaths)
-          }
+          onChange={onTimeSpanSelect}
         >
           <option value={''}>When Will You Play?</option>
           <option value={TimeSpanOptions.week}>This Week</option>
