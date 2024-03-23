@@ -5,37 +5,39 @@
 
   padding: .25rem .5rem;
 
-  position: relative;
+  min-width: 12rem;
+  width: 100%;
+  max-width: 25rem;
+
   
-  label {
+  & > label {
+    display: flex;
+    flex-direction: row;
+    min-width: fit-content;
+    width: 50%;
 
-    div:first-child {
-      display: flex;
-      flex-direction: row;
-
-      input {
-        margin-right: .25rem;
-      }
-    
-      input:checked + h3 {
-        opacity: 75%;
-      }
-
-      h3 {
-        font-weight: 500;
-      }
+    & > input {
+      margin-right: .25rem;
+    }
+  
+    & > input:checked + h3 {
+      opacity: 75%;
     }
 
-    span {
-      margin-left: 1rem;
-      line-height: 1.5rem;
+    & > h3 {
+      font-weight: 500;
     }
+  }
+  
+  & > span {
+    margin-left: 1rem;
+    line-height: 1.5rem;
   }
 
   & > div {
     margin-left: 1rem;
 
-    span {
+    & > span {
       text-decoration: underline;
     }
 

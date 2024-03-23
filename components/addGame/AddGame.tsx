@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { TimeSpanOptions } from '@/utils/enums';
 import { TimeSpanPaths } from '@/utils/types';
-import { getGames, setGames } from '@/utils/localStorage';
-import styles from './AddGame.module.scss';
+import { setGames } from '@/utils/localStorage';
 import addGame from '@/utils/addGame';
+import styles from './AddGame.module.scss';
 
 export default function AddGame() {
   const [game, setGame] = useState('');
@@ -20,6 +20,10 @@ export default function AddGame() {
     setGames('GAMES_TO_PLAY', updatedGames);
     setGame('');
     setNote('');
+  };
+
+  const onTimeSpanSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setTimeSpanOption(e.target.value as TimeSpanPaths);
   };
 
   return (
@@ -51,9 +55,7 @@ export default function AddGame() {
         <select
           id='time-span-options'
           name='time-span-options'
-          onChange={(e) =>
-            setTimeSpanOption(e.target.value.toLowerCase() as TimeSpanPaths)
-          }
+          onChange={onTimeSpanSelect}
         >
           <option value={''}>When Will You Play?</option>
           <option value={TimeSpanOptions.week}>This Week</option>

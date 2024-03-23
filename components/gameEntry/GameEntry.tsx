@@ -28,18 +28,16 @@ export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
   };
   return (
     <li className={styles.GameEntry}>
-      <label htmlFor='game'>
-        <div>
-          <input
-            id='game'
-            type='checkbox'
-            onChange={isCheckedChange}
-            checked={isChecked}
-          />
-          <h3>{game}</h3>
-        </div>
-        <span>(status: {isChecked ? 'played 🎉' : 'unplayed'})</span>
+      <label htmlFor={game}>
+        <input
+          id={game}
+          type='checkbox'
+          onChange={isCheckedChange}
+          checked={isChecked}
+        />
+        <h3>{game}</h3>
       </label>
+      <span>(status: {isChecked ? 'played 🎉' : 'unplayed'})</span>
       <div>
         {!isOpen ? (
           <>
