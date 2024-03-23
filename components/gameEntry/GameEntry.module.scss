@@ -8,11 +8,8 @@
   width: 100%;
   max-width: 25rem;
 
-  & > * > * {
-    outline: 1px dashed yellow;
-  }
   
-  label {
+  & > label {
     display: flex;
     flex-direction: row;
     min-width: fit-content;
