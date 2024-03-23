@@ -4,7 +4,7 @@
   list-style-type: none;
 
   margin-inline: auto;
-  padding: 1rem;
+  padding: var(--padding-game-list);
 
   min-width: 15rem;
 
@@ -12,17 +12,17 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: var(--gap-game-entry);
 
   @media (min-width: 30rem) {
-    max-width: 27rem;
+    max-width: calc(var(--width-game-entry) + var(--padding-game-list) * 2);
   }
 
   @media (min-width: 60rem) {
-    max-width: 53rem;
+    max-width: calc(var(--width-game-entry) * 2 + var(--padding-game-list) * 2 + var(--gap-game-entry));
   }
 
   @media (min-width: 90rem) {
-    max-width: 79rem;
+    max-width: calc(var(--width-game-entry) * 3 + var(--padding-game-list) * 2 + var(--gap-game-entry) * 2);
   }
 }

@@ -7,8 +7,7 @@
 
   min-width: 12rem;
   width: 100%;
-  max-width: 25rem;
-
+  max-width: var(--width-game-entry);
   
   & > label {
     display: flex;
