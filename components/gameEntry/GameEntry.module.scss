@@ -9,6 +9,7 @@
   width: 100%;
   max-width: var(--max-width-game-entry);
   
+  // first child
   & > label {
     display: flex;
     flex-direction: row;
@@ -27,26 +28,29 @@
       font-weight: 500;
     }
   }
-  
+
+  // second child
   & > span {
     margin-left: 1rem;
     line-height: 1.5rem;
   }
 
+  // third child
   & > div {
     margin-left: 1rem;
 
-    & > span {
+    & > p > span {
       text-decoration: underline;
     }
-
-    button {
-      background-color: var(--bkgd-btn-edit);
-      color: var(--text-btn-edit);
-
-      border-radius: var(--bdr-rad-btn);
-      margin-top: 0.25rem;
-      padding: var(--pad-btn);
-    }
   }
+
+  button {
+    background-color: var(--bkgd-btn-edit);
+    color: var(--text-btn-edit);
+    border-radius: var(--bdr-rad-btn);
+    padding: var(--pad-btn);
+    min-width: fit-content;
+  }
+  
+
 }
