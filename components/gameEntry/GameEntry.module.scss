@@ -18,15 +18,15 @@
     min-width: fit-content;
     width: 50%;
 
-    input {
+    & > input {
       margin-right: .25rem;
     }
   
-    input:checked + h3 {
+    & > input:checked + h3 {
       opacity: 75%;
     }
 
-    h3 {
+    & > h3 {
       font-weight: 500;
     }
   }
@@ -39,7 +39,7 @@
   & > div {
     margin-left: 1rem;
 
-    span {
+    & > span {
       text-decoration: underline;
     }
 
