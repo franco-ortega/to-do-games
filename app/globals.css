@@ -61,7 +61,7 @@
   --padding-game-list: var(--gap-game-entry);
 
   /* test */
-  --outline-test: 1px solid yellow;
+  --test-outline: 1px solid yellow;
 }
 
 @media (prefers-color-scheme: dark) {

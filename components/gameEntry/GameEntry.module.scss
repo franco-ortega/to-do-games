@@ -9,11 +9,12 @@
   width: 100%;
   max-width: var(--max-width-game-entry);
   
+  // first child
   & > label {
     display: flex;
     flex-direction: row;
-    min-width: fit-content;
-    width: 50%;
+    // min-width: fit-content;
+    // width: 50%;
 
     & > input {
       margin-right: 0.25rem;
@@ -27,26 +28,44 @@
       font-weight: 500;
     }
   }
-  
+
+  // second child
   & > span {
     margin-left: 1rem;
     line-height: 1.5rem;
+    min-width: fit-content;
+  }
+  
+  // third child
+  hr {
+    margin-block: 0.25rem;
+    margin-left: 1rem;
+    border-color: hsl(275, 100%, 66%);
   }
 
-  & > div {
+  // fourth child
+  & > div:last-child {
     margin-left: 1rem;
 
-    & > span {
-      text-decoration: underline;
-    }
+    & > p:first-child {
+      display: flex;
+      justify-content: space-between;
 
-    button {
-      background-color: var(--bkgd-btn-edit);
-      color: var(--text-btn-edit);
-
-      border-radius: var(--bdr-rad-btn);
-      margin-top: 0.25rem;
-      padding: var(--pad-btn);
+      h4 {
+        text-decoration: underline;
+        font-size: 1.05rem;
+        font-weight: 500;
+      }
     }
   }
+
+  button {
+    background-color: var(--bkgd-btn-edit);
+    color: var(--text-btn-edit);
+    border-radius: var(--bdr-rad-btn);
+    padding: var(--pad-btn);
+    min-width: fit-content;
+  }
+  
+
 }
