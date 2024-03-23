@@ -57,7 +57,7 @@
 
   /* game entry and game list spacing and widths */
   --gap-game-entry: 1rem;
-  --width-game-entry: calc(var(--gap-game-entry) * 25);
+  --max-width-game-entry: calc(var(--gap-game-entry) * 25);
   --padding-game-list: var(--gap-game-entry);
 
   /* test */
