@@ -16,7 +16,6 @@ type Props = {
 export default function GamesToPlay({ timeSpan }: Props): JSX.Element {
   const [games, setGames] = useState([] as Game[]);
   const header = createHeaderFromPath(timeSpan);
-  console.log(TimeSpanOptions.week);
 
   useEffect(() => {
     updateNoteData();
