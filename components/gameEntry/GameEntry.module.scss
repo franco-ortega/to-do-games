@@ -13,9 +13,7 @@
   & > label {
     display: flex;
     flex-direction: row;
-    // min-width: fit-content;
-    // width: 50%;
-
+    
     & > input {
       margin-right: 0.25rem;
     }
@@ -44,7 +42,7 @@
   }
 
   // fourth child
-  & > div:last-child {
+  & > div {
     margin-left: 1rem;
 
     & > p:first-child {
