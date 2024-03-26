@@ -29,7 +29,7 @@ export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
   };
 
   const toggleEditNote = () => {
-    setIsEditNote(true);
+    setIsEditNote((prev) => !prev);
   };
 
   return (
@@ -62,7 +62,7 @@ export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
             ) : (
               <EditNote
                 isEditNote={isEditNote}
-                setIsEditNote={setIsEditNote}
+                toggleEditNote={toggleEditNote}
                 game={game}
                 note={currentNote}
                 timeSpanOption={timeSpan}

@@ -5,7 +5,7 @@ import styles from './EditNote.module.scss';
 
 type Props = {
   isEditNote: boolean;
-  setIsEditNote: Dispatch<SetStateAction<boolean>>;
+  toggleEditNote: () => void;
   game: string;
   note: string;
   timeSpanOption: TimeSpanPaths;
@@ -14,7 +14,7 @@ type Props = {
 
 export default function EditNote({
   isEditNote,
-  setIsEditNote,
+  toggleEditNote,
   game,
   note,
   timeSpanOption,
@@ -23,7 +23,7 @@ export default function EditNote({
   const [newNote, setNewNote] = useState(note);
 
   const onHandleCancel = () => {
-    setIsEditNote(false);
+    toggleEditNote();
   };
 
   const onHandleSave = () => {
@@ -43,7 +43,7 @@ export default function EditNote({
 
     setCurrentNote(newNote);
     setGames('GAMES_TO_PLAY', updatedGames);
-    setIsEditNote(false);
+    toggleEditNote();
   };
 
   return (
