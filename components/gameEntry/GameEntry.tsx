@@ -16,6 +16,7 @@ type Props = {
 export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
   const [isChecked, setIsChecked] = useState(isPlayed);
   const [isOpen, setIsOpen] = useState(false);
+  const [isNoteOpen, setIsNoteOpen] = useState(false);
   const [currentNote, setCurrentNote] = useState(note);
 
   const isCheckedChange = () => {
