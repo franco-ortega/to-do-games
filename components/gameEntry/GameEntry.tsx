@@ -15,7 +15,7 @@ type Props = {
 
 export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
   const [isChecked, setIsChecked] = useState(isPlayed);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isEditNote, setIsEditNote] = useState(false);
   const [isViewNote, setIsViewNote] = useState(false);
   const [currentNote, setCurrentNote] = useState(note);
 
@@ -29,7 +29,7 @@ export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
   };
 
   const handleEditNote = () => {
-    setIsOpen(true);
+    setIsEditNote(true);
   };
 
   return (
@@ -51,7 +51,7 @@ export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
         {isViewNote && (
           <>
             <hr />
-            {!isOpen ? (
+            {!isEditNote ? (
               <>
                 <p>
                   <h4>Note</h4>{' '}
@@ -61,8 +61,8 @@ export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
               </>
             ) : (
               <EditNote
-                isOpen={isOpen}
-                setIsOpen={setIsOpen}
+                isEditNote={isEditNote}
+                setIsEditNote={setIsEditNote}
                 game={game}
                 note={currentNote}
                 timeSpanOption={timeSpan}
