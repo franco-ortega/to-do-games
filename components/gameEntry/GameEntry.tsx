@@ -6,6 +6,7 @@ import updateGameEntry from '@/utils/updateGameEntry';
 import EditNote from '../editNote/EditNote';
 import styles from './GameEntry.module.scss';
 import ViewNote from '../buttons/ViewNote';
+import Note from '../note/Note';
 
 type Props = {
   game: string;
@@ -16,7 +17,6 @@ type Props = {
 
 export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
   const [isChecked, setIsChecked] = useState(isPlayed);
-  const [isEditNote, setIsEditNote] = useState(false);
   const [isViewNote, setIsViewNote] = useState(false);
   const [currentNote, setCurrentNote] = useState(note);
 
@@ -29,10 +29,6 @@ export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
 
   const toggleNote = () => {
     setIsViewNote((prev) => !prev);
-  };
-
-  const toggleEditNote = () => {
-    setIsEditNote((prev) => !prev);
   };
 
   return (
@@ -50,29 +46,13 @@ export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
         <p>[status: {isChecked ? 'played 🎉' : 'unplayed'}]</p>
         <ViewNote isViewNote={isViewNote} toggleNote={toggleNote} />
       </div>
-
       {isViewNote && (
-        <>
-          <hr />
-          {!isEditNote ? (
-            <>
-              <p>
-                <h4>Note</h4>{' '}
-                <button onClick={toggleEditNote}>Edit Note</button>
-              </p>
-              <p>{currentNote}</p>
-            </>
-          ) : (
-            <EditNote
-              isEditNote={isEditNote}
-              toggleEditNote={toggleEditNote}
-              game={game}
-              note={currentNote}
-              timeSpanOption={timeSpan}
-              setCurrentNote={setCurrentNote}
-            />
-          )}
-        </>
+        <Note
+          currentNote={currentNote}
+          setCurrentNote={setCurrentNote}
+          game={game}
+          timeSpan={timeSpan}
+        />
       )}
     </li>
   );

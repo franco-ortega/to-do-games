@@ -1,0 +1,28 @@
+.Note {
+  // background-color: pink;
+  padding-inline: 1rem;
+
+    hr {
+      margin-block: 0.25rem;
+      border-color: hsl(275, 100%, 66%);
+    }
+
+    & > p {
+      display: flex;
+      justify-content: space-between;
+
+      h4 {
+        text-decoration: underline;
+        font-size: 1.05rem;
+        font-weight: 500;
+      }
+    }
+
+    button {
+      background-color: var(--bkgd-btn-edit);
+      color: var(--text-btn-edit);
+      border-radius: var(--bdr-rad-btn);
+      padding: var(--pad-btn);
+      min-width: fit-content;
+    }
+}
