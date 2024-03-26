@@ -16,7 +16,7 @@ type Props = {
 export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
   const [isChecked, setIsChecked] = useState(isPlayed);
   const [isOpen, setIsOpen] = useState(false);
-  const [isNoteOpen, setIsNoteOpen] = useState(false);
+  const [isViewNote, setIsViewNote] = useState(false);
   const [currentNote, setCurrentNote] = useState(note);
 
   const isCheckedChange = () => {
@@ -25,7 +25,7 @@ export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
   };
 
   const toggleNote = () => {
-    setIsNoteOpen((prev) => !prev);
+    setIsViewNote((prev) => !prev);
   };
 
   const handleEditNote = () => {
@@ -45,10 +45,10 @@ export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
       </label>
       <span>(status: {isChecked ? 'played 🎉' : 'unplayed'})</span>
       <button onClick={toggleNote}>{`${
-        isNoteOpen ? 'Hide' : 'View'
+        isViewNote ? 'Hide' : 'View'
       } Note`}</button>
       <div>
-        {isNoteOpen && (
+        {isViewNote && (
           <>
             <hr />
             {!isOpen ? (
