@@ -28,7 +28,8 @@ export default function Note({
       {!isEditNote ? (
         <>
           <div>
-            <h4>Note</h4> <button onClick={toggleEditNote}>Edit Note</button>
+            <h4>Note</h4>
+            <button onClick={toggleEditNote}>Edit Note</button>
           </div>
           <p>{currentNote}</p>
         </>
