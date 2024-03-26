@@ -29,23 +29,21 @@
 
   // second child
   & > span {
-    margin-left: 1rem;
+    padding-left: 1rem;
     line-height: 1.5rem;
     min-width: fit-content;
   }
   
   // third child
-  hr {
-    margin-block: 0.25rem;
-    margin-left: 1rem;
-    border-color: hsl(275, 100%, 66%);
-  }
-
-  // fourth child
   & > div {
-    margin-left: 1rem;
+    padding-inline: 1rem;
 
-    & > p:first-child {
+    hr {
+      margin-block: 0.25rem;
+      border-color: hsl(275, 100%, 66%);
+    }
+
+    & > p {
       display: flex;
       justify-content: space-between;
 
