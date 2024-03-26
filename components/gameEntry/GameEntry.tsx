@@ -21,6 +21,8 @@ export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
 
   const isCheckedChange = () => {
     setIsChecked((prevState) => !prevState);
+
+    // change updateGameEntry to updateGameStatus
     updateGameEntry(timeSpan, game, isPlayed, currentNote);
   };
 
@@ -43,35 +45,36 @@ export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
         />
         <h3>{game}</h3>
       </label>
-      <span>(status: {isChecked ? 'played 🎉' : 'unplayed'})</span>
-      <button onClick={toggleNote}>{`${
-        isViewNote ? 'Hide' : 'View'
-      } Note`}</button>
       <div>
-        {isViewNote && (
-          <>
-            <hr />
-            {!isEditNote ? (
-              <>
-                <p>
-                  <h4>Note</h4>{' '}
-                  <button onClick={toggleEditNote}>Edit Note</button>
-                </p>
-                <p>{currentNote}</p>
-              </>
-            ) : (
-              <EditNote
-                isEditNote={isEditNote}
-                toggleEditNote={toggleEditNote}
-                game={game}
-                note={currentNote}
-                timeSpanOption={timeSpan}
-                setCurrentNote={setCurrentNote}
-              />
-            )}
-          </>
-        )}
+        <span>(status: {isChecked ? 'played 🎉' : 'unplayed'})</span>
+        <button onClick={toggleNote}>{`${
+          isViewNote ? 'Hide' : 'View'
+        } Note`}</button>
       </div>
+
+      {isViewNote && (
+        <>
+          <hr />
+          {!isEditNote ? (
+            <>
+              <p>
+                <h4>Note</h4>{' '}
+                <button onClick={toggleEditNote}>Edit Note</button>
+              </p>
+              <p>{currentNote}</p>
+            </>
+          ) : (
+            <EditNote
+              isEditNote={isEditNote}
+              toggleEditNote={toggleEditNote}
+              game={game}
+              note={currentNote}
+              timeSpanOption={timeSpan}
+              setCurrentNote={setCurrentNote}
+            />
+          )}
+        </>
+      )}
     </li>
   );
 }

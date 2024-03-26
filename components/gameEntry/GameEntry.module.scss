@@ -28,14 +28,27 @@
   }
 
   // second child
-  & > span {
-    padding-left: 1rem;
-    line-height: 1.5rem;
-    min-width: fit-content;
+  & > div:nth-child(2) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    // background-color: bisque;
+
+
+
+    & > span {
+      padding-left: 1rem;
+      line-height: 1.5rem;
+      min-width: fit-content;
+    }
   }
+
+
+
   
   // third child
-  & > div {
+  & > div:nth-child(3) {
     padding-inline: 1rem;
 
     hr {
