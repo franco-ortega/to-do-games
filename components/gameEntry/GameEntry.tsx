@@ -24,9 +24,14 @@ export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
     updateGameEntry(timeSpan, game, isPlayed, currentNote);
   };
 
+  const toggleNote = () => {
+    setIsNoteOpen((prev) => !prev);
+  };
+
   const handleEditNote = () => {
     setIsOpen(true);
   };
+
   return (
     <li className={styles.GameEntry}>
       <label htmlFor={game}>
