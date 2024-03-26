@@ -5,6 +5,7 @@ import { TimeSpanPaths } from '@/utils/types';
 import updateGameEntry from '@/utils/updateGameEntry';
 import EditNote from '../editNote/EditNote';
 import styles from './GameEntry.module.scss';
+import ViewNote from '../buttons/ViewNote';
 
 type Props = {
   game: string;
@@ -47,9 +48,7 @@ export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
       </label>
       <div>
         <p>[status: {isChecked ? 'played 🎉' : 'unplayed'}]</p>
-        <button onClick={toggleNote}>{`${
-          isViewNote ? 'Hide' : 'View'
-        } Note`}</button>
+        <ViewNote isViewNote={isViewNote} toggleNote={toggleNote} />
       </div>
 
       {isViewNote && (

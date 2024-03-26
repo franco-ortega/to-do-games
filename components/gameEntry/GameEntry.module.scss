@@ -39,9 +39,6 @@
       min-width: fit-content;
     }
   }
-
-
-
   
   // third child
   & > div:nth-child(3) {
@@ -65,11 +62,11 @@
   }
 
   button {
-    background-color: var(--bkgd-btn-edit);
-    color: var(--text-btn-edit);
-    border-radius: var(--bdr-rad-btn);
-    padding: var(--pad-btn);
-    min-width: fit-content;
+    // background-color: var(--bkgd-btn-edit);
+    // color: var(--text-btn-edit);
+    // border-radius: var(--bdr-rad-btn);
+    // padding: var(--pad-btn);
+    // min-width: fit-content;
   }
   
 
