@@ -1,12 +1,12 @@
 .Note {
-  // padding-inline: 1rem;
+  background-color: hsl(33, 100%, 88%, .2);
 
     hr {
       margin-block: 0.25rem;
       border-color: hsl(275, 100%, 66%);
     }
 
-    & > p {
+    & > div {
       display: flex;
       justify-content: space-between;
 

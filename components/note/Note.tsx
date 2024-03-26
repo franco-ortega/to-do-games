@@ -27,9 +27,9 @@ export default function Note({
       <hr />
       {!isEditNote ? (
         <>
-          <p>
+          <div>
             <h4>Note</h4> <button onClick={toggleEditNote}>Edit Note</button>
-          </p>
+          </div>
           <p>{currentNote}</p>
         </>
       ) : (
