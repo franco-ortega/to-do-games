@@ -1,30 +1,29 @@
 'use client';
 
 import { useState } from 'react';
-import { TimeSpanPaths } from '@/utils/types';
+import { Game, TimeSpanPaths } from '@/utils/types';
 import updateGameEntry from '@/utils/updateGameEntry';
-import EditNote from '../editNote/EditNote';
-import styles from './GameEntry.module.scss';
 import ViewNote from '../buttons/ViewNote';
 import Note from '../note/Note';
+import styles from './GameEntry.module.scss';
 
 type Props = {
-  game: string;
-  isPlayed: boolean;
-  note: string;
+  game: Game;
   timeSpan: TimeSpanPaths;
 };
 
-export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
+export default function GameEntry({ game, timeSpan }: Props) {
+  const [title, { isPlayed, note }] = game;
+
   const [isChecked, setIsChecked] = useState(isPlayed);
   const [isViewNote, setIsViewNote] = useState(false);
-  const [currentNote, setCurrentNote] = useState(note);
+  const [currentNote, setCurrentNote] = useState(note || '');
 
   const isCheckedChange = () => {
     setIsChecked((prevState) => !prevState);
 
     // change updateGameEntry to updateGameStatus
-    updateGameEntry(timeSpan, game, isPlayed, currentNote);
+    updateGameEntry(timeSpan, title, isPlayed, currentNote);
   };
 
   const toggleNote = () => {
@@ -33,14 +32,14 @@ export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
 
   return (
     <li className={styles.GameEntry}>
-      <label htmlFor={game}>
+      <label htmlFor={title}>
         <input
-          id={game}
+          id={title}
           type='checkbox'
           onChange={isCheckedChange}
           checked={isChecked}
         />
-        <h3>{game}</h3>
+        <h3>{title}</h3>
       </label>
       <div>
         <div>
@@ -51,7 +50,7 @@ export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
           <Note
             currentNote={currentNote}
             setCurrentNote={setCurrentNote}
-            game={game}
+            game={title}
             timeSpan={timeSpan}
           />
         )}
