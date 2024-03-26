@@ -46,7 +46,7 @@ export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
         <h3>{game}</h3>
       </label>
       <div>
-        <span>(status: {isChecked ? 'played 🎉' : 'unplayed'})</span>
+        <p>(status: {isChecked ? 'played 🎉' : 'unplayed'})</p>
         <button onClick={toggleNote}>{`${
           isViewNote ? 'Hide' : 'View'
         } Note`}</button>
