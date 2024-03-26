@@ -28,7 +28,7 @@ export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
     setIsViewNote((prev) => !prev);
   };
 
-  const handleEditNote = () => {
+  const toggleEditNote = () => {
     setIsEditNote(true);
   };
 
@@ -55,7 +55,7 @@ export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
               <>
                 <p>
                   <h4>Note</h4>{' '}
-                  <button onClick={handleEditNote}>Edit Note</button>
+                  <button onClick={toggleEditNote}>Edit Note</button>
                 </p>
                 <p>{currentNote}</p>
               </>
