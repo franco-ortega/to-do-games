@@ -46,23 +46,28 @@ export default function GameEntry({ game, isPlayed, note, timeSpan }: Props) {
       <span>(status: {isChecked ? 'played 🎉' : 'unplayed'})</span>
       <button onClick={toggleNote}>View Note</button>
       <div>
-        <hr />
-        {!isOpen ? (
+        {isNoteOpen && (
           <>
-            <p>
-              <h4>Note</h4> <button onClick={handleEditNote}>Edit Note</button>
-            </p>
-            <p>{currentNote}</p>
+            <hr />
+            {!isOpen ? (
+              <>
+                <p>
+                  <h4>Note</h4>{' '}
+                  <button onClick={handleEditNote}>Edit Note</button>
+                </p>
+                <p>{currentNote}</p>
+              </>
+            ) : (
+              <EditNote
+                isOpen={isOpen}
+                setIsOpen={setIsOpen}
+                game={game}
+                note={currentNote}
+                timeSpanOption={timeSpan}
+                setCurrentNote={setCurrentNote}
+              />
+            )}
           </>
-        ) : (
-          <EditNote
-            isOpen={isOpen}
-            setIsOpen={setIsOpen}
-            game={game}
-            note={currentNote}
-            timeSpanOption={timeSpan}
-            setCurrentNote={setCurrentNote}
-          />
         )}
       </div>
     </li>
