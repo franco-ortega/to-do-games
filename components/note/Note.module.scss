@@ -1,3 +1,5 @@
+@use '../../styles/scss/' as *;
+
 .Note {
   // background-color: hsl(33, 100%, 88%, .2);
 
@@ -18,10 +20,6 @@
     }
 
     button {
-      background-color: var(--bkgd-btn-edit);
-      color: var(--text-btn-edit);
-      border-radius: var(--bdr-rad-btn);
-      padding: var(--pad-btn);
-      min-width: fit-content;
+      @extend %note-button;
     }
 }
