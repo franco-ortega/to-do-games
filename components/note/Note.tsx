@@ -6,14 +6,14 @@ import styles from './Note.module.scss';
 type Props = {
   currentNote: string;
   setCurrentNote: Dispatch<SetStateAction<string>>;
-  game: string;
+  title: string;
   timeSpan: TimeSpanPaths;
 };
 
 export default function Note({
   currentNote,
   setCurrentNote,
-  game,
+  title,
   timeSpan,
 }: Props) {
   const [isEditNote, setIsEditNote] = useState(false);
@@ -36,7 +36,7 @@ export default function Note({
       ) : (
         <EditNote
           toggleEditNote={toggleEditNote}
-          game={game}
+          title={title}
           note={currentNote}
           timeSpanOption={timeSpan}
           setCurrentNote={setCurrentNote}

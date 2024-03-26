@@ -50,7 +50,7 @@ export default function GameEntry({ game, timeSpan }: Props) {
           <Note
             currentNote={currentNote}
             setCurrentNote={setCurrentNote}
-            game={title}
+            title={title}
             timeSpan={timeSpan}
           />
         )}
