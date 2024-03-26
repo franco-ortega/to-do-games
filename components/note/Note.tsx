@@ -35,7 +35,6 @@ export default function Note({
         </>
       ) : (
         <EditNote
-          isEditNote={isEditNote}
           toggleEditNote={toggleEditNote}
           game={game}
           note={currentNote}

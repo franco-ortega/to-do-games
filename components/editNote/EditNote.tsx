@@ -4,7 +4,6 @@ import { TimeSpanPaths } from '@/utils/types';
 import styles from './EditNote.module.scss';
 
 type Props = {
-  isEditNote: boolean;
   toggleEditNote: () => void;
   game: string;
   note: string;
@@ -13,7 +12,6 @@ type Props = {
 };
 
 export default function EditNote({
-  isEditNote,
   toggleEditNote,
   game,
   note,
