@@ -18,8 +18,6 @@ export default function Note({
 }: Props) {
   const [isEditNote, setIsEditNote] = useState(false);
 
-  console.log(isEditNote);
-
   const toggleEditNote = () => {
     setIsEditNote((prev) => !prev);
   };
