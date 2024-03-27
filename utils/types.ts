@@ -1,12 +1,15 @@
 export type Game = [
   string,
   {
-    title: string,
     isPlayed: boolean,
     note?: string,
     notes?: string
   }
-];
+] | {
+  title: string,
+  isPlayed: boolean,
+  note: string,
+};
 
 export type GamesToPlay = {
   week: Game[],
