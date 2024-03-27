@@ -37,12 +37,6 @@ export default function GamesList({ gamesList, timeSpan }: Props) {
     <ul className={styles.GamesList}>
       {
         // check if there is data in the game list -> Game[]
-        // if so, check if the first item is an array
-        // if so, display data as array items
-        // if not, display data as object items
-        // if not, display 'No games yet' message
-
-        // check if there is data in the game list -> Game[]
         gamesList.length
           ? // if so, check if the first item is an array
             Array.isArray(gamesList[0])
@@ -63,7 +57,6 @@ export default function GamesList({ gamesList, timeSpan }: Props) {
                 />
               ))
           : // if not, display 'No games yet' message
-
             'No games yet.'
       }
     </ul>
