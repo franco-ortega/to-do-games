@@ -9,21 +9,6 @@ type Props = {
   timeSpan: TimeSpanPaths;
 };
 
-type OldGameData = [
-  string,
-  {
-    isPlayed: boolean;
-    note?: string;
-    notes?: string;
-  }
-];
-
-type NewGameData = {
-  title: string;
-  isPlayed: boolean;
-  note: string;
-};
-
 export default function GamesList({ gamesList, timeSpan }: Props) {
   const [loading, setLoading] = useState(true);
 
