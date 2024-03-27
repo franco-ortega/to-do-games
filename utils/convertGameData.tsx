@@ -14,17 +14,20 @@ export default function convertGameData() {
   const savedGames = getGames('GAMES_TO_PLAY');
 
   for (const timeSpan in savedGames) {
-    const gamesPerTimeSpan = savedGames[
-      timeSpan as TimeSpanPaths
-    ] as OldGameData[];
-    const firstItem = gamesPerTimeSpan[0];
+    const isOldGameData = Array.isArray(
+      savedGames[timeSpan as TimeSpanPaths][0]
+    );
 
-    if (Array.isArray(firstItem)) {
-      gamesPerTimeSpan.forEach(([game, { isPlayed, note }]) => {
+    if (isOldGameData) {
+      const gamesPerTimeSpan = savedGames[
+        timeSpan as TimeSpanPaths
+      ] as OldGameData[];
+
+      gamesPerTimeSpan.forEach((game) => {
         return {
-          title: game,
-          isPlayed,
-          note,
+          title: game[0],
+          isPlayed: game[1].isPlayed,
+          note: game[1].note || game[1].notes,
         };
       });
     }
