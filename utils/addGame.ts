@@ -8,10 +8,9 @@ export default function addGame(timeSpanOption: TimeSpanPaths, game: string, not
       ...savedGames,
       [timeSpanOption]: [
         ...savedGames[timeSpanOption],
-        [game, { isPlayed: false, note }],
+        [game, { title: game, isPlayed: false, note }],
       ],
     };
 
-    return updatedGames
-
+    return updatedGames;
 }

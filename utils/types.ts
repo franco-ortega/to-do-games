@@ -1,7 +1,8 @@
 export type Game = [
   string,
   {
-    isPlayed: boolean, 
+    title: string,
+    isPlayed: boolean,
     note?: string,
     notes?: string
   }
