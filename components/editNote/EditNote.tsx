@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction, useState } from 'react';
 import { getGames, setGames } from '@/utils/localStorage';
 import { TimeSpanPaths } from '@/utils/types';
-import styles from './EditNote.module.scss';
 import getGameProps from '@/utils/getGameProps';
+import styles from './EditNote.module.scss';
 
 type Props = {
   toggleEditNote: () => void;
