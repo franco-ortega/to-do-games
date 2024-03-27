@@ -29,14 +29,24 @@ export default function EditNote({
 
     const updatedGames = {
       ...savedGames,
-      [timeSpanOption]: savedGames[timeSpanOption].map(
-        ([selectedGame, { isPlayed, note }]) => {
-          if (title === selectedGame) {
-            return [title, { isPlayed, note: newNote }];
-          }
-          return [selectedGame, { isPlayed, note }];
+      [timeSpanOption]: savedGames[timeSpanOption].map((game) => {
+        const currentTitle = Array.isArray(game) ? game[0] : game.title;
+        const isPlayed = Array.isArray(game) ? game[1].isPlayed : game.isPlayed;
+        const note = Array.isArray(game) ? game[1].note : game.note;
+
+        if (title === currentTitle) {
+          return {
+            title,
+            isPlayed,
+            note: newNote,
+          };
         }
-      ),
+        return {
+          title,
+          isPlayed,
+          note,
+        };
+      }),
     };
 
     setCurrentNote(newNote);
