@@ -6,7 +6,7 @@ export default function addGame(timeSpan: TimeSpanPaths, game: string, note: str
 
   const isOldGameData = Array.isArray(savedGames[timeSpan][0])
 
-    const updatedGames = isOldGameData ? {
+    return isOldGameData ? {
       ...savedGames,
       [timeSpan]: [
         ...savedGames[timeSpan],
@@ -20,6 +20,4 @@ export default function addGame(timeSpan: TimeSpanPaths, game: string, note: str
       ]
 
     };
-
-    return updatedGames;
 }
