@@ -13,13 +13,12 @@ export default function updateGameEntry(pathname: TimeSpanPaths, game: Game) {
       const note = Array.isArray(game) ? game[1].note : game.note;
 
       if (Array.isArray(game) ? game[0] : game.title === (title)) {
-        return [
-          game,
-          {
+        return {
+            title,
             isPlayed: !isPlayed,
             note
-          },
-        ];
+          }
+        ;
       } else return gameItem;
     }),
   };
