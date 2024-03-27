@@ -15,7 +15,8 @@ export default function convertGameData() {
   const newGameData = {} as GamesToPlay;
 
   for (const timeSpan in savedGames) {
-    const currentGames = savedGames[timeSpan as TimeSpanPaths];
+    const currentTimeSpan = timeSpan as TimeSpanPaths;
+    const currentGames = savedGames[currentTimeSpan];
 
     const isOldGameData = Array.isArray(currentGames[0]);
 
@@ -32,7 +33,7 @@ export default function convertGameData() {
         }
       ) as Game[];
 
-      newGameData[timeSpan as TimeSpanPaths] = currentGamesNewData;
+      newGameData[currentTimeSpan] = currentGamesNewData;
     }
   }
 
