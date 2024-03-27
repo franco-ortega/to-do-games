@@ -3,10 +3,10 @@
 import { useState } from 'react';
 import { Game, TimeSpanPaths } from '@/utils/types';
 import updateGameEntry from '@/utils/updateGameEntry';
+import getGameProps from '@/utils/getGameProps';
 import ViewNote from '../buttons/ViewNote';
 import Note from '../note/Note';
 import styles from './GameEntry.module.scss';
-import getGameProps from '@/utils/getGameProps';
 
 type Props = {
   game: Game;

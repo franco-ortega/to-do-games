@@ -13,7 +13,6 @@ type OldGameData = [
 export default function convertGameData() {
   const savedGames = getGames('GAMES_TO_PLAY');
   const newGameData = {} as GamesToPlay;
-  console.log('TOP', newGameData);
 
   for (const timeSpan in savedGames) {
     const currentGames = savedGames[timeSpan as TimeSpanPaths];
@@ -21,7 +20,6 @@ export default function convertGameData() {
     const isOldGameData = Array.isArray(currentGames[0]);
 
     if (isOldGameData) {
-      console.log('hello old game data');
       const currentGamesOldData = currentGames as OldGameData[];
 
       const currentGamesNewData = currentGamesOldData.map(
@@ -37,7 +35,6 @@ export default function convertGameData() {
       newGameData[timeSpan as TimeSpanPaths] = currentGamesNewData;
     }
   }
-  console.log('BOTTOM', newGameData);
 
   setGames('GAMES_TO_PLAY', newGameData);
 }
