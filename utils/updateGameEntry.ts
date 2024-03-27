@@ -1,3 +1,4 @@
+import getGameProps from "./getGameProps";
 import { getGames, setGames } from "./localStorage";
 import { Game, GamesToPlay, TimeSpanPaths } from "./types";
 
@@ -10,9 +11,7 @@ export default function updateGameEntry(timeSpan: TimeSpanPaths, gameToUpdate: G
   const updatedGames = {
     ...savedGames,
     [timeSpan]: savedGames[timeSpan].map((game) => {
-      const title = Array.isArray(game) ? game[0] : game.title;
-      const isPlayed = Array.isArray(game) ? game[1].isPlayed : game.isPlayed;
-      const note = Array.isArray(game) ? game[1].note : game.note;
+      const { title, isPlayed, note } = getGameProps(game)
 
       if (isOldGameData ? gameToUpdate[0] : gameToUpdate.title === (title)) {
         return isOldGameData ? [

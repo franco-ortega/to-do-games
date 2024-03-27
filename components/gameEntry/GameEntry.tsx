@@ -6,6 +6,7 @@ import updateGameEntry from '@/utils/updateGameEntry';
 import ViewNote from '../buttons/ViewNote';
 import Note from '../note/Note';
 import styles from './GameEntry.module.scss';
+import getGameProps from '@/utils/getGameProps';
 
 type Props = {
   game: Game;
@@ -13,9 +14,7 @@ type Props = {
 };
 
 export default function GameEntry({ game, timeSpan }: Props) {
-  const title = Array.isArray(game) ? game[0] : game.title;
-  const isPlayed = Array.isArray(game) ? game[1].isPlayed : game.isPlayed;
-  const note = Array.isArray(game) ? game[1].note : game.note;
+  const { title, isPlayed, note } = getGameProps(game);
 
   const [isChecked, setIsChecked] = useState(isPlayed);
   const [isViewNote, setIsViewNote] = useState(false);

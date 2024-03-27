@@ -2,10 +2,11 @@ import { Dispatch, SetStateAction, useState } from 'react';
 import { getGames, setGames } from '@/utils/localStorage';
 import { TimeSpanPaths } from '@/utils/types';
 import styles from './EditNote.module.scss';
+import getGameProps from '@/utils/getGameProps';
 
 type Props = {
   toggleEditNote: () => void;
-  title: string;
+  titleToEdit: string;
   note: string;
   timeSpanOption: TimeSpanPaths;
   setCurrentNote: Dispatch<SetStateAction<string>>;
@@ -13,7 +14,7 @@ type Props = {
 
 export default function EditNote({
   toggleEditNote,
-  title,
+  titleToEdit,
   note,
   timeSpanOption,
   setCurrentNote,
@@ -30,11 +31,9 @@ export default function EditNote({
     const updatedGames = {
       ...savedGames,
       [timeSpanOption]: savedGames[timeSpanOption].map((game) => {
-        const currentTitle = Array.isArray(game) ? game[0] : game.title;
-        const isPlayed = Array.isArray(game) ? game[1].isPlayed : game.isPlayed;
-        const note = Array.isArray(game) ? game[1].note : game.note;
+        const { title, isPlayed, note } = getGameProps(game);
 
-        if (title === currentTitle) {
+        if (title === titleToEdit) {
           return {
             title,
             isPlayed,
