@@ -14,16 +14,14 @@ export default function convertGameData() {
   const savedGames = getGames('GAMES_TO_PLAY');
 
   for (const timeSpan in savedGames) {
-    const isOldGameData = Array.isArray(
-      savedGames[timeSpan as TimeSpanPaths][0]
-    );
+    const currentGames = savedGames[timeSpan as TimeSpanPaths];
+
+    const isOldGameData = Array.isArray(currentGames[0]);
 
     if (isOldGameData) {
-      const gamesPerTimeSpan = savedGames[
-        timeSpan as TimeSpanPaths
-      ] as OldGameData[];
+      const currentGamesOldData = currentGames as OldGameData[];
 
-      gamesPerTimeSpan.forEach((game) => {
+      currentGamesOldData.forEach((game) => {
         return {
           title: game[0],
           isPlayed: game[1].isPlayed,
