@@ -26,7 +26,7 @@ export default function GameEntry({ game, timeSpan }: Props) {
     setIsChecked((prevState) => !prevState);
 
     // change updateGameEntry to updateGameStatus
-    updateGameEntry(timeSpan, title, isPlayed, currentNote);
+    updateGameEntry(timeSpan, game);
   };
 
   const toggleNote = () => {
