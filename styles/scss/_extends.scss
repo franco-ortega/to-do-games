@@ -4,3 +4,12 @@
   line-height: 1;
   text-align: center;
 }
+
+%note-button {
+  background-color: var(--bkgd-btn-edit);
+  color: var(--text-btn-edit);
+  border-radius: var(--bdr-rad-btn);
+  padding: var(--pad-btn);
+  min-width: fit-content;
+  width: 5rem;
+}
