@@ -21,11 +21,11 @@ export default function convertGameData() {
     if (isOldGameData) {
       const currentGamesOldData = currentGames as OldGameData[];
 
-      currentGamesOldData.forEach((game) => {
+      currentGamesOldData.forEach(([title, { isPlayed, note, notes }]) => {
         return {
-          title: game[0],
-          isPlayed: game[1].isPlayed,
-          note: game[1].note || game[1].notes,
+          title,
+          isPlayed,
+          note: note || notes,
         };
       });
     }
