@@ -1,19 +1,21 @@
 import { getGames, setGames } from "./localStorage";
 import { Game, GamesToPlay, TimeSpanPaths } from "./types";
 
-export default function updateGameEntry(pathname: TimeSpanPaths, gameToUpdate: Game) {
+export default function updateGameEntry(timeSpan: TimeSpanPaths, gameToUpdate: Game) {
+
+  const isOldGameData = Array.isArray(gameToUpdate);
 
   const savedGames = getGames('GAMES_TO_PLAY') as GamesToPlay;
 
   const updatedGames = {
     ...savedGames,
-    [pathname]: savedGames[pathname].map((game) => {
+    [timeSpan]: savedGames[timeSpan].map((game) => {
       const title = Array.isArray(game) ? game[0] : game.title;
       const isPlayed = Array.isArray(game) ? game[1].isPlayed : game.isPlayed;
       const note = Array.isArray(game) ? game[1].note : game.note;
 
-      if (Array.isArray(gameToUpdate) ? gameToUpdate[0] : gameToUpdate.title === (title)) {
-        return Array.isArray(gameToUpdate) ? [
+      if (isOldGameData ? gameToUpdate[0] : gameToUpdate.title === (title)) {
+        return isOldGameData ? [
           title,
           {
             isPlayed: !isPlayed,

@@ -13,7 +13,6 @@ type Props = {
 };
 
 export default function GameEntry({ game, timeSpan }: Props) {
-  // const [title, { isPlayed, note }] = game;
   const title = Array.isArray(game) ? game[0] : game.title;
   const isPlayed = Array.isArray(game) ? game[1].isPlayed : game.isPlayed;
   const note = Array.isArray(game) ? game[1].note : game.note;
