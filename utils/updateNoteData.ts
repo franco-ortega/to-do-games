@@ -26,4 +26,4 @@ export default function updateNoteData() {
   }
 
   setGames('GAMES_TO_PLAY', savedGames)
-}
+};
