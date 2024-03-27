@@ -9,6 +9,21 @@ type Props = {
   timeSpan: TimeSpanPaths;
 };
 
+type OldGameData = [
+  string,
+  {
+    isPlayed: boolean;
+    note?: string;
+    notes?: string;
+  }
+];
+
+type NewGameData = {
+  title: string;
+  isPlayed: boolean;
+  note: string;
+};
+
 export default function GamesList({ gamesList, timeSpan }: Props) {
   const [loading, setLoading] = useState(true);
 
@@ -33,11 +48,19 @@ export default function GamesList({ gamesList, timeSpan }: Props) {
             Array.isArray(gamesList[0])
             ? // if so, display data as array items
               gamesList.map((game) => (
-                <GameEntry key={game[0]} game={game} timeSpan={timeSpan} />
+                <GameEntry
+                  key={Array.isArray(game) ? game[0] : game.title}
+                  game={game}
+                  timeSpan={timeSpan}
+                />
               ))
             : // if not, display data as object items
               gamesList.map((game) => (
-                <GameEntry key={game.title} game={game} timeSpan={timeSpan} />
+                <GameEntry
+                  key={Array.isArray(game) ? game[0] : game.title}
+                  game={game}
+                  timeSpan={timeSpan}
+                />
               ))
           : // if not, display 'No games yet' message
 
