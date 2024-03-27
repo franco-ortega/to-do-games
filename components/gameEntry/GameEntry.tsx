@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Game, TimeSpanPaths } from '@/utils/types';
 import updateGameEntry from '@/utils/updateGameEntry';
+import getGameProps from '@/utils/getGameProps';
 import ViewNote from '../buttons/ViewNote';
 import Note from '../note/Note';
 import styles from './GameEntry.module.scss';
@@ -13,7 +14,7 @@ type Props = {
 };
 
 export default function GameEntry({ game, timeSpan }: Props) {
-  const [title, { isPlayed, note }] = game;
+  const { title, isPlayed, note } = getGameProps(game);
 
   const [isChecked, setIsChecked] = useState(isPlayed);
   const [isViewNote, setIsViewNote] = useState(false);
@@ -23,7 +24,7 @@ export default function GameEntry({ game, timeSpan }: Props) {
     setIsChecked((prevState) => !prevState);
 
     // change updateGameEntry to updateGameStatus
-    updateGameEntry(timeSpan, title, isPlayed, currentNote);
+    updateGameEntry(timeSpan, game);
   };
 
   const toggleNote = () => {

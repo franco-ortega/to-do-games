@@ -1,25 +1,34 @@
+import getGameProps from "./getGameProps";
 import { getGames, setGames } from "./localStorage";
-import { GamesToPlay, TimeSpanPaths } from "./types";
+import { Game, GamesToPlay, TimeSpanPaths } from "./types";
 
-export default function updateGameEntry(pathname: TimeSpanPaths, game: string, isPlayed: boolean, note: string) {
+export default function updateGameEntry(timeSpan: TimeSpanPaths, gameToUpdate: Game) {
+
+  const isOldGameData = Array.isArray(gameToUpdate);
 
   const savedGames = getGames('GAMES_TO_PLAY') as GamesToPlay;
 
   const updatedGames = {
     ...savedGames,
-    [pathname]: savedGames[pathname].map((gameItem) => {
-      if (gameItem[0] === (game)) {
-        return [
-          game,
+    [timeSpan]: savedGames[timeSpan].map((game) => {
+      const { title, isPlayed, note } = getGameProps(game)
+
+      if (isOldGameData ? gameToUpdate[0] : gameToUpdate.title === (title)) {
+        return isOldGameData ? [
+          title,
           {
             isPlayed: !isPlayed,
             note
-          },
-        ];
-      } else return gameItem;
+          }
+        ] : 
+        {
+          title,
+          isPlayed: !isPlayed,
+          note
+        };
+      } else return game;
     }),
   };
 
   setGames('GAMES_TO_PLAY', updatedGames);
-
-}
+};

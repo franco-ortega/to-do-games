@@ -1,11 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { TimeSpanOptions } from '@/utils/enums';
 import { getGames } from '@/utils/localStorage';
 import { Game, TimeSpanPaths } from '../../utils/types';
-import createHeaderFromPath from '@/utils/createHeaderFromPath';
 import updateNoteData from '@/utils/updateNoteData';
+import convertGameData from '@/utils/convertGameData';
+import createHeaderFromPath from '@/utils/createHeaderFromPath';
 import GamesList from '../gamesList/GamesList';
 import styles from './GamesToPlay.module.scss';
 
@@ -21,6 +21,15 @@ export default function GamesToPlay({ timeSpan }: Props): JSX.Element {
     updateNoteData();
 
     const gamesFromLocalStorage = getGames('GAMES_TO_PLAY');
+
+    if (
+      gamesFromLocalStorage[timeSpan] &&
+      Array.isArray(gamesFromLocalStorage[timeSpan][0])
+    ) {
+      console.log('hello convert');
+      convertGameData();
+    }
+
     const gamesByTimeSpan = gamesFromLocalStorage[timeSpan]
       ? gamesFromLocalStorage[timeSpan]
       : [];
