@@ -22,7 +22,10 @@ export default function GamesToPlay({ timeSpan }: Props): JSX.Element {
 
     const gamesFromLocalStorage = getGames('GAMES_TO_PLAY');
 
-    if (Array.isArray(gamesFromLocalStorage[timeSpan][0])) {
+    if (
+      gamesFromLocalStorage[timeSpan] &&
+      Array.isArray(gamesFromLocalStorage[timeSpan][0])
+    ) {
       console.log('hello convert');
       convertGameData();
     }
