@@ -10,12 +10,6 @@ type OldGameData = [
   }
 ];
 
-type NewGameData = {
-  title: string;
-  isPlayed: boolean;
-  note: string;
-};
-
 export default function convertGameData() {
   const savedGames = getGames('GAMES_TO_PLAY');
 
