@@ -1,5 +1,5 @@
 import { getGames, setGames } from './localStorage';
-import { TimeSpanPaths } from './types';
+import { Game, GamesToPlay, TimeSpanPaths } from './types';
 
 type OldGameData = [
   string,
@@ -12,6 +12,8 @@ type OldGameData = [
 
 export default function convertGameData() {
   const savedGames = getGames('GAMES_TO_PLAY');
+  const newGameData = {} as GamesToPlay;
+  console.log('TOP', newGameData);
 
   for (const timeSpan in savedGames) {
     const currentGames = savedGames[timeSpan as TimeSpanPaths];
@@ -19,17 +21,23 @@ export default function convertGameData() {
     const isOldGameData = Array.isArray(currentGames[0]);
 
     if (isOldGameData) {
+      console.log('hello old game data');
       const currentGamesOldData = currentGames as OldGameData[];
 
-      currentGamesOldData.forEach(([title, { isPlayed, note, notes }]) => {
-        return {
-          title,
-          isPlayed,
-          note: note || notes,
-        };
-      });
+      const currentGamesNewData = currentGamesOldData.map(
+        ([title, { isPlayed, note, notes }]) => {
+          return {
+            title,
+            isPlayed,
+            note: note || notes,
+          };
+        }
+      ) as Game[];
+
+      newGameData[timeSpan as TimeSpanPaths] = currentGamesNewData;
     }
   }
+  console.log('BOTTOM', newGameData);
 
-  setGames('GAMES_TO_PLAY', savedGames);
+  setGames('GAMES_TO_PLAY', newGameData);
 }
