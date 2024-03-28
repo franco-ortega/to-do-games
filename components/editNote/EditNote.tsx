@@ -54,6 +54,7 @@ export default function EditNote({
     setCurrentNote(newNote);
     setGames('GAMES_TO_PLAY', updatedGames);
     toggleEditNote();
+    toggleNote();
   };
 
   return (
