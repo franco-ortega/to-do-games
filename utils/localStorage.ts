@@ -8,15 +8,10 @@ export function setGames(key: string, value: GamesToPlay) {
 export function getGames(key: string) {
   const stringyGames = window.localStorage.getItem(key);
 
-  if(stringyGames) {
-    const parsedGames: GamesToPlay = JSON.parse(stringyGames);
-    return parsedGames
-  }
-
-  return {
+  // return data from local storage or create new data
+  return stringyGames ? JSON.parse(stringyGames) as GamesToPlay : {
     week: [],
     month: [],
     year: []
-    
-  } as GamesToPlay;
+  } as GamesToPlay;;
 };
