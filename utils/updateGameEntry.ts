@@ -26,8 +26,10 @@ export default function updateGameEntry(timeSpan: TimeSpanPaths, gameToUpdate: G
           isPlayed: !isPlayed,
           note
         };
-      } else return game;
-    }),
+      };
+
+      return game;
+    })
   };
 
   setGames('GAMES_TO_PLAY', updatedGames);
