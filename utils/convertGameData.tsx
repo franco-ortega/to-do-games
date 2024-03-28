@@ -1,14 +1,5 @@
 import { getGames, setGames } from './localStorage';
-import { Game, GamesToPlay, TimeSpanPaths } from './types';
-
-type OldGameData = [
-  string,
-  {
-    isPlayed: boolean;
-    note?: string;
-    notes?: string;
-  }
-];
+import { Game, GamesToPlay, OldGameData, TimeSpanPaths } from './types';
 
 export default function convertGameData() {
   const savedGames = getGames('GAMES_TO_PLAY');

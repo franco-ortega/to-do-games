@@ -1,15 +1,19 @@
-export type Game = [
+export type OldGameData = [
   string,
   {
-    isPlayed: boolean,
-    note?: string,
-    notes?: string
+    isPlayed: boolean;
+    note?: string;
+    notes?: string;
   }
-] | {
+];
+
+export type NewGameData = {
   title: string,
   isPlayed: boolean,
   note: string,
 };
+
+export type Game = OldGameData | NewGameData;
 
 export type GamesToPlay = {
   week: Game[],
