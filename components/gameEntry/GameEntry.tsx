@@ -34,9 +34,15 @@ export default function GameEntry({ game, timeSpan }: Props) {
     setIsViewNote((prev) => !prev);
   };
 
+  const toggleViewNote = () => {
+    setIsViewNote((prev) => !prev);
+  };
+
   const toggleAddNote = () => {
     console.log('add note');
     // open note editor -> EditNote
+    setIsViewNote((prev) => !prev);
+    setIsEditNote((prev) => !prev);
   };
 
   const toggleEditNote = () => {
@@ -70,31 +76,35 @@ export default function GameEntry({ game, timeSpan }: Props) {
         <div>
           <p>[status: {isChecked ? 'played 🎉' : 'unplayed'}]</p>
           {currentNote ? (
-            <ViewNote isViewNote={isViewNote} toggleNote={toggleNote} />
+            <ViewNote isViewNote={isViewNote} toggleNote={toggleViewNote} />
           ) : (
-            !isViewNote && <AddNoteBtn toggleAddNote={toggleNote} />
+            !isViewNote && <AddNoteBtn toggleAddNote={toggleAddNote} />
           )}
         </div>
-        {isViewNote &&
-          (!isEditNote ? (
-            <Note
-              currentNote={currentNote}
-              setCurrentNote={setCurrentNote}
-              title={title}
-              timeSpan={timeSpan}
-              toggleNote={toggleNote}
-              toggleEditNote={toggleEditNote}
-            />
-          ) : (
-            <EditNote
-              toggleEditNote={toggleEditNote}
-              toggleNote={toggleNote}
-              titleToEdit={title}
-              note={currentNote}
-              timeSpanOption={timeSpan}
-              setCurrentNote={setCurrentNote}
-            />
-          ))}
+        {isViewNote && (
+          <div>
+            <hr />
+            {!isEditNote ? (
+              <Note
+                currentNote={currentNote}
+                setCurrentNote={setCurrentNote}
+                title={title}
+                timeSpan={timeSpan}
+                toggleNote={toggleNote}
+                toggleEditNote={toggleEditNote}
+              />
+            ) : (
+              <EditNote
+                toggleEditNote={toggleEditNote}
+                toggleNote={toggleNote}
+                titleToEdit={title}
+                note={currentNote}
+                timeSpanOption={timeSpan}
+                setCurrentNote={setCurrentNote}
+              />
+            )}
+          </div>
+        )}
       </div>
     </li>
   );

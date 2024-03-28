@@ -40,7 +40,7 @@ export default function Note({
 
   return (
     <div className={styles.Note}>
-      <hr />
+      {/* <hr /> */}
       {/* {!currentNote && isEditNote ? (
         <EditNote
           toggleEditNote={toggleEditNote}
