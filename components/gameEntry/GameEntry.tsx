@@ -7,6 +7,7 @@ import getGameProps from '@/utils/getGameProps';
 import ViewNote from '../buttons/ViewNote';
 import Note from '../note/Note';
 import styles from './GameEntry.module.scss';
+import AddNoteBtn from '../buttons/AddNoteBtn';
 
 type Props = {
   game: Game;
@@ -31,6 +32,11 @@ export default function GameEntry({ game, timeSpan }: Props) {
     setIsViewNote((prev) => !prev);
   };
 
+  const toggleAddNote = () => {
+    console.log('add note');
+    // open note editor -> EditNote
+  };
+
   return (
     <li className={styles.GameEntry}>
       <label htmlFor={title}>
@@ -45,7 +51,11 @@ export default function GameEntry({ game, timeSpan }: Props) {
       <div>
         <div>
           <p>[status: {isChecked ? 'played 🎉' : 'unplayed'}]</p>
-          <ViewNote isViewNote={isViewNote} toggleNote={toggleNote} />
+          {currentNote ? (
+            <ViewNote isViewNote={isViewNote} toggleNote={toggleNote} />
+          ) : (
+            !isViewNote && <AddNoteBtn toggleAddNote={toggleNote} />
+          )}
         </div>
         {isViewNote && (
           <Note
@@ -53,6 +63,7 @@ export default function GameEntry({ game, timeSpan }: Props) {
             setCurrentNote={setCurrentNote}
             title={title}
             timeSpan={timeSpan}
+            toggleNote={toggleNote}
           />
         )}
       </div>

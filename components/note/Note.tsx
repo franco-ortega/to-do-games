@@ -8,6 +8,7 @@ type Props = {
   setCurrentNote: Dispatch<SetStateAction<string>>;
   title: string;
   timeSpan: TimeSpanPaths;
+  toggleNote: () => void;
 };
 
 export default function Note({
@@ -15,6 +16,7 @@ export default function Note({
   setCurrentNote,
   title,
   timeSpan,
+  toggleNote,
 }: Props) {
   const [isEditNote, setIsEditNote] = useState(false);
 
@@ -25,7 +27,16 @@ export default function Note({
   return (
     <div className={styles.Note}>
       <hr />
-      {!isEditNote ? (
+      {!currentNote && isEditNote ? (
+        <EditNote
+          toggleEditNote={toggleEditNote}
+          titleToEdit={title}
+          note={currentNote}
+          timeSpanOption={timeSpan}
+          setCurrentNote={setCurrentNote}
+          toggleNote={toggleNote}
+        />
+      ) : !isEditNote && currentNote ? (
         <>
           <div>
             <h4>Note</h4>
@@ -36,6 +47,7 @@ export default function Note({
       ) : (
         <EditNote
           toggleEditNote={toggleEditNote}
+          toggleNote={toggleNote}
           titleToEdit={title}
           note={currentNote}
           timeSpanOption={timeSpan}

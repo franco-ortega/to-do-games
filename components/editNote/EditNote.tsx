@@ -10,6 +10,7 @@ type Props = {
   note: string;
   timeSpanOption: TimeSpanPaths;
   setCurrentNote: Dispatch<SetStateAction<string>>;
+  toggleNote: () => void;
 };
 
 export default function EditNote({
@@ -18,11 +19,13 @@ export default function EditNote({
   note,
   timeSpanOption,
   setCurrentNote,
+  toggleNote,
 }: Props) {
   const [newNote, setNewNote] = useState(note);
 
   const onHandleCancel = () => {
     toggleEditNote();
+    toggleNote();
   };
 
   const onHandleSave = () => {

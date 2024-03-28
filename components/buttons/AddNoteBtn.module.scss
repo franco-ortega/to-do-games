@@ -1,3 +1,6 @@
-.AddNoteButton {
-  background-color: aliceblue;
+@use '../../styles/scss/' as *;
+
+.AddNoteBtn {
+  
+  @extend %note-button;
 }
