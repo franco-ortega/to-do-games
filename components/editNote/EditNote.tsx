@@ -10,7 +10,7 @@ type Props = {
   note: string;
   timeSpanOption: TimeSpanPaths;
   setCurrentNote: Dispatch<SetStateAction<string>>;
-  toggleNote: () => void;
+  // toggleNote: () => void;
 };
 
 export default function EditNote({
@@ -19,13 +19,13 @@ export default function EditNote({
   note,
   timeSpanOption,
   setCurrentNote,
-  toggleNote,
-}: Props) {
+}: // toggleNote,
+Props) {
   const [newNote, setNewNote] = useState(note);
 
   const onHandleCancel = () => {
     toggleEditNote();
-    toggleNote();
+    // toggleNote();
   };
 
   const onHandleSave = () => {
@@ -54,7 +54,7 @@ export default function EditNote({
     setCurrentNote(newNote);
     setGames('GAMES_TO_PLAY', updatedGames);
     toggleEditNote();
-    toggleNote();
+    // toggleNote();
   };
 
   return (

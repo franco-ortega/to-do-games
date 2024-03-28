@@ -30,9 +30,9 @@ export default function GameEntry({ game, timeSpan }: Props) {
     updateGameEntry(timeSpan, game);
   };
 
-  const toggleNote = () => {
-    setIsViewNote((prev) => !prev);
-  };
+  // const toggleNote = () => {
+  //   setIsViewNote((prev) => !prev);
+  // };
 
   const toggleViewNote = () => {
     setIsViewNote((prev) => !prev);
@@ -51,8 +51,8 @@ export default function GameEntry({ game, timeSpan }: Props) {
 
   // Do no display Note
   // ---- if note exists, display View Note
-  // ---- ---- if View Note clicked, display Hide Note, Note and Edit Note button
-  // ---- ---- ---- if Hide Note clicked, hide Note and display View Note
+  // ---- ---- if View Note clicked, display Note
+  // ---- ---- ---- if Hide Note clicked, hide Note
   // ---- ---- ---- if Edit Note clicked, display EditNote
   // ---- ---- ---- ---- if note added and Save clicked, save note and display updated Note
   // ---- ---- ---- ---- if Cancel clicked, display previous Note
@@ -85,22 +85,15 @@ export default function GameEntry({ game, timeSpan }: Props) {
           <div>
             <hr />
             {!isEditNote ? (
-              <Note
-                currentNote={currentNote}
-                setCurrentNote={setCurrentNote}
-                title={title}
-                timeSpan={timeSpan}
-                toggleNote={toggleNote}
-                toggleEditNote={toggleEditNote}
-              />
+              <Note currentNote={currentNote} toggleEditNote={toggleEditNote} />
             ) : (
               <EditNote
                 toggleEditNote={toggleEditNote}
-                toggleNote={toggleNote}
                 titleToEdit={title}
                 note={currentNote}
                 timeSpanOption={timeSpan}
                 setCurrentNote={setCurrentNote}
+                // toggleNote={toggleNote}
               />
             )}
           </div>
