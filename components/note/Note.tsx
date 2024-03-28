@@ -9,6 +9,7 @@ type Props = {
   title: string;
   timeSpan: TimeSpanPaths;
   toggleNote: () => void;
+  toggleEditNote: () => void;
 };
 
 export default function Note({
@@ -17,12 +18,13 @@ export default function Note({
   title,
   timeSpan,
   toggleNote,
+  toggleEditNote,
 }: Props) {
-  const [isEditNote, setIsEditNote] = useState(false);
+  // const [isEditNote, setIsEditNote] = useState(false);
 
-  const toggleEditNote = () => {
-    setIsEditNote((prev) => !prev);
-  };
+  // const toggleEditNote = () => {
+  //   setIsEditNote((prev) => !prev);
+  // };
 
   // Do no display Note
   // ---- if note exists, display View Note

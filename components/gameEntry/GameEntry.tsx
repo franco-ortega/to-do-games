@@ -83,6 +83,7 @@ export default function GameEntry({ game, timeSpan }: Props) {
               title={title}
               timeSpan={timeSpan}
               toggleNote={toggleNote}
+              toggleEditNote={toggleEditNote}
             />
           ) : (
             <EditNote
