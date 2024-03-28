@@ -15,13 +15,11 @@ export default function convertGameData() {
       const currentGamesOldData = currentGames as OldGameData[];
 
       const currentGamesNewData = currentGamesOldData.map(
-        ([title, { isPlayed, note, notes }]) => {
-          return {
-            title,
-            isPlayed,
-            note: note || notes,
-          };
-        }
+        ([title, { isPlayed, note, notes }]) => ({
+          title,
+          isPlayed,
+          note: note || notes,
+        })
       ) as Game[];
 
       newGameData[currentTimeSpan] = currentGamesNewData;
