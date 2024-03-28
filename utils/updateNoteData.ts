@@ -10,20 +10,20 @@ export default function updateNoteData() {
 
     if(gamesPerTimeSpan.length) {
       gamesPerTimeSpan.forEach(game => {
-        const gameData = game[1];
+        const gameData = Array.isArray(game) ? game[1] : game;
 
         // this checks to see if "notes" exists
         if (Object.keys(gameData).includes('notes')) {
 
           // first - add the "note" variable
-          gameData.note = gameData.notes
+          gameData.note = Array.isArray(game) ? game[1].notes : game.note; 
           
           // second - remove the "notes" variable
-          delete gameData.notes
+          Array.isArray(game) && delete game[1].notes 
         }
       })
     }
   }
 
   setGames('GAMES_TO_PLAY', savedGames)
-}
+};

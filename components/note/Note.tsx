@@ -36,7 +36,7 @@ export default function Note({
       ) : (
         <EditNote
           toggleEditNote={toggleEditNote}
-          title={title}
+          titleToEdit={title}
           note={currentNote}
           timeSpanOption={timeSpan}
           setCurrentNote={setCurrentNote}

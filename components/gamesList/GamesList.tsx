@@ -22,7 +22,11 @@ export default function GamesList({ gamesList, timeSpan }: Props) {
     <ul className={styles.GamesList}>
       {gamesList.length
         ? gamesList.map((game) => (
-            <GameEntry key={game[0]} game={game} timeSpan={timeSpan} />
+            <GameEntry
+              key={Array.isArray(game) ? game[0] : game.title}
+              game={game}
+              timeSpan={timeSpan}
+            />
           ))
         : 'No games yet.'}
     </ul>
