@@ -33,15 +33,11 @@ export default function GameEntry({ game, timeSpan }: Props) {
   };
 
   const toggleAddNote = () => {
-    console.log('add note: sets isViewNote to TRUE and isEditNote to TRUE');
-    // open note editor -> EditNote
     setIsViewNote((prev) => !prev);
     setIsEditNote((prev) => !prev);
   };
 
   const toggleEditNote = () => {
-    // in Note, this sets isEditNote to TRUE
-    // in EditNote, this probly sets isEditNote to FALSE
     setIsEditNote((prev) => !prev);
   };
 
