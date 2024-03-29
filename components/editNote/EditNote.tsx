@@ -24,12 +24,10 @@ export default function EditNote({
   const [newNote, setNewNote] = useState(currentNote);
 
   const onHandleCancel = () => {
-    if (newNote) toggleEditNote();
+    setNewNote('');
+    toggleEditNote();
 
-    if (!newNote && currentNote) {
-      // toggleViewNote();
-      toggleEditNote();
-    }
+    if (!currentNote) toggleViewNote();
   };
 
   const onHandleSave = () => {
