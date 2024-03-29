@@ -2,7 +2,7 @@ import styles from './Button.module.scss';
 
 type Props = {
   text: string;
-  handler: () => {};
+  handler: () => void;
 };
 
 export default function Button({ text, handler }: Props) {
