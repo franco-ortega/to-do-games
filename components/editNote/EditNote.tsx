@@ -1,10 +1,8 @@
 import { useState } from 'react';
-import { getGames, setGames } from '@/utils/localStorage';
 import { TimeSpanPaths } from '@/utils/types';
-import getGameProps from '@/utils/getGameProps';
-import styles from './EditNote.module.scss';
 import saveNote from '@/utils/saveNote';
 import Button from '../buttons/Button';
+import styles from './EditNote.module.scss';
 
 type Props = {
   timeSpan: TimeSpanPaths;
