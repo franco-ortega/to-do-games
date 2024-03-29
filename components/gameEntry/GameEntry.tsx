@@ -40,7 +40,7 @@ export default function GameEntry({ game, timeSpan }: Props) {
     setIsEditNote((prev) => !prev);
   };
 
-  const updateNote = (newNote: string) => {
+  const updateCurrentNote = (newNote: string) => {
     setCurrentNote(newNote);
   };
 
@@ -72,7 +72,7 @@ export default function GameEntry({ game, timeSpan }: Props) {
             currentNote={currentNote}
             toggleEditNote={toggleEditNote}
             toggleViewNote={toggleViewNote}
-            updateNote={updateNote}
+            updateCurrentNote={updateCurrentNote}
           />
         )}
       </div>

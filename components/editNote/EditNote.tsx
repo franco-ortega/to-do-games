@@ -11,7 +11,7 @@ type Props = {
   currentNote: string;
   toggleEditNote: () => void;
   toggleViewNote: () => void;
-  updateNote: (newNote: string) => void;
+  updateCurrentNote: (newNote: string) => void;
 };
 
 export default function EditNote({
@@ -20,7 +20,7 @@ export default function EditNote({
   currentNote,
   toggleEditNote,
   toggleViewNote,
-  updateNote,
+  updateCurrentNote,
 }: Props) {
   const [noteToEdit, setNoteToEdit] = useState(currentNote);
 
@@ -31,8 +31,7 @@ export default function EditNote({
 
   const onHandleSave = () => {
     saveNote(noteToEdit, timeSpan, titleToEdit);
-
-    updateNote(noteToEdit);
+    updateCurrentNote(noteToEdit);
 
     if (noteToEdit) {
       toggleEditNote();

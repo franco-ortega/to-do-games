@@ -10,7 +10,7 @@ type Props = {
   isEditNote: boolean;
   toggleEditNote: () => void;
   toggleViewNote: () => void;
-  updateNote: (newNote: string) => void;
+  updateCurrentNote: (newNote: string) => void;
 };
 
 export default function GameNote({
@@ -20,7 +20,7 @@ export default function GameNote({
   toggleViewNote,
   title,
   timeSpan,
-  updateNote,
+  updateCurrentNote,
 }: Props) {
   return (
     <div className={styles.GameNote}>
@@ -32,7 +32,7 @@ export default function GameNote({
           titleToEdit={title}
           timeSpan={timeSpan}
           currentNote={currentNote}
-          updateNote={updateNote}
+          updateCurrentNote={updateCurrentNote}
         />
       ) : (
         <Note note={currentNote} toggleEditNote={toggleEditNote} />
