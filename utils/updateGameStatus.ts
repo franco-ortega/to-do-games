@@ -2,7 +2,7 @@ import getGameProps from "./getGameProps";
 import { getGames, setGames } from "./localStorage";
 import { Game, GamesToPlay, TimeSpanPaths } from "./types";
 
-export default function updateGameEntry(timeSpan: TimeSpanPaths, gameToUpdate: Game) {
+export default function updateGameStatus(timeSpan: TimeSpanPaths, gameToUpdate: Game) {
 
   const isOldGameData = Array.isArray(gameToUpdate);
 
