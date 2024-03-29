@@ -66,12 +66,12 @@ export default function GameEntry({ game, timeSpan }: Props) {
         </div>
         {isViewNote && (
           <GameNote
+            timeSpan={timeSpan}
+            title={title}
             isEditNote={isEditNote}
+            currentNote={currentNote}
             toggleEditNote={toggleEditNote}
             toggleViewNote={toggleViewNote}
-            title={title}
-            timeSpan={timeSpan}
-            currentNote={currentNote}
             updateNote={updateNote}
           />
         )}

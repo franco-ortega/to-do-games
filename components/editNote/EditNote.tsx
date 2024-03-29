@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import { getGames, setGames } from '@/utils/localStorage';
 import { TimeSpanPaths } from '@/utils/types';
 import getGameProps from '@/utils/getGameProps';
@@ -8,7 +8,7 @@ type Props = {
   currentNote: string;
   updateNote: (newNote: string) => void;
   titleToEdit: string;
-  timeSpanOption: TimeSpanPaths;
+  timeSpan: TimeSpanPaths;
   toggleEditNote: () => void;
   toggleViewNote: () => void;
 };
@@ -17,7 +17,7 @@ export default function EditNote({
   currentNote,
   updateNote,
   titleToEdit,
-  timeSpanOption,
+  timeSpan,
   toggleEditNote,
   toggleViewNote,
 }: Props) {
@@ -25,7 +25,6 @@ export default function EditNote({
 
   const onHandleCancel = () => {
     toggleEditNote();
-
     if (!currentNote) toggleViewNote();
   };
 
@@ -34,7 +33,7 @@ export default function EditNote({
 
     const updatedGames = {
       ...savedGames,
-      [timeSpanOption]: savedGames[timeSpanOption].map((game) => {
+      [timeSpan]: savedGames[timeSpan].map((game) => {
         const { title, isPlayed, note } = getGameProps(game);
 
         if (title === titleToEdit) {

@@ -4,12 +4,12 @@ import Note from '../note/Note';
 import styles from './GameNote.module.scss';
 
 type Props = {
-  isEditNote: boolean;
+  timeSpan: TimeSpanPaths;
+  title: string;
   currentNote: string;
+  isEditNote: boolean;
   toggleEditNote: () => void;
   toggleViewNote: () => void;
-  title: string;
-  timeSpan: TimeSpanPaths;
   updateNote: (newNote: string) => void;
 };
 
@@ -30,7 +30,7 @@ export default function GameNote({
           toggleEditNote={toggleEditNote}
           toggleViewNote={toggleViewNote}
           titleToEdit={title}
-          timeSpanOption={timeSpan}
+          timeSpan={timeSpan}
           currentNote={currentNote}
           updateNote={updateNote}
         />
