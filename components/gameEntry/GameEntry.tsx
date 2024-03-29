@@ -21,7 +21,7 @@ export default function GameEntry({ game, timeSpan }: Props) {
   const [isChecked, setIsChecked] = useState(isPlayed);
   const [isViewNote, setIsViewNote] = useState(false);
   const [isEditNote, setIsEditNote] = useState(false);
-  const [currentNote, setCurrentNote] = useState(note || '');
+  const [currentNote, setCurrentNote] = useState(note);
 
   const isCheckedChange = () => {
     setIsChecked((prevState) => !prevState);
