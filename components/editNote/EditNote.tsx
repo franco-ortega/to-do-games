@@ -21,10 +21,9 @@ export default function EditNote({
   toggleEditNote,
   toggleViewNote,
 }: Props) {
-  const [noteToEdit, setNoteToEdit] = useState('');
+  const [noteToEdit, setNoteToEdit] = useState(currentNote);
 
   const onHandleCancel = () => {
-    setNoteToEdit('');
     toggleEditNote();
 
     if (!currentNote) toggleViewNote();
