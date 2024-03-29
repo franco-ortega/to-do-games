@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { Game, TimeSpanPaths } from '@/utils/types';
-import updateGameEntry from '@/utils/updateGameEntry';
 import getGameProps from '@/utils/getGameProps';
+import updateGameStatus from '@/utils/updateGameStatus';
 import ViewNote from '../buttons/ViewNote';
 import AddNoteBtn from '../buttons/AddNoteBtn';
 import Note from '../note/Note';
@@ -25,9 +25,7 @@ export default function GameEntry({ game, timeSpan }: Props) {
 
   const isCheckedChange = () => {
     setIsChecked((prevState) => !prevState);
-
-    // change updateGameEntry to updateGameStatus
-    updateGameEntry(timeSpan, game);
+    updateGameStatus(timeSpan, game);
   };
 
   const toggleViewNote = () => {
