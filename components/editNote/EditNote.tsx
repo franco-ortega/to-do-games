@@ -21,7 +21,7 @@ export default function EditNote({
   toggleEditNote,
   toggleViewNote,
 }: Props) {
-  const [newNote, setNewNote] = useState(currentNote);
+  const [newNote, setNewNote] = useState('');
 
   const onHandleCancel = () => {
     setNewNote('');
@@ -73,7 +73,7 @@ export default function EditNote({
         <textarea
           rows={4}
           id='edit-note'
-          value={newNote}
+          defaultValue={currentNote}
           onChange={(e) => setNewNote(e.target.value)}
         />
         <button onClick={onHandleSave}>Save</button>
