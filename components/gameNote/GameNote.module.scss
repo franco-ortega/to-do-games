@@ -3,15 +3,4 @@
     margin-block: 0.5rem;
     border-color: hsl(275, 100%, 66%);
   }
-
-  & > div:first-child {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  
-    & > p {
-      line-height: 1.5rem;
-      min-width: fit-content;
-    }
-  }
 }
