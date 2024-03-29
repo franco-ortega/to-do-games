@@ -32,12 +32,12 @@ export default function GameEntry({ game, timeSpan }: Props) {
     setIsViewNote((prev) => !prev);
   };
 
-  const toggleAddNote = () => {
-    setIsViewNote((prev) => !prev);
+  const toggleEditNote = () => {
     setIsEditNote((prev) => !prev);
   };
 
-  const toggleEditNote = () => {
+  const toggleAddNote = () => {
+    setIsViewNote((prev) => !prev);
     setIsEditNote((prev) => !prev);
   };
 
