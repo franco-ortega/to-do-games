@@ -9,6 +9,7 @@ import ViewNote from '../buttons/ViewNoteBtn';
 import Note from '../note/Note';
 import EditNote from '../editNote/EditNote';
 import styles from './GameEntry.module.scss';
+import GameNote from '../gameNote/GameNote';
 
 type Props = {
   game: Game;
@@ -41,6 +42,10 @@ export default function GameEntry({ game, timeSpan }: Props) {
     setIsEditNote((prev) => !prev);
   };
 
+  const updateNote = (newNote: string) => {
+    setCurrentNote(newNote);
+  };
+
   return (
     <li className={styles.GameEntry}>
       <label htmlFor={title}>
@@ -62,21 +67,30 @@ export default function GameEntry({ game, timeSpan }: Props) {
             : !isViewNote && <AddNoteBtn toggle={toggleAddNote} />}
         </div>
         {isViewNote && (
-          <div>
-            <hr />
-            {!isEditNote ? (
-              <Note note={currentNote} toggleEditNote={toggleEditNote} />
-            ) : (
-              <EditNote
-                toggleEditNote={toggleEditNote}
-                toggleViewNote={toggleViewNote}
-                titleToEdit={title}
-                timeSpanOption={timeSpan}
-                currentNote={currentNote}
-                setCurrentNote={setCurrentNote}
-              />
-            )}
-          </div>
+          <GameNote
+            isEditNote={isEditNote}
+            toggleEditNote={toggleEditNote}
+            toggleViewNote={toggleViewNote}
+            title={title}
+            timeSpan={timeSpan}
+            currentNote={currentNote}
+            updateNote={updateNote}
+          />
+          // <div>
+          //   <hr />
+          //   {!isEditNote ? (
+          //     <Note note={currentNote} toggleEditNote={toggleEditNote} />
+          //   ) : (
+          //     <EditNote
+          //       toggleEditNote={toggleEditNote}
+          //       toggleViewNote={toggleViewNote}
+          //       titleToEdit={title}
+          //       timeSpanOption={timeSpan}
+          //       currentNote={currentNote}
+          //       updateNote={updateNote}
+          //     />
+          //   )}
+          // </div>
         )}
       </div>
     </li>

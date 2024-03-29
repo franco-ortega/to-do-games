@@ -6,7 +6,7 @@ import styles from './EditNote.module.scss';
 
 type Props = {
   currentNote: string;
-  setCurrentNote: Dispatch<SetStateAction<string>>;
+  updateNote: (newNote: string) => void;
   titleToEdit: string;
   timeSpanOption: TimeSpanPaths;
   toggleEditNote: () => void;
@@ -15,7 +15,7 @@ type Props = {
 
 export default function EditNote({
   currentNote,
-  setCurrentNote,
+  updateNote,
   titleToEdit,
   timeSpanOption,
   toggleEditNote,
@@ -53,7 +53,7 @@ export default function EditNote({
       }),
     };
 
-    setCurrentNote(noteToEdit);
+    updateNote(noteToEdit);
     setGames('GAMES_TO_PLAY', updatedGames);
 
     if (noteToEdit) {
