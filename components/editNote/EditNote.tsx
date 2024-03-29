@@ -26,8 +26,8 @@ export default function EditNote({
   const onHandleCancel = () => {
     if (newNote) toggleEditNote();
 
-    if (!newNote) {
-      toggleViewNote();
+    if (!newNote && currentNote) {
+      // toggleViewNote();
       toggleEditNote();
     }
   };
