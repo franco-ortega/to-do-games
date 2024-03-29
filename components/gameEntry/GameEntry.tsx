@@ -47,18 +47,6 @@ export default function GameEntry({ game, timeSpan }: Props) {
     setIsEditNote((prev) => !prev);
   };
 
-  // Do no display Note
-  // ---- if note exists, display View Note
-  // ---- ---- if View Note clicked, display Note
-  // ---- ---- ---- if Hide Note clicked, hide Note
-  // ---- ---- ---- if Edit Note clicked, display EditNote
-  // ---- ---- ---- ---- if note added and Save clicked, save note and display updated Note
-  // ---- ---- ---- ---- if Cancel clicked, display previous Note
-  // ---- if not, display Add Note
-  // ---- ---- if Add Note clicked, display Note and display EditNote and hide Add Note
-  // ---- ---- ---- if note added and Save clicked, save note and display Note and Hide Note
-  // ---- ---- ---- if Cancel clicked, hide Note and hide EditNote and display Add Note
-
   return (
     <li className={styles.GameEntry}>
       <label htmlFor={title}>
