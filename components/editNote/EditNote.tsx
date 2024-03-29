@@ -3,23 +3,24 @@ import { getGames, setGames } from '@/utils/localStorage';
 import { TimeSpanPaths } from '@/utils/types';
 import getGameProps from '@/utils/getGameProps';
 import styles from './EditNote.module.scss';
+import saveNote from '@/utils/saveNote';
 
 type Props = {
-  currentNote: string;
-  updateNote: (newNote: string) => void;
-  titleToEdit: string;
   timeSpan: TimeSpanPaths;
+  titleToEdit: string;
+  currentNote: string;
   toggleEditNote: () => void;
   toggleViewNote: () => void;
+  updateNote: (newNote: string) => void;
 };
 
 export default function EditNote({
-  currentNote,
-  updateNote,
-  titleToEdit,
   timeSpan,
+  titleToEdit,
+  currentNote,
   toggleEditNote,
   toggleViewNote,
+  updateNote,
 }: Props) {
   const [noteToEdit, setNoteToEdit] = useState(currentNote);
 
@@ -29,30 +30,9 @@ export default function EditNote({
   };
 
   const onHandleSave = () => {
-    const savedGames = getGames('GAMES_TO_PLAY');
-
-    const updatedGames = {
-      ...savedGames,
-      [timeSpan]: savedGames[timeSpan].map((game) => {
-        const { title, isPlayed, note } = getGameProps(game);
-
-        if (title === titleToEdit) {
-          return {
-            title,
-            isPlayed,
-            note: noteToEdit,
-          };
-        }
-        return {
-          title,
-          isPlayed,
-          note,
-        };
-      }),
-    };
+    saveNote(noteToEdit, timeSpan, titleToEdit);
 
     updateNote(noteToEdit);
-    setGames('GAMES_TO_PLAY', updatedGames);
 
     if (noteToEdit) {
       toggleEditNote();
