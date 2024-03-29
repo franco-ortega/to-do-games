@@ -21,10 +21,10 @@ export default function EditNote({
   toggleEditNote,
   toggleViewNote,
 }: Props) {
-  const [newNote, setNewNote] = useState('');
+  const [noteToEdit, setNoteToEdit] = useState('');
 
   const onHandleCancel = () => {
-    setNewNote('');
+    setNoteToEdit('');
     toggleEditNote();
 
     if (!currentNote) toggleViewNote();
@@ -42,7 +42,7 @@ export default function EditNote({
           return {
             title,
             isPlayed,
-            note: newNote,
+            note: noteToEdit,
           };
         }
         return {
@@ -53,14 +53,14 @@ export default function EditNote({
       }),
     };
 
-    setCurrentNote(newNote);
+    setCurrentNote(noteToEdit);
     setGames('GAMES_TO_PLAY', updatedGames);
 
-    if (newNote) {
+    if (noteToEdit) {
       toggleEditNote();
     }
 
-    if (!newNote) {
+    if (!noteToEdit) {
       toggleViewNote();
       toggleEditNote();
     }
@@ -74,7 +74,7 @@ export default function EditNote({
           rows={4}
           id='edit-note'
           defaultValue={currentNote}
-          onChange={(e) => setNewNote(e.target.value)}
+          onChange={(e) => setNoteToEdit(e.target.value)}
         />
         <button onClick={onHandleSave}>Save</button>
         <button onClick={onHandleCancel}>Cancel</button>
