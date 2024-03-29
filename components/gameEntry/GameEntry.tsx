@@ -5,7 +5,9 @@ import { Game, TimeSpanPaths } from '@/utils/types';
 import updateGameEntry from '@/utils/updateGameEntry';
 import getGameProps from '@/utils/getGameProps';
 import ViewNote from '../buttons/ViewNote';
+import AddNoteBtn from '../buttons/AddNoteBtn';
 import Note from '../note/Note';
+import EditNote from '../editNote/EditNote';
 import styles from './GameEntry.module.scss';
 
 type Props = {
@@ -18,6 +20,7 @@ export default function GameEntry({ game, timeSpan }: Props) {
 
   const [isChecked, setIsChecked] = useState(isPlayed);
   const [isViewNote, setIsViewNote] = useState(false);
+  const [isEditNote, setIsEditNote] = useState(false);
   const [currentNote, setCurrentNote] = useState(note || '');
 
   const isCheckedChange = () => {
@@ -27,8 +30,21 @@ export default function GameEntry({ game, timeSpan }: Props) {
     updateGameEntry(timeSpan, game);
   };
 
-  const toggleNote = () => {
+  const toggleViewNote = () => {
     setIsViewNote((prev) => !prev);
+  };
+
+  const toggleAddNote = () => {
+    console.log('add note: sets isViewNote to TRUE and isEditNote to TRUE');
+    // open note editor -> EditNote
+    setIsViewNote((prev) => !prev);
+    setIsEditNote((prev) => !prev);
+  };
+
+  const toggleEditNote = () => {
+    // in Note, this sets isEditNote to TRUE
+    // in EditNote, this probly sets isEditNote to FALSE
+    setIsEditNote((prev) => !prev);
   };
 
   return (
@@ -45,15 +61,28 @@ export default function GameEntry({ game, timeSpan }: Props) {
       <div>
         <div>
           <p>[status: {isChecked ? 'played 🎉' : 'unplayed'}]</p>
-          <ViewNote isViewNote={isViewNote} toggleNote={toggleNote} />
+          {currentNote ? (
+            <ViewNote isViewNote={isViewNote} toggleNote={toggleViewNote} />
+          ) : (
+            !isViewNote && <AddNoteBtn toggleAddNote={toggleAddNote} />
+          )}
         </div>
         {isViewNote && (
-          <Note
-            currentNote={currentNote}
-            setCurrentNote={setCurrentNote}
-            title={title}
-            timeSpan={timeSpan}
-          />
+          <div>
+            <hr />
+            {!isEditNote ? (
+              <Note note={currentNote} toggleEditNote={toggleEditNote} />
+            ) : (
+              <EditNote
+                toggleEditNote={toggleEditNote}
+                toggleViewNote={toggleViewNote}
+                titleToEdit={title}
+                timeSpanOption={timeSpan}
+                currentNote={currentNote}
+                setCurrentNote={setCurrentNote}
+              />
+            )}
+          </div>
         )}
       </div>
     </li>
