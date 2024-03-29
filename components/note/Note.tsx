@@ -1,3 +1,4 @@
+import EditNoteBtn from '../buttons/EditNoteBtn';
 import styles from './Note.module.scss';
 
 type Props = {
@@ -10,7 +11,7 @@ export default function Note({ note, toggleEditNote }: Props) {
     <div className={styles.Note}>
       <div>
         <h4>Note</h4>
-        <button onClick={toggleEditNote}>Edit Note</button>
+        <EditNoteBtn toggle={toggleEditNote} />
       </div>
       <p>{note}</p>
     </div>
