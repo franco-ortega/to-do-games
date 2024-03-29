@@ -30,21 +30,16 @@
   // second child
   & > div {
     margin-inline: 1rem 0.5rem;
-    
+
     & > div:first-child {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-  
+
       & > p {
         line-height: 1.5rem;
         min-width: fit-content;
       }
     }
-  }
-
-  hr {
-    margin-block: 0.5rem;
-    border-color: hsl(275, 100%, 66%);
   }
 }

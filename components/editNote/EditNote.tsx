@@ -1,69 +1,42 @@
-import { Dispatch, SetStateAction, useState } from 'react';
-import { getGames, setGames } from '@/utils/localStorage';
+import { useState } from 'react';
 import { TimeSpanPaths } from '@/utils/types';
-import getGameProps from '@/utils/getGameProps';
+import saveNote from '@/utils/saveNote';
+import Button from '../buttons/Button';
 import styles from './EditNote.module.scss';
 
 type Props = {
-  currentNote: string;
-  setCurrentNote: Dispatch<SetStateAction<string>>;
+  timeSpan: TimeSpanPaths;
   titleToEdit: string;
-  timeSpanOption: TimeSpanPaths;
+  currentNote: string;
   toggleEditNote: () => void;
   toggleViewNote: () => void;
+  updateCurrentNote: (newNote: string) => void;
 };
 
 export default function EditNote({
-  currentNote,
-  setCurrentNote,
+  timeSpan,
   titleToEdit,
-  timeSpanOption,
+  currentNote,
   toggleEditNote,
   toggleViewNote,
+  updateCurrentNote,
 }: Props) {
-  const [newNote, setNewNote] = useState(currentNote);
+  const [noteToEdit, setNoteToEdit] = useState(currentNote);
 
-  const onHandleCancel = () => {
-    setNewNote('');
+  const onSaveClick = () => {
+    // save note
+    saveNote(noteToEdit, timeSpan, titleToEdit);
+    // update note state to re-render ViewNoteBtn text in GameEntry
+    updateCurrentNote(noteToEdit);
+    // close editor
     toggleEditNote();
-
-    if (!currentNote) toggleViewNote();
+    // close note view if note was erased
+    if (!noteToEdit) toggleViewNote();
   };
 
-  const onHandleSave = () => {
-    const savedGames = getGames('GAMES_TO_PLAY');
-
-    const updatedGames = {
-      ...savedGames,
-      [timeSpanOption]: savedGames[timeSpanOption].map((game) => {
-        const { title, isPlayed, note } = getGameProps(game);
-
-        if (title === titleToEdit) {
-          return {
-            title,
-            isPlayed,
-            note: newNote,
-          };
-        }
-        return {
-          title,
-          isPlayed,
-          note,
-        };
-      }),
-    };
-
-    setCurrentNote(newNote);
-    setGames('GAMES_TO_PLAY', updatedGames);
-
-    if (newNote) {
-      toggleEditNote();
-    }
-
-    if (!newNote) {
-      toggleViewNote();
-      toggleEditNote();
-    }
+  const onCancelClick = () => {
+    toggleEditNote();
+    if (!currentNote) toggleViewNote();
   };
 
   return (
@@ -73,11 +46,11 @@ export default function EditNote({
         <textarea
           rows={4}
           id='edit-note'
-          value={newNote}
-          onChange={(e) => setNewNote(e.target.value)}
+          defaultValue={currentNote}
+          onChange={(e) => setNoteToEdit(e.target.value)}
         />
-        <button onClick={onHandleSave}>Save</button>
-        <button onClick={onHandleCancel}>Cancel</button>
+        <Button handler={onSaveClick} text={'Save'} />
+        <Button handler={onCancelClick} text={'Cancel'} />
       </label>
     </div>
   );

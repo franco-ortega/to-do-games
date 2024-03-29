@@ -2,8 +2,7 @@ export type OldGameData = [
   string,
   {
     isPlayed: boolean;
-    note?: string;
-    notes?: string;
+    note: string;
   }
 ];
 

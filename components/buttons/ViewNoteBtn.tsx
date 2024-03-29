@@ -1,14 +1,12 @@
-import styles from './ViewNoteBtn.module.scss';
+import Button from './Button';
 
 type Props = {
   isViewNote: boolean;
-  toggleNote: () => void;
+  toggle: () => void;
 };
 
-export default function ViewNoteBtn({ isViewNote, toggleNote }: Props) {
-  return (
-    <button className={styles.ViewNoteBtn} onClick={toggleNote}>{`${
-      isViewNote ? 'Hide' : 'View'
-    } Note`}</button>
-  );
+export default function ViewNoteBtn({ isViewNote, toggle }: Props) {
+  const viewNoteText = `${isViewNote ? 'Hide' : 'View'} Note`;
+
+  return <Button handler={toggle} text={viewNoteText} />;
 }

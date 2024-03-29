@@ -1,13 +1,10 @@
-import styles from './AddNoteBtn.module.scss';
+import Button from './Button';
 
 type Props = {
-  toggleAddNote: () => void;
+  toggle: () => void;
 };
 
-export default function AddNoteBtn({ toggleAddNote }: Props) {
-  return (
-    <button className={styles.AddNoteBtn} onClick={toggleAddNote}>
-      Add Note
-    </button>
-  );
+export default function AddNoteBtn({ toggle }: Props) {
+  const addNoteText = 'Add Note';
+  return <Button handler={toggle} text={addNoteText} />;
 }

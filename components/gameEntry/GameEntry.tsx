@@ -5,9 +5,8 @@ import { Game, TimeSpanPaths } from '@/utils/types';
 import getGameProps from '@/utils/getGameProps';
 import updateGameStatus from '@/utils/updateGameStatus';
 import AddNoteBtn from '../buttons/AddNoteBtn';
-import ViewNote from '../buttons/ViewNoteBtn';
-import Note from '../note/Note';
-import EditNote from '../editNote/EditNote';
+import ViewNoteBtn from '../buttons/ViewNoteBtn';
+import GameNote from '../gameNote/GameNote';
 import styles from './GameEntry.module.scss';
 
 type Props = {
@@ -21,7 +20,7 @@ export default function GameEntry({ game, timeSpan }: Props) {
   const [isChecked, setIsChecked] = useState(isPlayed);
   const [isViewNote, setIsViewNote] = useState(false);
   const [isEditNote, setIsEditNote] = useState(false);
-  const [currentNote, setCurrentNote] = useState(note || '');
+  const [currentNote, setCurrentNote] = useState(note);
 
   const isCheckedChange = () => {
     setIsChecked((prevState) => !prevState);
@@ -32,13 +31,17 @@ export default function GameEntry({ game, timeSpan }: Props) {
     setIsViewNote((prev) => !prev);
   };
 
+  const toggleEditNote = () => {
+    setIsEditNote((prev) => !prev);
+  };
+
   const toggleAddNote = () => {
     setIsViewNote((prev) => !prev);
     setIsEditNote((prev) => !prev);
   };
 
-  const toggleEditNote = () => {
-    setIsEditNote((prev) => !prev);
+  const updateCurrentNote = (newNote: string) => {
+    setCurrentNote(newNote);
   };
 
   return (
@@ -55,28 +58,22 @@ export default function GameEntry({ game, timeSpan }: Props) {
       <div>
         <div>
           <p>[status: {isChecked ? 'played 🎉' : 'unplayed'}]</p>
-          {currentNote
-            ? !isEditNote && (
-                <ViewNote isViewNote={isViewNote} toggleNote={toggleViewNote} />
-              )
-            : !isViewNote && <AddNoteBtn toggleAddNote={toggleAddNote} />}
+          {isEditNote ? null : currentNote ? (
+            <ViewNoteBtn isViewNote={isViewNote} toggle={toggleViewNote} />
+          ) : (
+            <AddNoteBtn toggle={toggleAddNote} />
+          )}
         </div>
         {isViewNote && (
-          <div>
-            <hr />
-            {!isEditNote ? (
-              <Note note={currentNote} toggleEditNote={toggleEditNote} />
-            ) : (
-              <EditNote
-                toggleEditNote={toggleEditNote}
-                toggleViewNote={toggleViewNote}
-                titleToEdit={title}
-                timeSpanOption={timeSpan}
-                currentNote={currentNote}
-                setCurrentNote={setCurrentNote}
-              />
-            )}
-          </div>
+          <GameNote
+            timeSpan={timeSpan}
+            title={title}
+            isEditNote={isEditNote}
+            currentNote={currentNote}
+            toggleEditNote={toggleEditNote}
+            toggleViewNote={toggleViewNote}
+            updateCurrentNote={updateCurrentNote}
+          />
         )}
       </div>
     </li>
