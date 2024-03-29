@@ -30,5 +30,12 @@
   // second child
   & > div {
     margin-inline: 1rem 0.5rem;
+
+    & > div:first-child {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    
   }
 }
