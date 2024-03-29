@@ -4,6 +4,7 @@ import { TimeSpanPaths } from '@/utils/types';
 import getGameProps from '@/utils/getGameProps';
 import styles from './EditNote.module.scss';
 import saveNote from '@/utils/saveNote';
+import Button from '../buttons/Button';
 
 type Props = {
   timeSpan: TimeSpanPaths;
@@ -50,8 +51,8 @@ export default function EditNote({
           defaultValue={currentNote}
           onChange={(e) => setNoteToEdit(e.target.value)}
         />
-        <button onClick={onSaveClick}>Save</button>
-        <button onClick={onCancelClick}>Cancel</button>
+        <Button handler={onSaveClick} text={'Save'} />
+        <Button handler={onCancelClick} text={'Cancel'} />
       </label>
     </div>
   );
