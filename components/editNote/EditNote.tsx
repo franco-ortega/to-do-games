@@ -24,23 +24,20 @@ export default function EditNote({
 }: Props) {
   const [noteToEdit, setNoteToEdit] = useState(currentNote);
 
-  const onHandleCancel = () => {
+  const onSaveClick = () => {
+    // save note
+    saveNote(noteToEdit, timeSpan, titleToEdit);
+    // update note state to re-render ViewNoteBtn text in GameEntry
+    updateCurrentNote(noteToEdit);
+    // close editor
     toggleEditNote();
-    if (!currentNote) toggleViewNote();
+    // close note view if note was erased
+    if (!noteToEdit) toggleViewNote();
   };
 
-  const onHandleSave = () => {
-    saveNote(noteToEdit, timeSpan, titleToEdit);
-    updateCurrentNote(noteToEdit);
-
-    if (noteToEdit) {
-      toggleEditNote();
-    }
-
-    if (!noteToEdit) {
-      toggleViewNote();
-      toggleEditNote();
-    }
+  const onCancelClick = () => {
+    toggleEditNote();
+    if (!currentNote) toggleViewNote();
   };
 
   return (
@@ -53,8 +50,8 @@ export default function EditNote({
           defaultValue={currentNote}
           onChange={(e) => setNoteToEdit(e.target.value)}
         />
-        <button onClick={onHandleSave}>Save</button>
-        <button onClick={onHandleCancel}>Cancel</button>
+        <button onClick={onSaveClick}>Save</button>
+        <button onClick={onCancelClick}>Cancel</button>
       </label>
     </div>
   );
