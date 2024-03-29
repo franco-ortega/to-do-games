@@ -58,13 +58,11 @@ export default function GameEntry({ game, timeSpan }: Props) {
       <div>
         <div>
           <p>[status: {isChecked ? 'played 🎉' : 'unplayed'}]</p>
-          {!isEditNote ? (
-            currentNote ? (
-              <ViewNoteBtn isViewNote={isViewNote} toggle={toggleViewNote} />
-            ) : (
-              <AddNoteBtn toggle={toggleAddNote} />
-            )
-          ) : null}
+          {isEditNote ? null : currentNote ? (
+            <ViewNoteBtn isViewNote={isViewNote} toggle={toggleViewNote} />
+          ) : (
+            <AddNoteBtn toggle={toggleAddNote} />
+          )}
         </div>
         {isViewNote && (
           <GameNote
