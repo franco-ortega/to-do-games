@@ -25,9 +25,7 @@ export default function GameNote({
   return (
     <div className={styles.GameNote}>
       <hr />
-      {!isEditNote ? (
-        <Note note={currentNote} toggleEditNote={toggleEditNote} />
-      ) : (
+      {isEditNote ? (
         <EditNote
           toggleEditNote={toggleEditNote}
           toggleViewNote={toggleViewNote}
@@ -36,6 +34,8 @@ export default function GameNote({
           currentNote={currentNote}
           updateNote={updateNote}
         />
+      ) : (
+        <Note note={currentNote} toggleEditNote={toggleEditNote} />
       )}
     </div>
   );
