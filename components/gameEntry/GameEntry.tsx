@@ -65,10 +65,6 @@ export default function GameEntry({ game, timeSpan }: Props) {
               <AddNoteBtn toggle={toggleAddNote} />
             )
           ) : null}
-          {/* ? !isEditNote && (
-                <ViewNoteBtn isViewNote={isViewNote} toggle={toggleViewNote} />
-              )
-            : !isViewNote && <AddNoteBtn toggle={toggleAddNote} />} */}
         </div>
         {isViewNote && (
           <GameNote
@@ -80,21 +76,6 @@ export default function GameEntry({ game, timeSpan }: Props) {
             currentNote={currentNote}
             updateNote={updateNote}
           />
-          // <div>
-          //   <hr />
-          //   {!isEditNote ? (
-          //     <Note note={currentNote} toggleEditNote={toggleEditNote} />
-          //   ) : (
-          //     <EditNote
-          //       toggleEditNote={toggleEditNote}
-          //       toggleViewNote={toggleViewNote}
-          //       titleToEdit={title}
-          //       timeSpanOption={timeSpan}
-          //       currentNote={currentNote}
-          //       updateNote={updateNote}
-          //     />
-          //   )}
-          // </div>
         )}
       </div>
     </li>
