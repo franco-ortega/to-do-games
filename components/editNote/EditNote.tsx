@@ -5,27 +5,31 @@ import getGameProps from '@/utils/getGameProps';
 import styles from './EditNote.module.scss';
 
 type Props = {
-  toggleEditNote: () => void;
-  titleToEdit: string;
-  note: string;
-  timeSpanOption: TimeSpanPaths;
+  currentNote: string;
   setCurrentNote: Dispatch<SetStateAction<string>>;
-  // toggleNote: () => void;
+  titleToEdit: string;
+  timeSpanOption: TimeSpanPaths;
+  toggleEditNote: () => void;
+  toggleViewNote: () => void;
 };
 
 export default function EditNote({
-  toggleEditNote,
-  titleToEdit,
-  note,
-  timeSpanOption,
+  currentNote,
   setCurrentNote,
-}: // toggleNote,
-Props) {
-  const [newNote, setNewNote] = useState(note);
+  titleToEdit,
+  timeSpanOption,
+  toggleEditNote,
+  toggleViewNote,
+}: Props) {
+  const [newNote, setNewNote] = useState(currentNote);
 
   const onHandleCancel = () => {
-    toggleEditNote();
-    // toggleNote();
+    if (newNote) toggleEditNote();
+
+    if (!newNote) {
+      toggleViewNote();
+      toggleEditNote();
+    }
   };
 
   const onHandleSave = () => {
@@ -53,8 +57,15 @@ Props) {
 
     setCurrentNote(newNote);
     setGames('GAMES_TO_PLAY', updatedGames);
-    toggleEditNote();
-    // toggleNote();
+
+    if (newNote) {
+      toggleEditNote();
+    }
+
+    if (!newNote) {
+      toggleViewNote();
+      toggleEditNote();
+    }
   };
 
   return (

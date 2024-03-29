@@ -5,10 +5,10 @@ import { Game, TimeSpanPaths } from '@/utils/types';
 import updateGameEntry from '@/utils/updateGameEntry';
 import getGameProps from '@/utils/getGameProps';
 import ViewNote from '../buttons/ViewNote';
-import Note from '../note/Note';
-import styles from './GameEntry.module.scss';
 import AddNoteBtn from '../buttons/AddNoteBtn';
+import Note from '../note/Note';
 import EditNote from '../editNote/EditNote';
+import styles from './GameEntry.module.scss';
 
 type Props = {
   game: Game;
@@ -30,22 +30,20 @@ export default function GameEntry({ game, timeSpan }: Props) {
     updateGameEntry(timeSpan, game);
   };
 
-  // const toggleNote = () => {
-  //   setIsViewNote((prev) => !prev);
-  // };
-
   const toggleViewNote = () => {
     setIsViewNote((prev) => !prev);
   };
 
   const toggleAddNote = () => {
-    console.log('add note');
+    console.log('add note: sets isViewNote to TRUE and isEditNote to TRUE');
     // open note editor -> EditNote
     setIsViewNote((prev) => !prev);
     setIsEditNote((prev) => !prev);
   };
 
   const toggleEditNote = () => {
+    // in Note, this sets isEditNote to TRUE
+    // in EditNote, this probly sets isEditNote to FALSE
     setIsEditNote((prev) => !prev);
   };
 
@@ -85,15 +83,15 @@ export default function GameEntry({ game, timeSpan }: Props) {
           <div>
             <hr />
             {!isEditNote ? (
-              <Note currentNote={currentNote} toggleEditNote={toggleEditNote} />
+              <Note note={currentNote} toggleEditNote={toggleEditNote} />
             ) : (
               <EditNote
                 toggleEditNote={toggleEditNote}
+                toggleViewNote={toggleViewNote}
                 titleToEdit={title}
-                note={currentNote}
                 timeSpanOption={timeSpan}
+                currentNote={currentNote}
                 setCurrentNote={setCurrentNote}
-                // toggleNote={toggleNote}
               />
             )}
           </div>
