@@ -22,7 +22,7 @@ export default function GameNote({
   timeSpan,
   updateCurrentNote,
 }: Props) {
-  const closeNoteView = (noteToCheck: string) => {
+  const closeEditNote = (noteToCheck: string) => {
     // close editor
     toggleEditNote();
     // close note view if there is no note was erased
@@ -37,7 +37,7 @@ export default function GameNote({
           titleToEdit={title}
           timeSpan={timeSpan}
           currentNote={currentNote}
-          closeNoteView={closeNoteView}
+          closeEditNote={closeEditNote}
           updateCurrentNote={updateCurrentNote}
         />
       ) : (
