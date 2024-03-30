@@ -10,6 +10,7 @@ type Props = {
   currentNote: string;
   toggleEditNote: () => void;
   toggleViewNote: () => void;
+  closeNoteView: (noteToCheck: string) => void;
   updateCurrentNote: (newNote: string) => void;
 };
 
@@ -19,6 +20,7 @@ export default function EditNote({
   currentNote,
   toggleEditNote,
   toggleViewNote,
+  closeNoteView,
   updateCurrentNote,
 }: Props) {
   const [noteToEdit, setNoteToEdit] = useState(currentNote);
@@ -28,15 +30,11 @@ export default function EditNote({
     saveNote(noteToEdit, timeSpan, titleToEdit);
     // update note state to re-render ViewNoteBtn text in GameEntry
     updateCurrentNote(noteToEdit);
-    // close editor
-    toggleEditNote();
-    // close note view if note was erased
-    if (!noteToEdit) toggleViewNote();
+    closeNoteView(noteToEdit);
   };
 
   const onCancelClick = () => {
-    toggleEditNote();
-    if (!currentNote) toggleViewNote();
+    closeNoteView(noteToEdit);
   };
 
   return (
