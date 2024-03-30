@@ -8,8 +8,6 @@ type Props = {
   timeSpan: TimeSpanPaths;
   titleToEdit: string;
   currentNote: string;
-  toggleEditNote: () => void;
-  toggleViewNote: () => void;
   closeNoteView: (noteToCheck: string) => void;
   updateCurrentNote: (newNote: string) => void;
 };
@@ -18,8 +16,6 @@ export default function EditNote({
   timeSpan,
   titleToEdit,
   currentNote,
-  toggleEditNote,
-  toggleViewNote,
   closeNoteView,
   updateCurrentNote,
 }: Props) {

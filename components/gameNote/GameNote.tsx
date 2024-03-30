@@ -34,8 +34,6 @@ export default function GameNote({
       <hr />
       {isEditNote ? (
         <EditNote
-          toggleEditNote={toggleEditNote}
-          toggleViewNote={toggleViewNote}
           titleToEdit={title}
           timeSpan={timeSpan}
           currentNote={currentNote}
