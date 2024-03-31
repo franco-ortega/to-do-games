@@ -36,7 +36,6 @@ export default function EditNote({
   return (
     <div className={styles.EditNote}>
       <label htmlFor='edit-note'>
-        <p>Note:</p>
         <textarea
           rows={4}
           id='edit-note'
