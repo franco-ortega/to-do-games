@@ -56,22 +56,23 @@ export default function GameNote({
       <hr />
       <div>
         <h4>Note</h4>
-        {!isEditNote ? (
+        <div>
           <EditNoteBtn toggle={toggleEditNote} />
-        ) : (
-          <>
-            <Button handler={onSaveClick} text={'Save'} />
-            <Button handler={onCancelClick} text={'Cancel'} />
-          </>
-        )}
+        </div>
       </div>
       {isEditNote ? (
-        <EditNote
-          titleToEdit={title}
-          timeSpan={timeSpan}
-          currentNote={currentNote}
-          onEditNote={onEditNote}
-        />
+        <div>
+          <EditNote
+            titleToEdit={title}
+            timeSpan={timeSpan}
+            currentNote={currentNote}
+            onEditNote={onEditNote}
+          />
+          <div>
+            <Button handler={onSaveClick} text={'Save'} />
+            <Button handler={onCancelClick} text={'Cancel'} />
+          </div>
+        </div>
       ) : (
         <Note note={currentNote} />
       )}

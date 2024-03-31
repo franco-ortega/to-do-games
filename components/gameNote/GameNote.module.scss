@@ -13,7 +13,10 @@
       text-decoration: underline;
       font-size: 1.05rem;
       font-weight: 500;
-    }
+    } 
+  }
 
+  button + button {
+    margin-left: .5rem;
   }
 }
