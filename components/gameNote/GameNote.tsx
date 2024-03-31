@@ -2,6 +2,7 @@ import { TimeSpanPaths } from '@/utils/types';
 import EditNote from '../editNote/EditNote';
 import Note from '../note/Note';
 import styles from './GameNote.module.scss';
+import EditNoteBtn from '../buttons/EditNoteBtn';
 
 type Props = {
   timeSpan: TimeSpanPaths;
@@ -32,6 +33,10 @@ export default function GameNote({
   return (
     <div className={styles.GameNote}>
       <hr />
+      <div>
+        <h4>Note</h4>
+        <EditNoteBtn toggle={toggleEditNote} />
+      </div>
       {isEditNote ? (
         <EditNote
           titleToEdit={title}
