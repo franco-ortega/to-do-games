@@ -8,8 +8,7 @@ type Props = {
   timeSpan: TimeSpanPaths;
   titleToEdit: string;
   currentNote: string;
-  toggleEditNote: () => void;
-  toggleViewNote: () => void;
+  closeEditNote: (noteToCheck: string) => void;
   updateCurrentNote: (newNote: string) => void;
 };
 
@@ -17,8 +16,7 @@ export default function EditNote({
   timeSpan,
   titleToEdit,
   currentNote,
-  toggleEditNote,
-  toggleViewNote,
+  closeEditNote,
   updateCurrentNote,
 }: Props) {
   const [noteToEdit, setNoteToEdit] = useState(currentNote);
@@ -28,15 +26,11 @@ export default function EditNote({
     saveNote(noteToEdit, timeSpan, titleToEdit);
     // update note state to re-render ViewNoteBtn text in GameEntry
     updateCurrentNote(noteToEdit);
-    // close editor
-    toggleEditNote();
-    // close note view if note was erased
-    if (!noteToEdit) toggleViewNote();
+    closeEditNote(noteToEdit);
   };
 
   const onCancelClick = () => {
-    toggleEditNote();
-    if (!currentNote) toggleViewNote();
+    closeEditNote(noteToEdit);
   };
 
   return (
