@@ -46,7 +46,7 @@ export default function GameNote({
           updateCurrentNote={updateCurrentNote}
         />
       ) : (
-        <Note note={currentNote} toggleEditNote={toggleEditNote} />
+        <Note note={currentNote} />
       )}
     </div>
   );

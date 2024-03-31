@@ -1,8 +1,5 @@
 @use '../../styles/scss/' as *;
 
 .Note {
-    & > div {
-      display: flex;
-      justify-content: space-between;
-    }
+
 }
