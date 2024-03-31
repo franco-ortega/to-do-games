@@ -4,15 +4,5 @@
     & > div {
       display: flex;
       justify-content: space-between;
-
-      & > h4 {
-        text-decoration: underline;
-        font-size: 1.05rem;
-        font-weight: 500;
-      }
-
-      & > button {
-        @extend %note-button;
-      }
     }
 }
