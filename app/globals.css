@@ -21,6 +21,13 @@
   --white: hsl(0, 0%, 100%);
   --white-dark: hsl(0, 0%, 90%);
 
+  /* test palette #1 */
+  --liver: hsl(18, 24%, 30%);
+  --raw-umner: hsl(20, 18%, 44%);
+  --periwinkle: hsl(246, 38%, 85%);
+  --dim-gray: hsl(229, 7%, 46%);
+  --gunmetal: hsl(222, 10%, 20%);
+
   /* backgrounds */
   --bkgd-clr-main: var(--blue-dark);
   --bkgd-clr-main-faded: var(--blue-dark-faded);
