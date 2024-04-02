@@ -2,6 +2,10 @@ import { TimeSpanPaths } from '@/utils/types';
 import EditNote from '../editNote/EditNote';
 import Note from '../note/Note';
 import styles from './GameNote.module.scss';
+import EditNoteBtn from '../buttons/EditNoteBtn';
+import Button from '../buttons/Button';
+import { useState } from 'react';
+import saveNote from '@/utils/saveNote';
 
 type Props = {
   timeSpan: TimeSpanPaths;
@@ -22,6 +26,8 @@ export default function GameNote({
   timeSpan,
   updateCurrentNote,
 }: Props) {
+  const [noteToEdit, setNoteToEdit] = useState(currentNote);
+
   const closeEditNote = (noteToCheck: string) => {
     // close editor
     toggleEditNote();
@@ -29,19 +35,44 @@ export default function GameNote({
     if (!noteToCheck) toggleViewNote();
   };
 
+  const onSaveClick = () => {
+    // save note
+    saveNote(noteToEdit, timeSpan, title);
+    // update note state to re-render ViewNoteBtn text in GameEntry
+    updateCurrentNote(noteToEdit);
+    closeEditNote(noteToEdit);
+  };
+
+  const onCancelClick = () => {
+    closeEditNote(noteToEdit);
+  };
+
+  const onEditNote = (noteToEdit: string) => {
+    setNoteToEdit(noteToEdit);
+  };
+
   return (
     <div className={styles.GameNote}>
       <hr />
+      <div>
+        <h4>Note</h4>
+        <div>{!isEditNote && <EditNoteBtn toggle={toggleEditNote} />}</div>
+      </div>
       {isEditNote ? (
-        <EditNote
-          titleToEdit={title}
-          timeSpan={timeSpan}
-          currentNote={currentNote}
-          closeEditNote={closeEditNote}
-          updateCurrentNote={updateCurrentNote}
-        />
+        <div>
+          <EditNote
+            titleToEdit={title}
+            timeSpan={timeSpan}
+            currentNote={currentNote}
+            onEditNote={onEditNote}
+          />
+          <div>
+            <Button handler={onSaveClick} text={'Save'} />
+            <Button handler={onCancelClick} text={'Cancel'} />
+          </div>
+        </div>
       ) : (
-        <Note note={currentNote} toggleEditNote={toggleEditNote} />
+        <Note note={currentNote} />
       )}
     </div>
   );
