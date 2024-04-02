@@ -22,13 +22,6 @@
   --white: hsl(0, 0%, 100%);
   --white-dark: hsl(0, 0%, 90%);
 
-  /* test palette #1 */
-  --liver: hsl(18, 24%, 30%);
-  --raw-umner: hsl(20, 18%, 44%);
-  --periwinkle: hsl(246, 38%, 85%);
-  --dim-gray: hsl(229, 7%, 46%);
-  --gunmetal: hsl(222, 10%, 20%);
-
   /* backgrounds */
   --bkgd-clr-main: var(--blue-dark);
   --bkgd-clr-main-faded: var(--blue-dark-faded);
@@ -71,6 +64,28 @@
 
   /* test */
   --test-outline: 1px solid yellow;
+
+  /* test palette #1 */
+  --liver: hsl(18, 24%, 30%);
+  --raw-umber: hsl(20, 18%, 44%);
+  --periwinkle: hsl(246, 38%, 85%);
+  --dim-gray: hsl(229, 7%, 46%);
+  --gunmetal: hsl(222, 10%, 20%);
+
+  /* --primary-color: green;
+  --secondary-color: darkgreen;
+  --tertiary-color: lightgreen;
+  --accent-color: rgb(130, 231, 130);
+  --line-color: rgb(6, 75, 6);
+
+  --bkgd-clr-main: var(--primary-color);
+  --bkgd-clr-accent: var(--secondary-color);
+
+  --text-clr-main: var(--accent-color);
+  --text-clr-accent: var(--tertiary-color);
+
+  --bkgd-nav-link: var(--primary-color);
+  --text-nav: var(--accent-color); */
 }
 
 @media (prefers-color-scheme: dark) {
