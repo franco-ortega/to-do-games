@@ -16,6 +16,7 @@
   --green-dark: hsl(120, 8%, 25%);
   --pink: hsl(0, 81%, 88%);
   --pink-dark: hsl(160, 87%, 46%);
+  --purple-light: hsl(275, 100%, 66%);
   --red-dark: hsl(0, 50%, 27%);
   --red-darkest: hsl(348, 79%, 18%);
   --white: hsl(0, 0%, 100%);
@@ -45,6 +46,7 @@
   /* borders */
   --bdr-game-entry: var(--white);
   --bdr-rad-btn: 0.25rem;
+  --bdr-hr: var(--purple-light);
 
   /* padding */
   --pad-btn: 0.1rem 0.3rem;
