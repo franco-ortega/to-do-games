@@ -56,9 +56,7 @@ export default function GameNote({
       <hr />
       <div>
         <h4>Note</h4>
-        <div>
-          <EditNoteBtn toggle={toggleEditNote} disabled={isEditNote} />
-        </div>
+        <div>{!isEditNote && <EditNoteBtn toggle={toggleEditNote} />}</div>
       </div>
       {isEditNote ? (
         <div>
