@@ -1,7 +1,7 @@
 .GameNote {
   & > hr {
     margin-block: 0.5rem;
-    border-color: hsl(275, 100%, 66%);
+    border-color: var(--bdr-hr);
   }
 
   & > div:nth-child(2) {
