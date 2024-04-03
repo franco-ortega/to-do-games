@@ -38,19 +38,17 @@
       font-size: .95rem;
     }
     
-    button {
-      border-radius: .25rem;
-      background-color: var(--bkgd-btn-enabled);
-      margin: auto;
-      padding: .25rem .5rem;
+    &:last-child {
+      margin-inline: auto;
       width: fit-content;
       
-      color: var(--text-btn-enabled);
+      button {
+        @extend %note-button;
+      }
     }
-
+    
     button:disabled {
-      background-color: var(--bkgd-btn-disabled);
-      color: var(--text-btn-disabled);
+      opacity: 75%;
     }
   }
 }
