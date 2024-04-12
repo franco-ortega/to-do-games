@@ -14,8 +14,8 @@
   --blue-light: hsl(227, 68%, 86%);
   --blue-light-faded: hsl(227, 68%, 86%, var(--fade-mild));
   --green: hsl(120, 36%, 36%);
-  --green-dark: hsl(120, 8%, 25%);
-  --green-darkest: hsl(120, 8%, 16%);
+  --green-dark: hsl(120, 22%, 27%);
+  --green-darkest: hsl(120, 10%, 20%);
   --pink: hsl(0, 81%, 88%);
   --pink-dark: hsl(160, 87%, 46%);
   --purple-light: hsl(275, 100%, 66%);
@@ -25,9 +25,8 @@
   --white-dark: hsl(0, 0%, 90%);
 
   /* backgrounds */
-  --bkgd-clr-main: var(--blue-dark);
+  --bkgd-clr-main: var(--blue-darkest);
   --bkgd-clr-main-faded: var(--blue-dark-faded);
-  /* --bkgd-clr-accent: var(--red-dark); */
   --bkgd-clr-accent: var(--green-dark);
 
   --bkgd-btn-enabled: var(--bkgd-clr-main);
@@ -36,7 +35,6 @@
 
   --bkgd-game-entry: var(--blue-darkest);
   --bkgd-game-list: var(--green-dark);
-  /* --bkgd-nav-link: var(--red-darkest); */
   --bkgd-nav-link: var(--green-darkest);
   --bkgd-input: var(--white-dark);
 
